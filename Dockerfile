@@ -10,5 +10,12 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
   && a2enmod fcgid
 
 COPY mapserver.conf /etc/apache2/conf-enabled/
+COPY docker-entrypoint.sh /
 
 ONBUILD COPY mapserver.map /etc/mapserver/
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+# A bug in Docker resets the CMD of the parent image if you set the ENTRYPOINT:
+#   https://github.com/docker/docker/issues/5147
+CMD ["apache2", "-DFOREGROUND"]
