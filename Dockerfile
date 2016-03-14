@@ -1,6 +1,6 @@
 FROM tianon/apache2
 
-ENV MAPSERVER_VERSION 7.0.0-1~bpo8+1
+ENV MAPSERVER_VERSION 7.0.1-2~bpo8+1
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list \
   && apt-get update \
