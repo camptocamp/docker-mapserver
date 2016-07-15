@@ -37,8 +37,6 @@ EXPOSE 80
 
 COPY . /
 
-ONBUILD COPY mapserver.map /etc/mapserver/
-
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["apache2", "-DFOREGROUND"]

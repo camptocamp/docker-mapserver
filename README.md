@@ -9,6 +9,8 @@ COPY *.map /etc/mapserver/
 COPY *.sh *.env /docker-entrypoint.d/
 ```
 
+The main mapfile should be `/etc/mapserver/mapserver.map`.
+
 Or you can use the image as is and mount volumes to customize it.
 
 
