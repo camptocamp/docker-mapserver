@@ -26,3 +26,8 @@ All the files ending with `.tmpl` in /etc/mapserver and /etc/apache2 (can be
 changed by defining CONFD_DIRS in one of the sourced files) will go though
 confd with the `env` backend. The TOML files are created automagically to
 create a file at the same location, with just the `.tmpl` extension removed.
+
+You can use the following environment variables (when starting the container)
+to tune it:
+* MS_DEBUGLEVEL: The debug level 0=off 5=verbose
+* MS_ERRORFILE: If you want the debug to something other than STDOUT

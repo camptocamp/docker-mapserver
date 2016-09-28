@@ -37,6 +37,9 @@ EXPOSE 80
 
 COPY . /
 
+ENV MS_DEBUGLEVEL 0
+ENV MS_ERRORFILE stderr
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["apache2", "-DFOREGROUND"]
