@@ -29,8 +29,13 @@ node('docker') {
   if (finalTag ==~ /\d+(?:\.\d+)*/) {
     parts = finalTag.tokenize('.')
     tags = []
-    for (int i=1; i<=parts; ++i) {
-        tags << parts.subList(0, i).join('.')
+    for (int i=1; i<=parts.size(); ++i) {
+        curTag = "";
+        for (int j = 0; j < i; ++j) {
+            if (j > 0) curTag += '.'
+            curTag += parts[j]
+        }
+        tags << curTag
     }
   } else {
     tags = [finalTag]
@@ -45,8 +50,8 @@ node('docker') {
         sh "docker tag ${IMAGE_NAME}:${env.DOCKER_TAG} ${IMAGE_NAME}:${tag}"
         //push it
         docker.image("${IMAGE_NAME}:${tag}").push()
-        sh 'rm -rf ~/.docker*'
       }
+      sh 'rm -rf ~/.docker*'
     }
   }
 }
