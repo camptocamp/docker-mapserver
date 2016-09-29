@@ -1,0 +1,23 @@
+mapserver:
+  image: camptocamp/mapserver:${DOCKER_TAG}
+  environment:
+    MS_DEBUGLEVEL: 5
+  links:
+    - db
+  ports:
+    - 8380:80
+  volumes_from:
+    - acceptance_config
+
+db:
+  image: camptocamp/postgresql:pg9.5-latest
+  environment:
+    POSTGRES_USER: www-data
+    POSTGRES_PASSWORD: www-data
+    POSTGRES_DB: test
+  volumes_from:
+    - acceptance_config
+
+acceptance_config:
+  image: camptocamp/mapserver_acceptance_config:${DOCKER_TAG}
+

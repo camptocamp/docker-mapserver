@@ -1,2 +1,4 @@
-README.md
+acceptance_tests
 Dockerfile
+Makefile
+README.md

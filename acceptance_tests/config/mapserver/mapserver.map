@@ -1,0 +1,121 @@
+MAP
+    NAME "test"
+
+    EXTENT -180 -90 180 90
+    UNITS METERS
+
+    # RESOLUTION and DEFRESOLUTION default to 96. If you
+    # change RESOLUTION to some other value, also change
+    # DEFRESOLUTION. See
+    # http://mapserver.org/development/rfc/ms-rfc-55.html
+    RESOLUTION 96 ## Also set in Openlayers especially for legends
+    DEFRESOLUTION 96
+
+    # MAXSIZE shouldn't be less than 5000 for MF print on A3
+    MAXSIZE 5000
+
+    SHAPEPATH '/var/sig/c2cgeoportal'
+
+    IMAGECOLOR 255 255 255
+    STATUS ON
+
+    #FONTSET "fonts.conf"
+    #SYMBOLSET "symbol.sym"
+
+    OUTPUTFORMAT
+        NAME jpeg
+        DRIVER "AGG/JPEG"
+        MIMETYPE "image/jpeg"
+        IMAGEMODE RGB
+        EXTENSION "jpeg"
+        FORMATOPTION "QUALITY=75,PROGRESSIVE=TRUE"
+    END
+
+    OUTPUTFORMAT
+        NAME png
+        DRIVER AGG/PNG
+        MIMETYPE "image/png"
+        IMAGEMODE RGBA
+        EXTENSION "png"
+        FORMATOPTION "INTERLACE=OFF"
+        FORMATOPTION "QUANTIZE_DITHER=OFF"
+        FORMATOPTION "QUANTIZE_FORCE=ON"
+        FORMATOPTION "QUANTIZE_COLORS=256"
+    END
+
+    OUTPUTFORMAT
+        NAME "geojson"
+        DRIVER "OGR/GEOJSON"
+        MIMETYPE "application/json; subtype=geojson; charset=utf-8"
+        FORMATOPTION "STORAGE=stream"
+        FORMATOPTION "FORM=SIMPLE"
+    END
+
+    PROJECTION
+        "init=epsg:4326"
+    END
+
+    WEB
+        METADATA
+            "wms_title" "test"
+            "wms_abstract" "MapServer Docker test"
+            #"wms_onlineresource" "http://mapserver//mapserv"
+            "wms_srs" "EPSG:4326"
+            "wms_encoding" "UTF-8"
+            "wms_enable_request" "*"
+            "wfs_enable_request" "!*"
+            "wfs_encoding" "UTF-8"
+            "wfs_getfeature_formatlist" "gml,geojson"
+        END
+    END
+
+    LEGEND
+        LABEL
+            ENCODING "UTF-8"
+            TYPE TRUETYPE
+            FONT "Arial"
+            SIZE 9
+        END
+    END
+    
+    LAYER
+        NAME "polygons"
+        TYPE POLYGON
+        TEMPLATE fooOnlyForWMSGetFeatureInfo # For GetFeatureInfo
+        EXTENT -180 -90 180 90
+        CONNECTIONTYPE postgis
+        PROCESSING "CLOSE_CONNECTION=DEFER" # For performance
+        CONNECTION "user=www-data password=www-data dbname=test host=db"
+        DATA "geom FROM (SELECT * FROM polygons) AS foo USING UNIQUE name USING srid=4326"
+        METADATA
+            "wms_title" "polygons" # For WMS
+            "wms_srs" "EPSG:4326" # For WMS
+
+            "wfs_enable_request" "*" # Enable WFS for this layer
+            "gml_include_items" "all" # For GetFeatureInfo and WFS GetFeature (QueryBuilder)
+            "ows_geom_type" "Polygon" # For returning geometries in GetFeatureInfo
+            "ows_geometries" "geom" # For returning geometries in GetFeatureInfo
+            "wfs_featureid" "name"
+
+            "wms_metadataurl_href" "http://www.example.com/bar" # For metadata URL
+            "wms_metadataurl_format" "text/html" # For metadata URL
+            "wms_metadataurl_type" "TC211" # For metadata URL
+        END
+        STATUS ON
+        PROJECTION
+        "init=epsg:4326"
+        END
+        CLASS
+            NAME "polygon"
+            STYLE
+                OUTLINECOLOR 255 0 0
+                WIDTH 2
+            END
+            STYLE
+                COLOR 255 0 0
+                OPACITY 40
+            END
+        END
+    END
+
+END
