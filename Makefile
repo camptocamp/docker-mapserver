@@ -1,5 +1,6 @@
 DOCKER_TAG ?= latest
 DOCKER_IMAGE = camptocamp/mapserver
+ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
 #Get the IP address of the docker interface
 DOCKER_HOST = $(shell ifconfig docker0 | head -n 2 | tail -n 1 | awk -F : '{print $$2}' | awk '{print $$1}')
@@ -39,4 +40,5 @@ build_acceptance: build_acceptance_config
 	docker build --build-arg DOCKER_VERSION="$(DOCKER_VERSION)" --build-arg DOCKER_COMPOSE_VERSION="$(DOCKER_COMPOSE_VERSION)" -t $(DOCKER_IMAGE)_acceptance:$(DOCKER_TAG) acceptance_tests
 
 acceptance: build_acceptance build
-	docker run --rm --add-host=host:${DOCKER_HOST} -e DOCKER_TAG=$(DOCKER_TAG) -e ACCEPTANCE_DIR=${ROOT}/acceptance -v /var/run/docker.sock:/var/run/docker.sock $(DOCKER_IMAGE)_acceptance:$(DOCKER_TAG)
+	mkdir -p acceptance_tests/junitxml && touch acceptance_tests/junitxml/results.xml
+	docker run --rm --add-host=host:${DOCKER_HOST} -e DOCKER_TAG=$(DOCKER_TAG) -v /var/run/docker.sock:/var/run/docker.sock -v $(ROOT)/acceptance_tests/junitxml:/tmp/junitxml $(DOCKER_IMAGE)_acceptance:$(DOCKER_TAG)

@@ -26,6 +26,7 @@ lock('docker-mapserver_tag_' + finalTag) {
       lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
         sh 'make acceptance'
       }
+      junit keepLongStdio: true, testResults: 'acceptance_tests/junitxml/*.xml'
     }
 
     if (finalTag ==~ /\d+(?:\.\d+)*/) {
