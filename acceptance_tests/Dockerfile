@@ -18,4 +18,4 @@ COPY . /acceptance_tests/
 
 ENV DOCKER_RUN 1
 WORKDIR /acceptance_tests
-CMD py.test -s --junitxml /tmp/junitxml/results.xml
+CMD py.test --junitxml /tmp/junitxml/results.xml

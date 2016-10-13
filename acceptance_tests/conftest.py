@@ -19,6 +19,4 @@ def connection(composition):
     """
     Fixture that returns a connection to a running batch container.
     """
-    connection = Connection(composition)
-    wait_mapserver()
-    return connection
+    return Connection(composition)

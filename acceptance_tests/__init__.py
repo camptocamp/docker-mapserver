@@ -2,6 +2,7 @@ import logging
 import os
 import requests
 import subprocess
+import sys
 import time
 from xml.etree import ElementTree
 
@@ -10,7 +11,7 @@ from acceptance_tests import utils
 
 BASE_URL = 'http://host:8380/' if utils.in_docker() else 'http://localhost:8380/'
 LOG = logging.getLogger(__name__)
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)-15s %(levelname)5s %(name)s %(message)s")
+logging.basicConfig(level=logging.DEBUG, format="TEST                 | %(asctime)-15s %(levelname)5s %(name)s %(message)s", stream=sys.stdout)
 logging.getLogger("requests.packages.urllib3.connectionpool").setLevel(logging.WARN)
 PROJECT_NAME='mapserver'
 
@@ -23,26 +24,39 @@ class Composition(object):
             request.addfinalizer(self.stop_all)
         if os.environ.get("docker_start", "1") == "1":
             subprocess.check_call(['docker-compose', '--file', composition,
-                                   '--project-name', PROJECT_NAME, 'rm', '-f'], env=env)
+                                   '--project-name', PROJECT_NAME, 'rm', '-f'], env=env,
+                                  stderr=subprocess.STDOUT)
 
             # to rebuild testDB, if needed
             subprocess.check_call(['docker-compose', '--file', composition,
-                                   '--project-name', PROJECT_NAME, 'build'], env=env)
+                                   '--project-name', PROJECT_NAME, 'build'], env=env,
+                                  stderr=subprocess.STDOUT)
 
             subprocess.check_call(['docker-compose', '--file', composition,
-                                   '--project-name', PROJECT_NAME, 'up', '-d'], env=env)
+                                   '--project-name', PROJECT_NAME, 'up', '-d'], env=env,
+                                  stderr=subprocess.STDOUT)
+
+        # setup something that redirects the docker container logs to the test output
+        log_watcher = subprocess.Popen(['docker-compose', '--file', composition,
+                                       '--project-name', PROJECT_NAME, 'logs', '--follow', '--no-color'],
+                                       env=env, stderr=subprocess.STDOUT)
+        request.addfinalizer(log_watcher.kill)
+        wait_mapserver()
 
     def stop_all(self):
         subprocess.check_call(['docker-compose', '--file', self.composition,
-                               '--project-name', PROJECT_NAME, 'stop'], env=Composition._get_env())
+                               '--project-name', PROJECT_NAME, 'stop'], env=Composition._get_env(),
+                              stderr=subprocess.STDOUT)
 
     def stop(self, container):
         subprocess.check_call(['docker', '--log-level=warn',
-                               'stop', '%s_%s_1' % (PROJECT_NAME, container)])
+                               'stop', '%s_%s_1' % (PROJECT_NAME, container)],
+                              stderr=subprocess.STDOUT)
 
     def restart(self, container):
         subprocess.check_call(['docker', '--log-level=warn',
-                               'restart', '%s_%s_1' % (PROJECT_NAME, container)])
+                               'restart', '%s_%s_1' % (PROJECT_NAME, container)],
+                              stderr=subprocess.STDOUT)
 
     @staticmethod
     def _get_env():
@@ -69,7 +83,7 @@ def wait_mapserver():
             pass
         if time.time() > timeout:
             assert False, "Timeout"
-        time.sleep(0.2)
+        time.sleep(0.5)
 
 
 class Connection(object):
