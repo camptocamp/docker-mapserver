@@ -29,10 +29,13 @@ lock('docker-mapserver_tag_' + finalTag) {
       }
       stage('Test') {
         checkout scm
-        lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
-          sh 'make acceptance'
+        try {
+          lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
+            sh 'make acceptance'
+          }
+        } finally {
+          junit keepLongStdio: true, testResults: 'acceptance_tests/junitxml/*.xml'
         }
-        junit keepLongStdio: true, testResults: 'acceptance_tests/junitxml/*.xml'
       }
 
       if (finalTag ==~ /\d+(?:\.\d+)*/) {
