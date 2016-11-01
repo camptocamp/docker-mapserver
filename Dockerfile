@@ -12,7 +12,7 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV LANG C
 
-ENV MAPSERVER_VERSION 7.0.1-2~bpo8+1
+ENV MAPSERVER_VERSION 7.0.*
 
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list \
