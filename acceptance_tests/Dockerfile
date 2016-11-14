@@ -1,6 +1,6 @@
 FROM python:3.5
 
-RUN pip install pytest==3.0.2 requests==2.11.1
+RUN pip install pytest==3.0.2 requests==2.11.1 netifaces==0.10.5
 
 ARG DOCKER_VERSION=1.12.0
 ARG DOCKER_COMPOSE_VERSION=1.8.0
