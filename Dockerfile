@@ -25,7 +25,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
   && rm /etc/apache2/mods-enabled/alias.conf \
   && mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR \
   && find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
-       s!^(\s*CustomLog)\s+\S+!#\1 /proc/self/fd/1!g; \
+       s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
        s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
        ' '{}' ';' \
   && curl -L https://github.com/kelseyhightower/confd/releases/download/v0.12.0-alpha3/confd-0.12.0-alpha3-linux-amd64 > /bin/confd \
