@@ -29,4 +29,6 @@ done
 
 /bin/confd -onetime -backend env
 
+rm -f $APACHE_RUN_DIR/apache2.pid
+
 exec "$@"
