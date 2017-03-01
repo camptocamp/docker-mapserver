@@ -16,6 +16,7 @@ ENV MAPSERVER_VERSION 7.0.*
 
 
 RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list \
+  && echo "deb http://pkg.camptocamp.net/apt jessie/dev mapserver-7.0" > /etc/apt/sources.list.d/c2c.list \
   && apt-get update \
   && apt-get install -y apache2 cgi-mapserver=$MAPSERVER_VERSION libapache2-mod-fcgid curl \
   && apt-get clean \
