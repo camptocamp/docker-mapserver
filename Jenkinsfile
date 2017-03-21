@@ -1,4 +1,5 @@
 #!groovy
+@Library('c2c-pipeline-library') import static com.camptocamp.utils.*
 
 properties([
     //rebuild every nights
@@ -13,32 +14,30 @@ if (env.BRANCH_NAME == 'master') {
   finalTag = env.BRANCH_NAME
 }
 
-lock('docker-mapserver_tag_' + finalTag) {
-  node('docker') {
-    try {
-      // make sure we don't mess with another build by using latest on both
-      env.DOCKER_TAG = env.BUILD_TAG
+dockerBuild {
+    // make sure we don't mess with another build by using latest on both
+    env.DOCKER_TAG = env.BUILD_TAG
 
-      stage('Update docker') {
+    stage('Update docker') {
         checkout scm
         sh 'make pull'
-      }
-      stage('Build') {
+    }
+    stage('Build') {
         checkout scm
         sh 'make build'
-      }
-      stage('Test') {
+    }
+    stage('Test') {
         checkout scm
         try {
-          lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
-            sh 'make acceptance'
-          }
+            lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
+                sh 'make acceptance'
+            }
         } finally {
-          junit keepLongStdio: true, testResults: 'acceptance_tests/junitxml/*.xml'
+            junit keepLongStdio: true, testResults: 'acceptance_tests/junitxml/*.xml'
         }
-      }
+    }
 
-      if (finalTag ==~ /\d+(?:\.\d+)*/) {
+    if (finalTag ==~ /\d+(?:\.\d+)*/) {
         parts = finalTag.tokenize('.')
         tags = []
         for (int i=1; i<=parts.size(); ++i) {
@@ -49,36 +48,21 @@ lock('docker-mapserver_tag_' + finalTag) {
             }
             tags << curTag
         }
-      } else {
+    } else {
         tags = [finalTag]
-      }
+    }
 
-      stage("Publish ${tags}") {
+    stage("Publish ${tags}") {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub',
                         usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
-          for (String tag: tags) {
-            //give the final tag to the image
-            sh "docker tag ${IMAGE_NAME}:${env.DOCKER_TAG} ${IMAGE_NAME}:${tag}"
-            //push it
-            docker.image("${IMAGE_NAME}:${tag}").push()
-          }
-          sh 'rm -rf ~/.docker*'
+            sh 'docker login -u "$USERNAME" -p "$PASSWORD"'
+            for (String tag: tags) {
+                //give the final tag to the image
+                sh "docker tag ${IMAGE_NAME}:${env.DOCKER_TAG} ${IMAGE_NAME}:${tag}"
+                //push it
+                docker.image("${IMAGE_NAME}:${tag}").push()
+            }
+            sh 'rm -rf ~/.docker*'
         }
-      }
-    } catch(err) {
-      // send emails in case of error
-      currentBuild.result = "FAILURE"
-      throw err
-    } finally {
-      stage("Emails") {
-        step([$class                  : 'Mailer',
-              notifyEveryUnstableBuild: true,
-              sendToIndividuals       : true,
-              recipients              : emailextrecipients([[$class: 'CulpritsRecipientProvider'],
-                                                            [$class: 'DevelopersRecipientProvider'],
-                                                            [$class: 'RequesterRecipientProvider']])])
-      }
     }
-  }
 }
