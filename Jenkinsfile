@@ -1,11 +1,6 @@
 #!groovy
 @Library('c2c-pipeline-library') import static com.camptocamp.utils.*
 
-properties([
-    //rebuild every nights
-    pipelineTriggers([cron('H H(0-8) * * *')])
-])
-
 IMAGE_NAME = 'camptocamp/mapserver'
 
 if (env.BRANCH_NAME == 'master') {
@@ -15,6 +10,9 @@ if (env.BRANCH_NAME == 'master') {
 }
 
 dockerBuild {
+    //rebuild every nights
+    setCronTrigger('H H(0-8) * * *')
+
     // make sure we don't mess with another build by using latest on both
     env.DOCKER_TAG = env.BUILD_TAG
 
