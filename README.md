@@ -31,3 +31,4 @@ You can use the following environment variables (when starting the container)
 to tune it:
 * MS_DEBUGLEVEL: The debug level 0=off 5=verbose
 * MS_ERRORFILE: If you want the debug to something other than STDOUT
+* MAX_REQUESTS_PER_PROCESS: To work around memory leaks (defaults to 1000)
