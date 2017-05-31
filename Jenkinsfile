@@ -11,21 +11,19 @@ if (env.BRANCH_NAME == 'master') {
 
 dockerBuild {
     //rebuild every nights
+    checkout scm
     setCronTrigger('H H(0-8) * * *')
 
     // make sure we don't mess with another build by using latest on both
     env.DOCKER_TAG = env.BUILD_TAG
 
     stage('Update docker') {
-        checkout scm
         sh 'make pull'
     }
     stage('Build') {
-        checkout scm
         sh 'make build'
     }
     stage('Test') {
-        checkout scm
         try {
             lock("acceptance-${env.NODE_NAME}") {  //only one acceptance test at a time on a machine
                 sh 'make acceptance'
