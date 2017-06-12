@@ -10,9 +10,6 @@ if (env.BRANCH_NAME == 'master') {
 }
 
 dockerBuild {
-    //rebuild every nights
-    setCronTrigger('H H(0-8) * * *')
-
     // make sure we don't mess with another build by using latest on both
     env.DOCKER_TAG = env.BUILD_TAG
 
@@ -20,6 +17,10 @@ dockerBuild {
         checkout scm
         sh 'make pull'
     }
+
+    //rebuild every nights
+    setCronTrigger('H H(0-8) * * *')
+
     stage('Build') {
         checkout scm
         sh 'make build'
