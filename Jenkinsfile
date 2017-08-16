@@ -15,7 +15,7 @@ dockerBuild {
 
     stage('Update docker') {
         checkout scm
-        sh 'make pull'
+        sh 'make clean pull'
     }
 
     //rebuild every nights
