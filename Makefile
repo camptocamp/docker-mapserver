@@ -1,5 +1,5 @@
 DOCKER_TAG ?= latest
-MAPSERVER_BRANCH ?= branch-7-0
+MAPSERVER_BRANCH ?= master
 DOCKER_IMAGE = camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)
@@ -33,7 +33,7 @@ src:
 
 .PHONY: update-src
 update-src: src
-	./checkout_release.sh $(MAPSERVER_BRANCH)
+	cd src && git checkout $(MAPSERVER_BRANCH) && git pull --rebase && git log -n 1
 
 .PHONY: build-builder
 build-builder:
