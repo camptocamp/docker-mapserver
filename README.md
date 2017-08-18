@@ -1,4 +1,4 @@
-# Docker image for mapserver 7.0
+# Docker image for mapserver master
 
 Here is a sample Dockerfile for using it:
 ```
@@ -32,3 +32,7 @@ to tune it:
 * MS_DEBUGLEVEL: The debug level 0=off 5=verbose
 * MS_ERRORFILE: If you want the debug to something other than STDOUT
 * MAX_REQUESTS_PER_PROCESS: To work around memory leaks (defaults to 1000)
+
+## Project version
+
+The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
