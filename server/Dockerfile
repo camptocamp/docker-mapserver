@@ -1,4 +1,5 @@
 FROM ubuntu:17.04
+LABEL maintainer="info@camptocamp.com"
 
 # let's copy a few of the settings from /etc/init.d/apache2
 ENV APACHE_CONFDIR /etc/apache2

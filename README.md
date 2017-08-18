@@ -3,7 +3,6 @@
 Here is a sample Dockerfile for using it:
 ```
 FROM camptocamp/mapserver
-MAINTAINER Camptocamp "info@camptocamp.com"
 
 COPY *.map /etc/mapserver/
 COPY *.sh *.env /docker-entrypoint.d/
@@ -13,6 +12,7 @@ The main mapfile should be `/etc/mapserver/mapserver.map`.
 
 Or you can use the image as is and mount volumes to customize it.
 
+Only tags for minor releases exist, not tag for bug fixes.
 
 ## Tunings
 
