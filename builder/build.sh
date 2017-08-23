@@ -21,7 +21,13 @@ mkdir -p /home/builder/.cmake/packages/mapserver/
 cmake /src \
       -GNinja \
       -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/usr/local
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DWITH_CLIENT_WMS=1 \
+      -DWITH_CLIENT_WFS=1 \
+      -DWITH_KML=1 \
+      -DWITH_SOS=1 \
+      -DWITH_XMLMAPFILE=1 \
+      -DWITH_POINT_Z_M=1
 
 ccache -M10G
 ninja install
