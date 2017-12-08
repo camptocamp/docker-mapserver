@@ -2,16 +2,16 @@ FROM ubuntu:17.04
 LABEL maintainer="info@camptocamp.com"
 
 # let's copy a few of the settings from /etc/init.d/apache2
-ENV APACHE_CONFDIR /etc/apache2
-ENV APACHE_ENVVARS $APACHE_CONFDIR/envvars
+ENV APACHE_CONFDIR=/etc/apache2 \
+    APACHE_ENVVARS=$APACHE_CONFDIR/envvars
 # and then a few more from $APACHE_CONFDIR/envvars itself
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_RUN_DIR /var/run/apache2
-ENV APACHE_PID_FILE $APACHE_RUN_DIR/apache2.pid
-ENV APACHE_LOCK_DIR /var/lock/apache2
-ENV APACHE_LOG_DIR /var/log/apache2
-ENV LANG C
+ENV APACHE_RUN_USER=www-data \
+    APACHE_RUN_GROUP=www-data \
+    APACHE_RUN_DIR=/var/run/apache2 \
+    APACHE_PID_FILE=$APACHE_RUN_DIR/apache2.pid \
+    APACHE_LOCK_DIR=/var/lock/apache2 \
+    APACHE_LOG_DIR=/var/log/apache2 \
+    LANG=C
 
 RUN apt-get update && \
     apt-get install -y apache2 libapache2-mod-fcgid curl libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 && \
@@ -35,9 +35,9 @@ EXPOSE 80
 COPY runtime /
 COPY target /usr/local/
 
-ENV MS_DEBUGLEVEL 0
-ENV MS_ERRORFILE stderr
-ENV MAX_REQUESTS_PER_PROCESS 1000
+ENV MS_DEBUGLEVEL=0 \
+    MS_ERRORFILE=stderr \
+    MAX_REQUESTS_PER_PROCESS=1000
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
