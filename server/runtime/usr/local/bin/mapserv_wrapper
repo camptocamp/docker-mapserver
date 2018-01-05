@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /tmp
+exec /usr/local/bin/mapserv "$@"
