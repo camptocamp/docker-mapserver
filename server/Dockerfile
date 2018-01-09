@@ -41,4 +41,4 @@ ENV MS_DEBUGLEVEL=0 \
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["apache2", "-DFOREGROUND"]
+CMD ["/bin/bash", "/usr/local/bin/start-server.sh"]
