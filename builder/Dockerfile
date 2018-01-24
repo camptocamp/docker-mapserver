@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 MAINTAINER Camptocamp<info@camptocamp.com>
 
 RUN apt-get -y update && \
