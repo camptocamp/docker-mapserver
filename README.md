@@ -1,4 +1,4 @@
-# Docker image for mapserver master
+# Docker image for mapserver 7.2
 
 Here is a sample Dockerfile for using it:
 ```
@@ -35,4 +35,4 @@ to tune it:
 
 ## Project version
 
-The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
+The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
