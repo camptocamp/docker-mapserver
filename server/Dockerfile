@@ -31,7 +31,7 @@ RUN apt-get update && \
     chmod a+rx /bin/confd  && \
     mkdir -p /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d && \
     adduser www-data root && \
-    chmod -R g+w /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
+    chmod -R g+w /etc/apache2 $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
 EXPOSE 80
 
