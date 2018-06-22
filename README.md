@@ -14,6 +14,9 @@ Or you can use the image as is and mount volumes to customize it.
 
 Only tags for minor releases exist, not tag for bug fixes.
 
+If the container is run as root, apache listens on port 80. If it is run as
+another user, it listens on port 8080.
+
 ## Tunings
 
 All the bash snipets in /docker-entrypoint.d ending with `.env` will

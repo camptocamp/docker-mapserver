@@ -3,12 +3,12 @@ LABEL maintainer="info@camptocamp.com"
 
 # let's copy a few of the settings from /etc/init.d/apache2
 ENV APACHE_CONFDIR=/etc/apache2 \
-    APACHE_ENVVARS=$APACHE_CONFDIR/envvars
+    APACHE_ENVVARS=/etc/apache2/envvars \
 # and then a few more from $APACHE_CONFDIR/envvars itself
-ENV APACHE_RUN_USER=www-data \
+    APACHE_RUN_USER=www-data \
     APACHE_RUN_GROUP=www-data \
     APACHE_RUN_DIR=/var/run/apache2 \
-    APACHE_PID_FILE=$APACHE_RUN_DIR/apache2.pid \
+    APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
     LANG=C
@@ -28,7 +28,9 @@ RUN apt-get update && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     apt-get --purge autoremove -y curl && \
     chmod a+rx /bin/confd  && \
-    mkdir -p /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
+    mkdir -p /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d && \
+    adduser www-data root && \
+    chmod -R g+w /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
 
 EXPOSE 80
 
@@ -41,4 +43,4 @@ ENV MS_DEBUGLEVEL=0 \
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["/bin/bash", "/usr/local/bin/start-server.sh"]
+CMD ["/usr/local/bin/start-server.sh"]
