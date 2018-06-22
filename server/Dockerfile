@@ -11,10 +11,12 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
-    LANG=C
+    LANG=C \
+    TERM=linux
 
 RUN apt-get update && \
-    apt-get install -y apache2 libapache2-mod-fcgid curl libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 && \
+    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+        libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     a2enmod fcgid headers && \
@@ -30,7 +32,7 @@ RUN apt-get update && \
     chmod a+rx /bin/confd  && \
     mkdir -p /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d && \
     adduser www-data root && \
-    chmod -R g+w /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
+    chmod -R g+w /etc/apache2 $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
 EXPOSE 80
 
