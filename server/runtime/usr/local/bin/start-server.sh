@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 
-# save the environment to be able to restore it in the FCGI daemon (used
-# in /usr/local/bin/qgis_mapsev_wrapper)
+# Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
 env | sed -e 's/^/export /' > /tmp/init_env.sh
 
 if [[ "${UID}" != 0 ]]
