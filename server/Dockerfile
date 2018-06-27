@@ -22,17 +22,14 @@ RUN apt-get update && \
     a2enmod fcgid headers && \
     a2dismod -f auth_basic authn_file authn_core authz_host authz_user autoindex dir status && \
     rm /etc/apache2/mods-enabled/alias.conf && \
-    mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR && \
+    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} && \
     find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
        s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
        s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
        ' '{}' ';' && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     apt-get --purge autoremove -y curl && \
-    chmod a+rx /bin/confd  && \
-    mkdir -p /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d && \
-    adduser www-data root && \
-    chmod -R g+w /etc/apache2 $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
+    chmod a+rx /bin/confd
 
 EXPOSE 80
 
@@ -43,6 +40,9 @@ ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \
     MAX_REQUESTS_PER_PROCESS=1000
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+RUN adduser www-data root && \
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR}
 
-CMD ["/usr/local/bin/start-server.sh"]
+ENTRYPOINT ["/docker-entrypoint"]
+
+CMD ["/usr/local/bin/start-server"]
