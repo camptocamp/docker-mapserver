@@ -22,7 +22,7 @@ RUN apt-get update && \
     a2enmod fcgid headers && \
     a2dismod -f auth_basic authn_file authn_core authz_host authz_user autoindex dir status && \
     rm /etc/apache2/mods-enabled/alias.conf && \
-    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} && \
+    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd/templates/ /etc/mapserver /etc/confd/conf.d && \
     find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
        s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
        s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
@@ -42,7 +42,7 @@ ENV MS_DEBUGLEVEL=0 \
     MAX_REQUESTS_PER_PROCESS=1000
 
 RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR}
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver
 
 ENTRYPOINT ["/docker-entrypoint"]
 
