@@ -11,10 +11,12 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
-    LANG=C
+    LANG=C \
+    TERM=linux
 
 RUN apt-get update && \
-    apt-get install -y apache2 libapache2-mod-fcgid curl libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 libprotobuf-c1 && \
+    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+        libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 libprotobuf-c1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     a2enmod fcgid headers && \
@@ -27,7 +29,8 @@ RUN apt-get update && \
        ' '{}' ';' && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     apt-get --purge autoremove -y curl && \
-    chmod a+rx /bin/confd
+    chmod a+rx /bin/confd  && \
+    mkdir --parent /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
 
 EXPOSE 80
 
@@ -41,6 +44,9 @@ ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \
     MAX_REQUESTS_PER_PROCESS=1000
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+RUN adduser www-data root && \
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver
 
-CMD ["/usr/local/bin/start-server.sh"]
+ENTRYPOINT ["/docker-entrypoint"]
+
+CMD ["/usr/local/bin/start-server"]

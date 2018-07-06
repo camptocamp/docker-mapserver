@@ -33,7 +33,7 @@ src:
 
 .PHONY: update-src
 update-src: src
-	cd src && git checkout $(MAPSERVER_BRANCH) && git pull --rebase && git log -n 1
+	./checkout_release.sh $(MAPSERVER_BRANCH)
 
 .PHONY: build-builder
 build-builder:
