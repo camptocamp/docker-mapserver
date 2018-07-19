@@ -16,7 +16,9 @@ cmake /src \
       -DWITH_KML=1 \
       -DWITH_SOS=1 \
       -DWITH_XMLMAPFILE=1 \
-      -DWITH_POINT_Z_M=1
+      -DWITH_POINT_Z_M=1 \
+      -DWITH_CAIRO=1 \
+      -DWITH_RSVG=1
 
 ccache -M10G
 ninja install
