@@ -15,7 +15,7 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     TERM=linux
 
 RUN apt-get update && \
-    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+    apt-get install --assume-yes --no-install-recommends vim ca-certificates apache2 libapache2-mod-fcgid curl \
         libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
