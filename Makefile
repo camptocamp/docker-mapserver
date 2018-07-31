@@ -1,5 +1,5 @@
 DOCKER_TAG ?= latest
-MAPSERVER_BRANCH ?= branch-7-0
+MAPSERVER_BRANCH ?= master
 DOCKER_IMAGE = camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)

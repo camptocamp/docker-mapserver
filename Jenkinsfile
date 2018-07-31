@@ -39,7 +39,7 @@ dockerBuild {
     if (finalTag ==~ /\d+(?:\.\d+)*/) {
         parts = finalTag.tokenize('.')
         tags = []
-        for (int i=1; i<=parts.size(); ++i) {
+        for (int i=2; i<=parts.size(); ++i) {
             curTag = "";
             for (int j = 0; j < i; ++j) {
                 if (j > 0) curTag += '.'
