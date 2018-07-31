@@ -37,9 +37,6 @@ EXPOSE 80
 COPY runtime /
 COPY target /usr/local/
 
-RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver
-
 ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \
     MAX_REQUESTS_PER_PROCESS=1000
