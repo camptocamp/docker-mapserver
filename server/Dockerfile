@@ -45,7 +45,8 @@ ENV MS_DEBUGLEVEL=0 \
     MAX_REQUESTS_PER_PROCESS=1000
 
 RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid && \
+    chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
 
 ENTRYPOINT ["/docker-entrypoint"]
 
