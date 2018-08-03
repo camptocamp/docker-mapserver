@@ -12,4 +12,19 @@ then
     sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf
 fi
 
-exec apache2 -DFOREGROUND
+trap 'echo "caught a SIGTERM"; kill -TERM $PID2; wait $PID2; kill -TERM $PID1; wait $PID1' TERM
+trap '' WINCH
+
+rm -f $APACHE_RUN_DIR/apache2.pid
+
+(while true
+do
+    echo "Listening on /var/log/mapserver.log"
+    cat /var/log/mapserver.log
+done) &
+PID1=$!
+
+apache2 -DFOREGROUND &
+PID2=$!
+wait $PID2
+kill $PID1 2>/dev/null
