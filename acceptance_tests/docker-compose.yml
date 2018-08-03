@@ -6,9 +6,10 @@ mapserver:
   links:
     - db
   ports:
-    - 8380:80
+    - 8380:8080
   volumes_from:
     - acceptance_config
+  user: www-data
 
 db:
   image: camptocamp/postgresql:pg9.5-latest

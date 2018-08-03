@@ -17,6 +17,11 @@ trap '' WINCH
 
 rm -f $APACHE_RUN_DIR/apache2.pid
 
+if [ ! -p /var/log/mapserver.log ]
+then
+    mknod /var/log/mapserver.log p
+fi
+
 (while true
 do
     echo "Listening on /var/log/mapserver.log"
