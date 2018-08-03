@@ -20,6 +20,10 @@ rm -f $APACHE_RUN_DIR/apache2.pid
 if [ ! -p /var/log/mapserver.log ]
 then
     mknod /var/log/mapserver.log p
+    if [[ "${UID}" == 0 ]]
+    then
+        chown www-data:root /var/log/mapserver.log
+    fi
 fi
 
 (while true
