@@ -35,6 +35,7 @@ to tune it:
 * MS_DEBUGLEVEL: The debug level 0=off 5=verbose
 * MS_ERRORFILE: If you want the debug to something other than STDOUT
 * MAX_REQUESTS_PER_PROCESS: To work around memory leaks (defaults to 1000)
+* MAPSERVER_CATCH_SEGV: Set to 1 to have the stacktraces in case of crash
 
 ## Project version
 

@@ -38,11 +38,13 @@ COPY runtime /
 COPY target /usr/local/
 
 ENV MS_DEBUGLEVEL=0 \
-    MS_ERRORFILE=stderr \
+    MS_ERRORFILE=/var/log/mapserver.log \
     MAX_REQUESTS_PER_PROCESS=1000
 
 RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid && \
+    mknod /var/log/mapserver.log p && \
+    chown www-data:root /var/log/mapserver.log && \
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid /var/log/mapserver.log && \
     chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
 
 ENTRYPOINT ["/docker-entrypoint"]

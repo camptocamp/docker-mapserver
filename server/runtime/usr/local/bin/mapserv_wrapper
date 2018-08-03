@@ -6,4 +6,9 @@ source /tmp/init_env
 # GDAL uses CWD to write temporary files. So we better be in a location writable by www-data.
 cd /tmp
 
-exec /usr/local/bin/mapserv "$@"
+if [[ "${MAPSERVER_CATCH_SEGV}" == 1 ]]
+then
+    exec catchsegv /usr/local/bin/mapserv "$@" > /var/log/mapserver.log
+else
+    exec /usr/local/bin/mapserv "$@"
+fi
