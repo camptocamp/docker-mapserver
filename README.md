@@ -36,6 +36,9 @@ to tune it:
 * MS_ERRORFILE: If you want the debug to something other than STDOUT
 * MAX_REQUESTS_PER_PROCESS: To work around memory leaks (defaults to 1000)
 * MAPSERVER_CATCH_SEGV: Set to 1 to have the stacktraces in case of crash
+* LISTEN_PORT_80: When running the container as an unprivileged user, apache 
+will listen to port 8080 instead of 80. Set to 1 force listening to port 80
+instead.
 
 ## Project version
 
