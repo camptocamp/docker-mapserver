@@ -32,6 +32,11 @@ RUN apt-get update && \
     chmod a+rx /bin/confd  && \
     mkdir --parent /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
 
+# Allow apache2 to bind to port <1024 for any user
+RUN apt-get update && apt-get install -y libcap2-bin && setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
+    rm -rf /var/lib/apt/lists/* &&\
+    apt-get purge -y libcap2-bin
+
 EXPOSE 80
 
 COPY runtime /
