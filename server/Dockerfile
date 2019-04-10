@@ -44,7 +44,9 @@ COPY target /usr/local/
 
 ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=/var/log/mapserver.log \
-    MAX_REQUESTS_PER_PROCESS=1000
+    MAX_REQUESTS_PER_PROCESS=1000 \
+    MIN_PROCESSES=1 \
+    MAX_PROCESSES=5
 
 RUN adduser www-data root && \
     chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid /var/log && \
