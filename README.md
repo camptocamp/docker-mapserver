@@ -1,4 +1,4 @@
-# Docker image for mapserver master
+# Docker image for mapserver 7.4
 
 Here is a sample Dockerfile for using it:
 ```
