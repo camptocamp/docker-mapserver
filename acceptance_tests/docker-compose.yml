@@ -12,7 +12,7 @@ mapserver:
   user: www-data
 
 db:
-  image: camptocamp/postgresql:pg9.5-latest
+  image: camptocamp/postgres:9.6
   environment:
     POSTGRES_USER: www-data
     POSTGRES_PASSWORD: www-data
