@@ -12,7 +12,8 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
     LANG=C \
-    TERM=linux
+    TERM=linux \
+    MS_MAPFILE=/etc/mapserver/mapserver.map
 
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
