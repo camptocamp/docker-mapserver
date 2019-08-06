@@ -41,6 +41,12 @@ to tune it:
 * LISTEN_PORT_80: When running the container as an unprivileged user, apache 
 will listen to port 8080 instead of 80. Set to 1 force listening to port 80
 instead.
+* BUSY_TIMEOUT: The maximum time limit for request handling (defaults to 300)
+* IDLE_TIMEOUT: Application processes which have not handled a request for
+this period of time will be terminated (defaults to 300)
+* IO_TIMEOUT: The maximum period of time the module will wait while trying to
+read from or write to a FastCGI application (defaults to 40)
+
 
 ## Project version
 

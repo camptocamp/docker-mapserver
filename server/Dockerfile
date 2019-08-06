@@ -47,7 +47,10 @@ ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=/var/log/mapserver.log \
     MAX_REQUESTS_PER_PROCESS=1000 \
     MIN_PROCESSES=1 \
-    MAX_PROCESSES=5
+    MAX_PROCESSES=5 \
+    BUSY_TIMEOUT=300 \
+    IDLE_TIMEOUT=300 \
+    IO_TIMEOUT=40
 
 RUN adduser www-data root && \
     chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid /var/log && \
