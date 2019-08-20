@@ -42,7 +42,10 @@ to tune it:
 will listen to port 8080 instead of 80. Set to 1 force listening to port 80
 instead.
 
+Fonts present in the `/etc/mapserver/fonts` directory will be installed and thus usable by mapserver.
+
 ## Project version
 
 The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
 The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
+The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
