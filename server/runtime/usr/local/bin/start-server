@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Be able to install fonts without creating a new image
+if [ -e /etc/mapserver/fonts/ ]
+then
+    fc-cache --really-force --system-only
+fi
+
 # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
 env | sed -e 's/.\+/export "\0"/' > /tmp/init_env
 
