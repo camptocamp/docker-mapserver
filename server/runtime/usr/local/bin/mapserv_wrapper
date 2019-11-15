@@ -8,7 +8,7 @@ cd /tmp
 
 if [[ "${MAPSERVER_CATCH_SEGV}" == 1 ]]
 then
-    exec catchsegv /usr/local/bin/mapserv "$@" > /var/log/mapserver.log
+    exec catchsegv /usr/local/bin/mapserv "$@"
 else
     exec /usr/local/bin/mapserv "$@"
 fi

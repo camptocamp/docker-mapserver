@@ -23,23 +23,4 @@ trap '' WINCH
 
 rm -f $APACHE_RUN_DIR/apache2.pid
 
-if [ ! -p /var/log/mapserver.log ]
-then
-    mknod /var/log/mapserver.log p
-    if [[ "${UID}" == 0 ]]
-    then
-        chown www-data:root /var/log/mapserver.log
-    fi
-fi
-
-(while true
-do
-    echo "Listening on /var/log/mapserver.log"
-    cat /var/log/mapserver.log
-done) &
-PID1=$!
-
-apache2 -DFOREGROUND &
-PID2=$!
-wait $PID2
-kill $PID1 2>/dev/null
+apache2 -DFOREGROUND
