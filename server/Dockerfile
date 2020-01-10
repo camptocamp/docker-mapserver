@@ -17,11 +17,17 @@ ENV APACHE_CONFDIR=/etc/apache2 \
 
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
-        libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 libxslt1.1 libprotobuf-c1 && \
+        libfribidi0 librsvg2-2 libpq5 libpng16-16 libjpeg8 libgif7 libgeos-c1v5 libfcgi0ldbl libgdal20 \
+        libxslt1.1 libprotobuf-c1 libcap2-bin && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    a2enmod fcgid headers && \
-    a2dismod -f auth_basic authn_file authn_core authz_host authz_user autoindex dir status && \
+    echo 'Allow apache2 to bind to port <1024 for any user' && \
+    curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
+    setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
+    apt-get --purge autoremove -y curl libcap2-bin
+
+RUN a2enmod fcgid headers status && \
+    a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
     rm /etc/apache2/mods-enabled/alias.conf && \
     mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd/templates/ /etc/mapserver /etc/confd/conf.d && \
     find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
@@ -30,15 +36,8 @@ RUN apt-get update && \
        ' '{}' ';' && \
     sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf && \
     echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf && \
-    curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
-    apt-get --purge autoremove -y curl && \
     chmod a+rx /bin/confd && \
     mkdir --parent /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
-
-# Allow apache2 to bind to port <1024 for any user
-RUN apt-get update && apt-get install -y libcap2-bin && setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    rm -rf /var/lib/apt/lists/* &&\
-    apt-get purge -y libcap2-bin
 
 EXPOSE 80
 
