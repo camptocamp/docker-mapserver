@@ -1,4 +1,40 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.04 as builder
+LABEL maintainer="info@camptocamp.com"
+
+RUN apt-get update && \
+    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y bison flex python-lxml libfribidi-dev swig \
+        cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
+        libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libgdal-dev libproj-dev libxml2-dev \
+        libxslt1-dev python-dev php-dev libexempi-dev lcov lftp libgdal-dev ninja-build git curl \
+        clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+ARG MAPSERVER_BRANCH
+
+RUN git clone https://github.com/mapserver/mapserver --branch=${MAPSERVER_BRANCH} --depth=100 /src
+
+COPY checkout_release /tmp
+RUN cd /src; /tmp/checkout_release ${MAPSERVER_BRANCH}
+
+WORKDIR /src/build
+RUN cmake .. \
+      -GNinja \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DWITH_CLIENT_WMS=1 \
+      -DWITH_CLIENT_WFS=1 \
+      -DWITH_KML=1 \
+      -DWITH_SOS=1 \
+      -DWITH_XMLMAPFILE=1 \
+      -DWITH_POINT_Z_M=1 \
+      -DWITH_CAIRO=1 \
+      -DWITH_RSVG=1
+
+RUN ninja install
+
+
+FROM ubuntu:18.04 as runner
 LABEL maintainer="info@camptocamp.com"
 
 # let's copy a few of the settings from /etc/init.d/apache2
@@ -41,8 +77,9 @@ RUN a2enmod fcgid headers status && \
 
 EXPOSE 80
 
+COPY --from=builder /usr/local/bin /usr/local/bin/
+COPY --from=builder /usr/local/lib /usr/local/lib/
 COPY runtime /
-COPY target /usr/local/
 
 ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eux
 
 if [ "$#" -ne 1 ]
 then
@@ -11,7 +11,6 @@ fi
 BRANCH=$1
 TAG_PREFIX=`echo $BRANCH | sed -e 's/branch-/rel-/'`
 
-cd src
 git fetch --tags
 LAST_RELEASE=`git log --format=%H --tags=$TAG_PREFIX* --no-walk | head -1`
 git checkout --detach $LAST_RELEASE
