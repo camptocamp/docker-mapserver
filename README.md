@@ -1,4 +1,4 @@
-# Docker image for mapserver master
+# Docker image for Mapserver
 
 Here is a sample Dockerfile for using it:
 ```
@@ -79,3 +79,4 @@ your query string.
 
 The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
 The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
+The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
