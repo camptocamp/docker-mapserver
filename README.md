@@ -38,7 +38,7 @@ to tune it:
 * MIN_PROCESSES: The minimum number of fcgi processes to keep (defaults to 1)
 * MAX_PROCESSES: The maximum number of fcgi processes to keep (defaults to 5)
 * MAPSERVER_CATCH_SEGV: Set to 1 to have the stacktraces in case of crash
-* LISTEN_PORT_80: When running the container as an unprivileged user, apache 
+* LISTEN_PORT_80: When running the container as an unprivileged user, apache
 will listen to port 8080 instead of 80. Set to 1 force listening to port 80
 instead.
 * BUSY_TIMEOUT: The maximum time limit for request handling (defaults to 300)
@@ -47,6 +47,33 @@ this period of time will be terminated (defaults to 300)
 * IO_TIMEOUT: The maximum period of time the module will wait while trying to
 read from or write to a FastCGI application (defaults to 40)
 
+## Running multiple mapfiles
+
+This section is for if you would like to use more than one mapfile, or use a mapfile
+that isn't `/etc/mapserver/mapserver.map`.
+
+In this example we have two mapfiles we want to use that both reference data in
+different directories. My mapfiles are `wms.map` and `wfs.map` and are located
+in `/mapfiles/` on the host, and the data for these mapfiles is located in the
+host in the directory `/mapdata/wms` and `/mapdata/wfs`.
+
+```bash
+docker run -d \
+        --restart unless-stopped \
+        -v /mapfiles/wms.map/:/etc/mapserver/wms.map:ro \
+        -v /mapfiles/wfs.map/:/etc/mapserver/wfs.map:ro \
+        -v /mapdata/wms/:/mapdata/wms/:ro \
+        -v /mapdata/wfs/:/mapdata/wfs/:ro \
+        camptocamp/mapserver
+```
+
+For accessing maps for the "wfs" service add `map=/etc/mapserver/wfs.map` to
+your query string. Here is the URL for a "GetCapabilities" request:
+
+`http://your.mapserver.host/?map=/etc/mapserver/wfs.map&service=WFS&request=GetCapabilities`
+
+Similarly, for accessing maps for the "wms" service add `map=/etc/mapserver/wms.map` to
+your query string.
 
 ## Project version
 
