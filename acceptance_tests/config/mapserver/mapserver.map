@@ -86,7 +86,7 @@ MAP
         CONNECTIONTYPE postgis
         PROCESSING "CLOSE_CONNECTION=DEFER" # For performance
         CONNECTION "user=www-data password=www-data dbname=test host=db"
-        DATA "geom FROM (SELECT * FROM polygons) AS foo USING UNIQUE name USING srid=4326"
+        DATA "geom FROM (SELECT * FROM polygons) AS foo USING unique name USING srid=4326"
         METADATA
             "wms_title" "polygons" # For WMS
             "wms_srs" "EPSG:4326" # For WMS
