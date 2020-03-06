@@ -52,6 +52,6 @@ Fonts present in the `/etc/mapserver/fonts` directory will be installed and thus
 
 ## Project version
 
-The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
-The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
-The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
+* The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
+* The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
+* The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
