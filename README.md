@@ -59,11 +59,11 @@ host in the directory `/mapdata/wms` and `/mapdata/wfs`.
 
 ```bash
 docker run -d \
-        --restart unless-stopped \
-        -v /mapfiles/wms.map/:/etc/mapserver/wms.map:ro \
-        -v /mapfiles/wfs.map/:/etc/mapserver/wfs.map:ro \
-        -v /mapdata/wms/:/mapdata/wms/:ro \
-        -v /mapdata/wfs/:/mapdata/wfs/:ro \
+        --restart=unless-stopped \
+        --volume=/mapfiles/wms.map/:/etc/mapserver/wms.map:ro \
+        --volume=/mapfiles/wfs.map/:/etc/mapserver/wfs.map:ro \
+        --volume=/mapdata/wms/:/mapdata/wms/:ro \
+        --volume=/mapdata/wfs/:/mapdata/wfs/:ro \
         camptocamp/mapserver
 ```
 
@@ -77,6 +77,6 @@ your query string.
 
 ## Project version
 
-The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
-The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
-The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
+* The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
+* The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
+* The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
