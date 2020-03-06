@@ -26,35 +26,11 @@ all: acceptance
 
 .PHONY: pull
 pull:
-	for image in `find -name Dockerfile | xargs grep --no-filename FROM | awk '{print $$2}'`; do docker pull $$image; done
-
-src:
-	git clone https://github.com/mapserver/mapserver src
-
-.PHONY: update-src
-update-src: src
-	./checkout_release.sh $(MAPSERVER_BRANCH)
-
-.PHONY: build-builder
-build-builder:
-	docker build --tag $(DOCKER_IMAGE)-builder:$(DOCKER_TAG) builder
-
-.PHONY: build-src
-build-src: build-builder update-src
-	mkdir -p server/build server/target
-	docker run --rm -e UID=$(UID) -e GID=$(GID) --volume $(ROOT)/src:/src --volume $(ROOT)/server/build:/build --volume $(ROOT)/server/target:/usr/local --volume $(HOME)/.ccache:/home/builder/.ccache $(DOCKER_IMAGE)-builder:$(DOCKER_TAG)
-
-.PHONY: run-builder
-run-builder: build-builder update-src
-	mkdir -p server/build server/target
-	docker run -ti --rm -e UID=$(UID) -e GID=$(GID) --volume $(ROOT)/src:/src --volume $(ROOT)/server/build:/build --volume $(ROOT)/server/target:/usr/local --volume $(HOME)/.ccache:/home/builder/.ccache $(DOCKER_IMAGE)-builder:$(DOCKER_TAG) bash
-
-.PHONY: build-server
-build-server: build-src
-	docker build --tag $(DOCKER_IMAGE):$(DOCKER_TAG) server
+	for image in `find -name Dockerfile | xargs grep --no-filename ^FROM | awk '{print $$2}'`; do docker pull $$image; done
 
 .PHONY: build
-build: build-server
+build:
+	docker build --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) .
 
 .PHONY: acceptance
 acceptance: build
@@ -64,4 +40,4 @@ acceptance: build
 
 .PHONY: clean
 clean:
-	rm -rf acceptance_tests/junitxml/ server/build server/target
+	rm -rf acceptance_tests/junitxml/
