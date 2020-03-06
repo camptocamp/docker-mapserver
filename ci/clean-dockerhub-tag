@@ -20,7 +20,7 @@ def clean(tag_=lambda tag: tag):
     ).json()["token"]
 
     with open(os.environ["GITHUB_EVENT_PATH"]) as event_file:
-        ref = json.loads(event_file.read())["ref"]
+        ref = json.loads(event_file.read())["ref"].replace('/', '_')
 
     response = requests.delete(
         "https://hub.docker.com/v2/repositories/camptocamp/mapserver/tags/{tag}/".format(tag=ref,),
