@@ -26,6 +26,8 @@ jobs:
       - run: make pull
       - run: make build
       - run: make acceptance
+      - run: (cd acceptance_tests/ && docker-compose logs)
+        if: failure()
 
       - uses: camptocamp/initialise-gopass-summon-action@v1
         with:
