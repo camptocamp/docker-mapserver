@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  mapserver:
+    image: camptocamp/mapserver:${DOCKER_TAG}
+    environment:
+      MS_DEBUGLEVEL: 5
+      MAPSERVER_CATCH_SEGV: 1
+    links:
+      - db
+    ports:
+      - 8380:8080
+    volumes:
+      - ./config/mapserver/:/etc/mapserver
+    user: www-data
+
+  db:
+    image: camptocamp/postgres:9.6
+    environment:
+      POSTGRES_USER: www-data
+      POSTGRES_PASSWORD: www-data
+      POSTGRES_DB: test
+    volumes:
+      - ./config/db/:/docker-entrypoint-initdb.d
+
+  acceptance:
+    image: camptocamp/c2cwsgiutils:3
+    command:
+      - tail
+      - -f
+      - /dev/null
+    volumes:
+      - .:/acceptance_tests
+    environment:
+      C2C_REQUESTS_DEFAULT_TIMEOUT: '10'

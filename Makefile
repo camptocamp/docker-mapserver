@@ -1,4 +1,5 @@
 DOCKER_TAG ?= latest
+export DOCKER_TAG
 MAPSERVER_BRANCH ?= branch-7-4
 DOCKER_IMAGE = camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
@@ -23,8 +24,7 @@ endif
 
 all: acceptance
 
-.PHONY: build acceptance build_acceptance_config build_acceptance
-
+.PHONY: pull
 pull:
 	for image in `find -name Dockerfile | xargs grep --no-filename FROM | awk '{print $$2}'`; do docker pull $$image; done
 
@@ -53,19 +53,15 @@ run-builder: build-builder update-src
 build-server: build-src
 	docker build --tag $(DOCKER_IMAGE):$(DOCKER_TAG) server
 
+.PHONY: build
 build: build-server
 
-build_acceptance_config:
-	docker build --tag=$(DOCKER_IMAGE)_acceptance_config:$(DOCKER_TAG) acceptance_tests/config
+.PHONY: acceptance
+acceptance: build
+	(cd acceptance_tests/ && docker-compose up -d)
+	(cd acceptance_tests/ && docker-compose exec -T acceptance bash -c 'cd /acceptance_tests ; py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml')
+	(cd acceptance_tests/ && docker-compose down)
 
-build_acceptance: build_acceptance_config
-	@echo "Docker version: $(DOCKER_VERSION)"
-	@echo "Docker-compose version: $(DOCKER_COMPOSE_VERSION)"
-	docker build --build-arg DOCKER_VERSION="$(DOCKER_VERSION)" --build-arg DOCKER_COMPOSE_VERSION="$(DOCKER_COMPOSE_VERSION)" -t $(DOCKER_IMAGE)_acceptance:$(DOCKER_TAG) acceptance_tests
-
-acceptance: build_acceptance build
-	mkdir -p acceptance_tests/junitxml && touch acceptance_tests/junitxml/results.xml
-	docker run --rm -e DOCKER_TAG=$(DOCKER_TAG) -v /var/run/docker.sock:/var/run/docker.sock -v $(ROOT)/acceptance_tests/junitxml:/tmp/junitxml $(DOCKER_IMAGE)_acceptance:$(DOCKER_TAG)
-
+.PHONY: clean
 clean:
 	rm -rf acceptance_tests/junitxml/ server/build server/target

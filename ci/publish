@@ -11,7 +11,8 @@ then
   TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/tags/||g')
 elif [[ "${GITHUB_REF}" =~ ^refs/heads/.* ]]
 then
-  TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/heads/||g')
+  BRANCH=$(echo "${GITHUB_REF}"|sed 's|^refs/heads/||g')
+  TAG=${BRANCH//\//_}
 else
   echo Wrong ref: ${GITHUB_REF}
   exit 2
