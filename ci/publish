@@ -12,6 +12,7 @@ then
 elif [[ "${GITHUB_REF}" =~ ^refs/heads/.* ]]
 then
   TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/heads/||g')
+  TAG=${TAG//\//_}
 else
   echo Wrong ref: ${GITHUB_REF}
   exit 2
