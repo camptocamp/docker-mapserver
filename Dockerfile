@@ -11,8 +11,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG MAPSERVER_BRANCH
+ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
 
-RUN git clone https://github.com/mapserver/mapserver --branch=${MAPSERVER_BRANCH} --depth=100 /src
+RUN git clone ${MAPSERVER_REPO} --branch=${MAPSERVER_BRANCH} --depth=100 /src
 
 COPY checkout_release /tmp
 RUN cd /src; /tmp/checkout_release ${MAPSERVER_BRANCH}
