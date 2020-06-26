@@ -10,4 +10,5 @@ Version | Supported Until | [Last Upstream Version](https://mapserver.org/announ
 7.4 | 31/10/2021 | 21/03/2020
 
 [Reporting Upstream Vulnerability](https://www.mapserver.org/development/bugs.html?highlight=security)
+
 [Upstream Vulnerability](https://www.cvedetails.com/product/17181/UMN-Mapserver.html)
