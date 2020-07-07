@@ -1,9 +1,3 @@
-acceptance_tests/
-ci
-Dockerfile
-.dockerignore
-.git
-.github
-.gitignore
-Makefile
-README.md
+*
+!checkout_release
+!runtime
