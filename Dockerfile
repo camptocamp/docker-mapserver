@@ -57,17 +57,17 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     TERM=linux \
     MS_MAPFILE=/etc/mapserver/mapserver.map
 
-RUN apt-get update && \
+RUN apt update && \
     apt upgrade --assume-yes && \
-    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+    apt install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
     libxslt1.1 libprotobuf-c1 libcap2-bin && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    apt-get --purge autoremove -y curl libcap2-bin
+    apt --purge autoremove -y curl libcap2-bin
 
 RUN a2enmod fcgid headers status && \
     a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
