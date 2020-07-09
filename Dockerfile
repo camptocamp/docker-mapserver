@@ -58,6 +58,7 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     MS_MAPFILE=/etc/mapserver/mapserver.map
 
 RUN apt-get update && \
+    apt upgrade --assume-yes && \
     apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
     libxslt1.1 libprotobuf-c1 libcap2-bin && \
