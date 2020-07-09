@@ -1,13 +1,14 @@
 FROM osgeo/gdal:ubuntu-small-3.1.1 as builder
 LABEL maintainer="info@camptocamp.com"
 
-RUN apt-get update && \
-    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y bison flex python-lxml libfribidi-dev swig \
+RUN apt update && \
+    apt upgrade --assume-yes && \
+    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt install -y bison flex python-lxml libfribidi-dev swig \
     cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
     libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
     libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
     clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so

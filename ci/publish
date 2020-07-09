@@ -3,9 +3,6 @@
 if [ $# -gt 0 ]
 then
   TAG="$1"
-elif [[ "${GITHUB_REF}" == "refs/heads/master" ]]
-then
-  TAG=latest
 elif [[ "${GITHUB_REF}" =~ ^refs/tags/.* ]]
 then
   TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/tags/||g')
