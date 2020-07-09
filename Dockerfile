@@ -104,3 +104,5 @@ RUN adduser www-data root && \
 ENTRYPOINT ["/docker-entrypoint"]
 
 CMD ["/usr/local/bin/start-server"]
+
+WORKDIR /etc/mapserver
