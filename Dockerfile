@@ -1,13 +1,14 @@
 FROM osgeo/gdal:ubuntu-small-3.1.1 as builder
 LABEL maintainer="info@camptocamp.com"
 
-RUN apt-get update && \
-    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y bison flex python-lxml libfribidi-dev swig \
+RUN apt update && \
+    apt upgrade --assume-yes && \
+    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt install -y bison flex python-lxml libfribidi-dev swig \
     cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
     libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
     libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
     clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
@@ -56,16 +57,17 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     TERM=linux \
     MS_MAPFILE=/etc/mapserver/mapserver.map
 
-RUN apt-get update && \
-    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+RUN apt update && \
+    apt upgrade --assume-yes && \
+    apt install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
     libxslt1.1 libprotobuf-c1 libcap2-bin && \
-    apt-get clean && \
+    apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    apt-get --purge autoremove -y curl libcap2-bin
+    apt --purge autoremove -y curl libcap2-bin
 
 RUN a2enmod fcgid headers status && \
     a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
@@ -102,3 +104,5 @@ RUN adduser www-data root && \
 ENTRYPOINT ["/docker-entrypoint"]
 
 CMD ["/usr/local/bin/start-server"]
+
+WORKDIR /etc/mapserver

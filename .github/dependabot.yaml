@@ -1,0 +1,7 @@
+---
+version: 2
+updates:
+  - package-ecosystem: docker
+    schedule:
+      interval: weekly
+      time: '02:00'
