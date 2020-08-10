@@ -9,7 +9,7 @@ jobs:
   main:
     runs-on: ubuntu-18.04
     name: Rebuild
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     strategy:
       fail-fast: false
