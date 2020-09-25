@@ -21,24 +21,44 @@ RUN git clone ${MAPSERVER_REPO} --branch=${MAPSERVER_BRANCH} --depth=100 /src
 COPY checkout_release /tmp
 RUN cd /src; /tmp/checkout_release ${MAPSERVER_BRANCH}
 
+COPY instantclient /tmp/instantclient
+
+ARG WITH_ORACLE=OFF
+
+RUN (if test "${WITH_ORACLE}" = "ON"; then \
+       apt-get update && \
+       LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y libarchive-tools libaio-dev && \
+       apt-get clean && \
+       rm -rf /var/lib/apt/lists/* && \
+       mkdir -p /usr/local/lib && \
+       cd /usr/local/lib && \
+       (for i in /tmp/instantclient/*.zip; do bsdtar --strip-components=1 -xvf $i; done) && \
+       ln -s libnnz19.so /usr/local/lib/libnnz18.so; \
+     fi )
+
 WORKDIR /src/build
-RUN cmake .. \
-    -GNinja \
-    -DCMAKE_C_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
-    -DCMAKE_CXX_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr/local \
-    -DWITH_CLIENT_WMS=1 \
-    -DWITH_CLIENT_WFS=1 \
-    -DWITH_KML=1 \
-    -DWITH_SOS=1 \
-    -DWITH_XMLMAPFILE=1 \
-    -DWITH_POINT_Z_M=1 \
-    -DWITH_CAIRO=1 \
-    -DWITH_RSVG=1
+RUN if test "${WITH_ORACLE}" = "ON"; then \
+      export ORACLE_HOME=/usr/local/lib; \
+    fi; \
+    cmake .. \
+      -GNinja \
+      -DCMAKE_C_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
+      -DCMAKE_CXX_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DWITH_CLIENT_WMS=1 \
+      -DWITH_CLIENT_WFS=1 \
+      -DWITH_KML=1 \
+      -DWITH_SOS=1 \
+      -DWITH_XMLMAPFILE=1 \
+      -DWITH_POINT_Z_M=1 \
+      -DWITH_CAIRO=1 \
+      -DWITH_RSVG=1 \
+      -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
 RUN ninja install
 
+RUN if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
 FROM osgeo/gdal:ubuntu-small-3.1.1 as runner
 LABEL maintainer="info@camptocamp.com"
@@ -61,7 +81,7 @@ RUN apt update && \
     apt upgrade --assume-yes && \
     apt install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-    libxslt1.1 libprotobuf-c1 libcap2-bin && \
+    libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
@@ -87,6 +107,8 @@ EXPOSE 80
 COPY --from=builder /usr/local/bin /usr/local/bin/
 COPY --from=builder /usr/local/lib /usr/local/lib/
 COPY runtime /
+
+RUN ldconfig
 
 ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \

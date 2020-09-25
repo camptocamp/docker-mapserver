@@ -1,6 +1,7 @@
 DOCKER_TAG ?= latest
 export DOCKER_TAG
 MAPSERVER_BRANCH ?= master
+WITH_ORACLE ?= OFF
 DOCKER_IMAGE = camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)
@@ -30,7 +31,7 @@ pull:
 
 .PHONY: build
 build:
-	docker build --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) .
+	docker build --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
 
 .PHONY: acceptance
 acceptance: build
