@@ -16,27 +16,22 @@ jobs:
       MAJOR_VERSION: 2.5
       CI: true
       PATH: /bin:/usr/bin:/usr/local/bin:/home/runner/.local/bin
-      SUMMON_PROVIDER: /usr/local/bin/gopass
 
     steps:
       # Versions
       - run: docker --version
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - run: make pull
       - run: make build
       - run: make acceptance
 
-      - uses: camptocamp/initialise-gopass-summon-action@v1
+      - uses: camptocamp/initialise-gopass-summon-action@v2
         with:
           ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
+          patterns: docker
         if: github.repository == 'camptocamp/docker-mapserver'
-      - run: mkdir -p ~/.docker
-      - run: |
-          summon --yaml '
-            TOKEN: !var gs/ci/dockerhub/token
-          ' bash -c 'envsubst < ci/docker-config.json.tmpl > ~/.docker/config.json'
       - name: Publish to Docker hub
         run: ci/publish
         if: github.repository == 'camptocamp/docker-mapserver'
