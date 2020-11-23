@@ -1,22 +1,26 @@
 #!/bin/bash -eux
 
-if [ $# -gt 0 ]
-then
-  TAG="$1"
-elif [[ "${GITHUB_REF}" == "refs/heads/master" ]]
-then
-  TAG=latest
-elif [[ "${GITHUB_REF}" =~ ^refs/tags/.* ]]
-then
-  TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/tags/||g')
-elif [[ "${GITHUB_REF}" =~ ^refs/heads/.* ]]
-then
-  TAG=$(echo "${GITHUB_REF}"|sed 's|^refs/heads/||g')
-  TAG=${TAG//\//_}
+GITHUB=TRUE
+if [ $# -gt 0 ]; then
+    TAG="$1"
+elif [[ "${GITHUB_REF}" =~ ^refs/tags/.* ]]; then
+    TAG=$(echo "${GITHUB_REF}" | sed 's|^refs/tags/||g')
+elif [[ "${GITHUB_REF}" =~ ^refs/heads/[0-9]+\.[0-9]+ ]]; then
+    TAG=$(echo "${GITHUB_REF}" | sed 's|^refs/heads/||g')
+    TAG=${TAG//\//_}
+elif [[ "${GITHUB_REF}" =~ ^refs/heads/.* ]]; then
+    TAG=$(echo "${GITHUB_REF}" | sed 's|^refs/heads/||g')
+    TAG=${TAG//\//_}
+    GITHUB=FALSE
 else
-  echo Wrong ref: ${GITHUB_REF}
-  exit 2
+    echo Wrong ref: ${GITHUB_REF}
+    exit 2
 fi
 
 docker tag camptocamp/mapserver camptocamp/mapserver:${TAG}
 docker push camptocamp/mapserver:${TAG}
+
+if [ ${GITHUB} == TRUE ]; then
+    docker tag camptocamp/mapserver ghcr.io/camptocamp/mapserver:${TAG}
+    docker push ghcr.io/camptocamp/mapserver:${TAG}
+fi
