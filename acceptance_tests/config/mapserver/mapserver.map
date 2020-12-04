@@ -77,7 +77,7 @@ MAP
             SIZE 9
         END
     END
-    
+
     LAYER
         NAME "polygons"
         TYPE POLYGON
