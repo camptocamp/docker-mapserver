@@ -5,3 +5,9 @@ updates:
     schedule:
       interval: weekly
       time: '02:00'
+  - package-ecosystem: pip
+    directory: /ci
+    schedule:
+      interval: daily
+      time: '02:00'
+    open-pull-requests-limit: 99
