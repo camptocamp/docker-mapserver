@@ -19,7 +19,7 @@ another user, it listens on port 8080.
 
 ## Tunings
 
-All the bash snipets in /docker-entrypoint.d ending with `.env` will
+All the bash snippets in /docker-entrypoint.d ending with `.env` will
 be sourced.
 
 All the executable files in /docker-entrypoint.d ending with `.sh` will
@@ -38,7 +38,7 @@ to tune it:
 * MIN_PROCESSES: The minimum number of fcgi processes to keep (defaults to 1)
 * MAX_PROCESSES: The maximum number of fcgi processes to keep (defaults to 5)
 * MAPSERVER_CATCH_SEGV: Set to 1 to have the stacktraces in case of crash
-* LISTEN_PORT_80: When running the container as an unprivileged user, apache 
+* LISTEN_PORT_80: When running the container as an unprivileged user, apache
 will listen to port 8080 instead of 80. Set to 1 force listening to port 80
 instead.
 * BUSY_TIMEOUT: The maximum time limit for request handling (defaults to 300)
