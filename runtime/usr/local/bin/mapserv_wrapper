@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# add the evironment variables that were set when apache was started
+# add the environment variables that were set when apache was started
 source /tmp/init_env
 
 # GDAL uses CWD to write temporary files. So we better be in a location writable by www-data.
