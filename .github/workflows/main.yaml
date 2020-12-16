@@ -1,5 +1,4 @@
 ---
-
 name: Continuous integration
 
 on:
@@ -7,26 +6,15 @@ on:
 
 jobs:
   main:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Continuous integration
     timeout-minutes: 10
-
-    env:
-      MAIN_BRANCH: master
-      MAJOR_VERSION: 2.5
-      CI: true
-      PATH: /bin:/usr/bin:/usr/local/bin:/home/runner/.local/bin
+    if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
     steps:
       # Versions
       - run: docker --version
       - uses: actions/checkout@v2
-
-      - run: make pull
-      - run: make build
-      - run: make acceptance
-      - run: (cd acceptance_tests/ && docker-compose logs)
-        if: failure()
 
       - uses: camptocamp/initialise-gopass-summon-action@v2
         with:
@@ -34,6 +22,18 @@ jobs:
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
           patterns: docker
         if: github.repository == 'camptocamp/docker-mapserver'
-      - name: Publish to Docker hub
-        run: ci/publish
+
+      - run: sudo python3 -m pip install --requirement=ci/requirements.txt
+
+      - name: Checks
+        run: c2cciutils-checks
+
+      - run: make pull
+      - run: make build
+      - run: make acceptance
+      - run: (cd acceptance_tests/ && docker-compose logs)
+        if: failure()
+
+      - name: Publish
+        run: c2cciutils-publish
         if: github.repository == 'camptocamp/docker-mapserver'
