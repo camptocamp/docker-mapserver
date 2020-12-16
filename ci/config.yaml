@@ -1,0 +1,15 @@
+checks:
+  required_workflows:
+    codeql.yaml: False
+    audit.yaml: False
+    clean.yaml: False
+    dependabot-auto-merge.yaml: False
+  versions:
+    audit: False
+
+publish:
+  pypi:
+    packages: []
+  docker:
+    images:
+      - name: camptocamp/mapserver
