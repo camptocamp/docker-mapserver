@@ -6,7 +6,7 @@ on:
     - cron: '30 2 * * *'
 
 jobs:
-  main:
+  rebuild:
     runs-on: ubuntu-20.04
     name: Rebuild
     timeout-minutes: 20
@@ -21,16 +21,8 @@ jobs:
           - '7.4'
           - '7.6'
 
-    env:
-      MAIN_BRANCH: master
-      MAJOR_VERSION: 2.5
-      CI: true
-      PATH: /bin:/usr/bin:/usr/local/bin:/home/runner/.local/bin
-
     steps:
-      # Versions
-      - run: docker --version
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           ref: ${{ matrix.branch }}
 
@@ -44,6 +36,6 @@ jobs:
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
           patterns: docker
         if: github.repository == 'camptocamp/docker-mapserver'
-      - name: Publish to Docker hub
-        run: ci/publish ${{ matrix.branch }}
-        if: github.repository == 'camptocamp/docker-mapserver'
+
+      - name: Publish
+        run: c2cciutils-publish --type=rebuild --branch=${{ matrix.branch }}
