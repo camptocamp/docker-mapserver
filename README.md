@@ -19,7 +19,7 @@ another user, it listens on port 8080.
 
 ## Tunings
 
-All the bash snipets in /docker-entrypoint.d ending with `.env` will
+All the bash snippets in /docker-entrypoint.d ending with `.env` will
 be sourced.
 
 All the executable files in /docker-entrypoint.d ending with `.sh` will
