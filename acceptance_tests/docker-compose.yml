@@ -22,4 +22,3 @@ db:
 
 acceptance_config:
   image: camptocamp/mapserver_acceptance_config:${DOCKER_TAG}
-
