@@ -26,16 +26,22 @@ jobs:
         with:
           ref: ${{ matrix.branch }}
 
-      - run: make pull
-      - run: make build
-      - run: make acceptance
-
       - uses: camptocamp/initialise-gopass-summon-action@v2
         with:
           ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
           patterns: docker
         if: github.repository == 'camptocamp/docker-mapserver'
+
+      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+
+      - name: Checks
+        run: c2cciutils-checks
+
+      - run: make pull
+      - run: make build
+      - run: make acceptance
 
       - name: Publish
         run: c2cciutils-publish --type=rebuild --branch=${{ matrix.branch }}
