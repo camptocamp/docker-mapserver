@@ -76,7 +76,7 @@ RUN a2enmod fcgid headers status && \
     chmod a+rx /bin/confd && \
     mkdir --parent /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
 
-EXPOSE 80
+EXPOSE 8080
 
 COPY --from=builder /usr/local/bin /usr/local/bin/
 COPY --from=builder /usr/local/lib /usr/local/lib/
