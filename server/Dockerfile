@@ -42,7 +42,7 @@ RUN a2enmod fcgid headers status && \
 # Be able to install font as nonroot
 RUN chmod u+s /usr/bin/fc-cache
 
-EXPOSE 80
+EXPOSE 8080
 
 COPY runtime /
 COPY target /usr/local/
