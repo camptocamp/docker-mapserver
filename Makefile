@@ -7,22 +7,6 @@ ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)
 UID = $(shell id -u)
 
-#Get the docker version (must use the same version for acceptance tests)
-DOCKER_VERSION_ACTUAL = $(shell docker version --format '{{.Server.Version}}')
-ifeq ($(DOCKER_VERSION_ACTUAL),)
-DOCKER_VERSION = 1.12.0
-else
-DOCKER_VERSION = $(DOCKER_VERSION_ACTUAL)
-endif
-
-#Get the docker-compose version (must use the same version for acceptance tests)
-DOCKER_COMPOSE_VERSION_ACTUAL = $(shell docker-compose version --short)
-ifeq ($(DOCKER_COMPOSE_VERSION_ACTUAL),)
-DOCKER_COMPOSE_VERSION = 1.8.0
-else
-DOCKER_COMPOSE_VERSION = $(DOCKER_COMPOSE_VERSION_ACTUAL)
-endif
-
 all: acceptance
 
 .PHONY: pull
