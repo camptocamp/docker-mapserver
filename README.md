@@ -14,8 +14,8 @@ Or you can use the image as is and mount volumes to customize it.
 
 Only tags for minor releases exist, not tag for bug fixes.
 
-If the container is run as root, apache listens on port 80. If it is run as
-another user, it listens on port 8080.
+If the container is run as root, apache listens on port `80`. If it is run as
+another user, it listens on port `8080`.
 
 ## Tunings
 
@@ -32,20 +32,20 @@ create a file at the same location, with just the `.tmpl` extension removed.
 
 You can use the following environment variables (when starting the container)
 to tune it:
-* MS_DEBUGLEVEL: The debug level 0=off 5=verbose
-* MS_ERRORFILE: If you want the debug to something other than STDOUT
-* MAX_REQUESTS_PER_PROCESS: To work around memory leaks (defaults to 1000)
-* MIN_PROCESSES: The minimum number of fcgi processes to keep (defaults to 1)
-* MAX_PROCESSES: The maximum number of fcgi processes to keep (defaults to 5)
-* MAPSERVER_CATCH_SEGV: Set to 1 to have the stacktraces in case of crash
-* LISTEN_PORT_80: When running the container as an unprivileged user, apache
-will listen to port 8080 instead of 80. Set to 1 force listening to port 80
+* `MS_DEBUGLEVEL`: The debug level `0`=off `5`=verbose
+* `MS_ERRORFILE`: If you want the debug to something other than STDOUT
+* `MAX_REQUESTS_PER_PROCESS`: To work around memory leaks (defaults to `1000`)
+* `MIN_PROCESSES`: The minimum number of fcgi processes to keep (defaults to `1`)
+* `MAX_PROCESSES`: The maximum number of fcgi processes to keep (defaults to `5`)
+* `MAPSERVER_CATCH_SEGV`: Set to `1` to have the stacktraces in case of crash
+* `LISTEN_PORT_80`: When running the container as an unprivileged user, apache
+will listen to port `8080` instead of `80`. Set to `1` force listening to port `80`
 instead.
-* BUSY_TIMEOUT: The maximum time limit for request handling (defaults to 300)
-* IDLE_TIMEOUT: Application processes which have not handled a request for
-this period of time will be terminated (defaults to 300)
-* IO_TIMEOUT: The maximum period of time the module will wait while trying to
-read from or write to a FastCGI application (defaults to 40)
+* `BUSY_TIMEOUT`: The maximum time limit for request handling (defaults to `300`)
+* `IDLE_TIMEOUT`: Application processes which have not handled a request for
+this period of time will be terminated (defaults to `300`)
+* `IO_TIMEOUT`: The maximum period of time the module will wait while trying to
+read from or write to a FastCGI application (defaults to `40`)
 
 ## Running multiple mapfiles
 
@@ -67,17 +67,10 @@ docker run -d \
         camptocamp/mapserver
 ```
 
-For accessing maps for the "wfs" service add `map=/etc/mapserver/wfs.map` to
-your query string. Here is the URL for a "GetCapabilities" request:
+For accessing maps for the WFS service add `map=/etc/mapserver/wfs.map` to
+your query string. Here is the URL for a `GetCapabilities` request:
 
 `http://your.mapserver.host/?map=/etc/mapserver/wfs.map&service=WFS&request=GetCapabilities`
 
-Similarly, for accessing maps for the "wms" service add `map=/etc/mapserver/wms.map` to
+Similarly, for accessing maps for the WMS service add `map=/etc/mapserver/wms.map` to
 your query string.
-
-## Project version
-
-* The version 7.0.x will be in the [branch 7.0](https://github.com/camptocamp/docker-mapserver/tree/7.0).
-* The version 7.2.x will be in the [branch 7.2](https://github.com/camptocamp/docker-mapserver/tree/7.2).
-* The version 7.4.x will be in the [branch 7.4](https://github.com/camptocamp/docker-mapserver/tree/7.4).
-* The version 7.6.x will be in the [branch 7.6](https://github.com/camptocamp/docker-mapserver/tree/7.6).
