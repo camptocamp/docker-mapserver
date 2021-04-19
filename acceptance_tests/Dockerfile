@@ -1,4 +1,4 @@
-FROM camptocamp/c2cwsgiutils:3
+FROM camptocamp/c2cwsgiutils:5
 
 COPY . /acceptance_tests/
 
