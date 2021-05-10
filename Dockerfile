@@ -77,7 +77,7 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     LANG=C \
     TERM=linux \
     MS_MAPFILE=/etc/mapserver/mapserver.map \
-    MS_MAP_PATTERN=^\/etc\/mapserver\/([^\.][_A-Za-z0-9\-\.]+\/{1})*([_A-Za-z0-9\-\.]+\.(map))$
+    MS_MAP_PATTERN=^\/etc\/mapserver\/([^\.][_A-Za-z0-9\-\.]+\/{1})*([_A-Za-z0-9\-\.]+\.map)$
 
 RUN apt update && \
     apt upgrade --assume-yes && \
