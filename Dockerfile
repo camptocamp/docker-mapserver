@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-small-3.2.2 as builder
+FROM osgeo/gdal:ubuntu-small-3.3.0 as builder
 LABEL maintainer="info@camptocamp.com"
 
 RUN apt update && \
@@ -61,7 +61,7 @@ RUN ninja install
 
 RUN if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
-FROM osgeo/gdal:ubuntu-small-3.2.2 as runner
+FROM osgeo/gdal:ubuntu-small-3.3.0 as runner
 LABEL maintainer="info@camptocamp.com"
 
 # Let's copy a few of the settings from /etc/init.d/apache2
