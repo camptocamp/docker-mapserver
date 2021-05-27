@@ -33,11 +33,8 @@ def connection(composition):
 
 
 @pytest.fixture
-def connection_map():
+def connection_map(composition):
     """
     Fixture that returns a connection to a running batch container.
     """
-    utils.wait_url(
-        BASE_URL_MAP + "?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=polygons&featureId=xxx"
-    )
     return Connection(BASE_URL_MAP, "http://localhost")
