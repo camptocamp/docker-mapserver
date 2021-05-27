@@ -18,7 +18,7 @@ def composition(request):
     """
     Fixture that start/stop the Docker composition used for all the tests.
     """
-    result = Composition(request, "mapserver", "docker-compose.yml")
+    result = Composition(request, "mapserver", "docker-compose.yaml")
     wait_mapserver()
     return result
 
