@@ -38,12 +38,4 @@ services:
       - ./config/db/:/docker-entrypoint-initdb.d
 
   acceptance:
-    image: camptocamp/c2cwsgiutils:3
-    command:
-      - tail
-      - -f
-      - /dev/null
-    volumes:
-      - .:/acceptance_tests
-    environment:
-      C2C_REQUESTS_DEFAULT_TIMEOUT: '10'
+    build: .
