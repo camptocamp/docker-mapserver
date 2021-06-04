@@ -34,10 +34,8 @@ build:
 
 .PHONY: acceptance
 acceptance: build
-	(cd acceptance_tests/ && docker-compose up -d)
-	(cd acceptance_tests/ && docker-compose exec -T acceptance bash -c 'cd /acceptance_tests ; py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml')
 	(cd acceptance_tests/ && docker-compose down)
-
-.PHONY: clean
-clean:
-	rm -rf acceptance_tests/junitxml/
+	(cd acceptance_tests/ && docker-compose build)
+	(cd acceptance_tests/ && docker-compose up -d)
+	(cd acceptance_tests/ && docker-compose exec -T acceptance py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml)
+	(cd acceptance_tests/ && docker-compose down)
