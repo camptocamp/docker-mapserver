@@ -1,8 +1,8 @@
-FROM camptocamp/c2cwsgiutils:5
-
-COPY . /acceptance_tests/
+FROM camptocamp/c2cwsgiutils:3
 
 WORKDIR /acceptance_tests
+COPY . ./
 
-CMD tail -f /dev/null
-CMD py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml
+CMD ["tail", "-f", "/dev/null"]
+
+ENV C2C_REQUESTS_DEFAULT_TIMEOUT=10
