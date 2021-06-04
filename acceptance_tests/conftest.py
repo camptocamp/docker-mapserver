@@ -24,6 +24,7 @@ def connection_map():
     Fixture that returns a connection to a running batch container.
     """
     utils.wait_url(
-        BASE_URL_MAP + "?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=polygons&featureId=xxx"
+        BASE_URL_MAP
+        + "?MAP=/etc/mapserver/mapserver.map&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=polygons&featureId=xxx"
     )
     return Connection(BASE_URL_MAP, "http://localhost")
