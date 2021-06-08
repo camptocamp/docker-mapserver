@@ -8,6 +8,12 @@ updates:
       interval: daily
     ignore:
       - dependency-name: none
+  - package-ecosystem: pip
+    directory: '/acceptance_tests'
+    schedule:
+      interval: daily
+    ignore:
+      - dependency-name: none
 
   - package-ecosystem: docker
     directory: /
