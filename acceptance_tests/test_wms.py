@@ -1,8 +1,8 @@
 def test_get_capabilities(connection):
     ns = "{http://www.opengis.net/wms}"
     answer = connection.get_xml("?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0")
-    assert [e.text for e in answer.findall("%sService/%sTitle" % (ns, ns))] == ["test"]
-    assert [e.text for e in answer.findall(".//%sLayer/%sName" % (ns, ns))] == ["test", "polygons"]
+    assert [e.text for e in answer.findall(f"{ns}Service/{ns}Title")] == ["test"]
+    assert [e.text for e in answer.findall(f".//{ns}Layer/{ns}Name")] == ["test", "polygons"]
 
 
 def test_get_map(connection):
