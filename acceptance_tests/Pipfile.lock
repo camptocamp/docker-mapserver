@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "06c683c26072aacf6318b7f088e459e6edf24811530c710ec656442d9639ddfa"
+            "sha256": "27b771ae7830614933936a70c863fc94f8dbf1e06b6dd6d3a79dffb7d89e8aae"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -32,10 +32,10 @@
         },
         "c2cwsgiutils": {
             "hashes": [
-                "sha256:bbf5435f6b355381c202e06e856f25c98d5ab05fb0b45c6266943b5689b117e0"
+                "sha256:094b967029e6f9a6742786b10891203a6386698002656601ec9133eae1e15b78"
             ],
             "index": "pypi",
-            "version": "==4.1.3"
+            "version": "==4.1.4"
         },
         "certifi": {
             "hashes": [
