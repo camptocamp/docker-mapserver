@@ -5,6 +5,15 @@ checks:
   versions:
     audit: False
 
+version:
+  branch_to_version_re:
+    - from: ([0-9]+.[0-9]+)
+      to: \1
+    - from: master
+      to: master
+    - from: 7.6-20-04
+      to: 7.6-20-04
+
 publish:
   pypi:
     packages: []
