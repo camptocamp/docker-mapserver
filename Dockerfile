@@ -114,6 +114,7 @@ RUN ldconfig
 
 ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \
+    MAPSERVER_CONFIG_FILE=/etc/mapserver.conf \
     MAX_REQUESTS_PER_PROCESS=1000 \
     MIN_PROCESSES=1 \
     MAX_PROCESSES=5 \

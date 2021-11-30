@@ -1,4 +1,4 @@
-# Docker image for Mapserver
+# Docker image for MapServer
 
 Here is a sample Dockerfile for using it:
 
