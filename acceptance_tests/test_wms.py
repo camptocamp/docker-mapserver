@@ -9,9 +9,9 @@ def test_get_map(connection):
     answer = connection.get_raw(
         "?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=polygons&STYLES=&CRS=EPSG:4326&BBOX=-180,-90,180,90&WIDTH=600&HEIGHT=300&FORMAT=image/png"
     )
-    if answer.headers["content-type"] != "image/png":
-        print(answer.text)
-    assert answer.headers["content-type"] == "image/png"
+    assert (
+        answer.headers["content-type"] == "image/png"
+    ), f"{answer.headers['content-type']} != 'image/png'\n{answer.text}"
 
 
 def test_other_url(connection):
