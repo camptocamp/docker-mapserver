@@ -9,6 +9,6 @@ c2cwsgiutils = "==4.1.4"
 boltons = "==21.0.0"
 netifaces = "==0.11.0"
 requests = "==2.26.0"
-lxml = "==4.6.3"
+lxml = "==4.6.4"
 
 [dev-packages]
