@@ -89,23 +89,21 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
-    curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    apt-get --purge autoremove -y curl libcap2-bin
+    apt-get --purge autoremove --yes curl libcap2-bin
 
 # hadolint-ignore double RUN
 RUN a2enmod fcgid headers status && \
     a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
     rm /etc/apache2/mods-enabled/alias.conf && \
-    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd/templates/ /etc/mapserver /etc/confd/conf.d && \
+    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver && \
     find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
     s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
     s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
     ' '{}' ';' && \
     sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf && \
     echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf && \
-    chmod a+rx /bin/confd && \
-    mkdir --parent /etc/confd/conf.d /etc/confd/templates /etc/mapserver /docker-entrypoint.d
+    mkdir --parent /etc/mapserver
 
 EXPOSE 8080
 
@@ -126,10 +124,8 @@ ENV MS_DEBUGLEVEL=0 \
     IO_TIMEOUT=40
 
 RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/confd /etc/mapserver /var/lib/apache2/fcgid /var/log && \
+    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /var/lib/apache2/fcgid /var/log && \
     chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
-
-ENTRYPOINT ["/docker-entrypoint"]
 
 CMD ["/usr/local/bin/start-server"]
 

@@ -6,7 +6,6 @@ Here is a sample Dockerfile for using it:
 FROM camptocamp/mapserver
 
 COPY *.map /etc/mapserver/
-COPY *.sh *.env /docker-entrypoint.d/
 ```
 
 The main Mapfile should be `/etc/mapserver/mapserver.map`.
@@ -19,17 +18,6 @@ If the container is run as root, apache listens on port `80`. If it is run as
 another user, it listens on port `8080`.
 
 ## Tunings
-
-All the bash snippets in /docker-entrypoint.d ending with `.env` will
-be sourced.
-
-All the executable files in /docker-entrypoint.d ending with `.sh` will
-be executed by the default entrypoint.
-
-All the files ending with `.tmpl` in /etc/mapserver and /etc/apache2 (can be
-changed by defining CONFD_DIRS in one of the sourced files) will go though
-confd with the `env` backend. The TOML files are created automagically to
-create a file at the same location, with just the `.tmpl` extension removed.
 
 You can use the following environment variables (when starting the container)
 to tune it:
@@ -76,3 +64,10 @@ your query string. Here is the URL for a `GetCapabilities` request:
 
 Similarly, for accessing maps for the WMS service add `map=/etc/mapserver/wms.map` to
 your query string.
+
+## Changelog
+
+### 8.0
+
+- `confd` and `entrypoints.d` are removed, you should replace it by a `volume_from` a configuration image
+  or an init container.
