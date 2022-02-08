@@ -1,5 +1,4 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
 # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
 env | sed -e 's/.\+/export "\0"/' > /tmp/init_env

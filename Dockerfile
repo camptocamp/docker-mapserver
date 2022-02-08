@@ -1,17 +1,17 @@
 FROM osgeo/gdal:ubuntu-small-3.4.1 as builder
 LABEL maintainer="info@camptocamp.com"
 
-RUN apt update && \
-    apt upgrade --assume-yes && \
-    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt install -y bison flex python-lxml libfribidi-dev swig \
+RUN apt-get update && \
+    apt-get upgrade --assume-yes && \
+    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends bison \
+    flex python-lxml libfribidi-dev swig \
     cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
     libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
     libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
     clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
@@ -19,7 +19,8 @@ ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
 RUN git clone ${MAPSERVER_REPO} --branch=${MAPSERVER_BRANCH} --depth=100 /src
 
 COPY checkout_release /tmp
-RUN cd /src; /tmp/checkout_release ${MAPSERVER_BRANCH}
+RUN cd /src && \
+    /tmp/checkout_release ${MAPSERVER_BRANCH}
 
 COPY instantclient /tmp/instantclient
 
@@ -27,12 +28,13 @@ ARG WITH_ORACLE=OFF
 
 RUN (if test "${WITH_ORACLE}" = "ON"; then \
        apt-get update && \
-       LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y libarchive-tools libaio-dev && \
+       LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends \
+       libarchive-tools libaio-dev && \
        apt-get clean && \
        rm -rf /var/lib/apt/lists/* && \
        mkdir -p /usr/local/lib && \
        cd /usr/local/lib && \
-       (for i in /tmp/instantclient/*.zip; do bsdtar --strip-components=1 -xvf $i; done) && \
+       (for i in /tmp/instantclient/*.zip; do bsdtar --strip-components=1 -xvf "$i"; done) && \
        ln -s libnnz19.so /usr/local/lib/libnnz18.so; \
      fi )
 
@@ -57,9 +59,9 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
       -DUSE_PROJ=1 \
       -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
-RUN ninja install
-
-RUN if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
+# hadolint-ignore double RUN
+RUN ninja install && \
+    if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
 FROM osgeo/gdal:ubuntu-small-3.4.1 as runner
 LABEL maintainer="info@camptocamp.com"
@@ -79,18 +81,19 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     MS_MAPFILE=/etc/mapserver/mapserver.map \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
 
-RUN apt update && \
-    apt upgrade --assume-yes && \
-    apt install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+RUN apt-get update && \
+    apt-get upgrade --assume-yes && \
+    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
     libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 && \
-    apt clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
     curl -L https://github.com/kelseyhightower/confd/releases/download/v0.14.0/confd-0.14.0-linux-amd64 > /bin/confd && \
     setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    apt --purge autoremove -y curl libcap2-bin
+    apt-get --purge autoremove -y curl libcap2-bin
 
+# hadolint-ignore double RUN
 RUN a2enmod fcgid headers status && \
     a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
     rm /etc/apache2/mods-enabled/alias.conf && \

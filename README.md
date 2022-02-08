@@ -9,7 +9,7 @@ COPY *.map /etc/mapserver/
 COPY *.sh *.env /docker-entrypoint.d/
 ```
 
-The main mapfile should be `/etc/mapserver/mapserver.map`.
+The main Mapfile should be `/etc/mapserver/mapserver.map`.
 
 Or you can use the image as is and mount volumes to customize it.
 
@@ -49,14 +49,14 @@ to tune it:
 - `IO_TIMEOUT`: The maximum period of time the module will wait while trying to
   read from or write to a FastCGI application (defaults to `40`)
 
-## Running multiple mapfiles
+## Running multiple Mapfiles
 
-This section is for if you would like to use more than one mapfile, or use a mapfile
+This section is for if you would like to use more than one Mapfile, or use a Mapfile
 that isn't `/etc/mapserver/mapserver.map`.
 
-In this example we have two mapfiles we want to use that both reference data in
-different directories. My mapfiles are `wms.map` and `wfs.map` and are located
-in `/mapfiles/` on the host, and the data for these mapfiles is located in the
+In this example we have two Mapfiles we want to use that both reference data in
+different directories. My Mapfiles are `wms.map` and `wfs.map` and are located
+in `/mapfiles/` on the host, and the data for these Mapfiles is located in the
 host in the directory `/mapdata/wms` and `/mapdata/wfs`.
 
 ```bash
