@@ -6,10 +6,9 @@ Here is a sample Dockerfile for using it:
 FROM camptocamp/mapserver
 
 COPY *.map /etc/mapserver/
-COPY *.sh *.env /docker-entrypoint.d/
 ```
 
-The main mapfile should be `/etc/mapserver/mapserver.map`.
+The main Mapfile should be `/etc/mapserver/mapserver.map`.
 
 Or you can use the image as is and mount volumes to customize it.
 
@@ -19,17 +18,6 @@ If the container is run as root, apache listens on port `80`. If it is run as
 another user, it listens on port `8080`.
 
 ## Tunings
-
-All the bash snippets in /docker-entrypoint.d ending with `.env` will
-be sourced.
-
-All the executable files in /docker-entrypoint.d ending with `.sh` will
-be executed by the default entrypoint.
-
-All the files ending with `.tmpl` in /etc/mapserver and /etc/apache2 (can be
-changed by defining CONFD_DIRS in one of the sourced files) will go though
-confd with the `env` backend. The TOML files are created automagically to
-create a file at the same location, with just the `.tmpl` extension removed.
 
 You can use the following environment variables (when starting the container)
 to tune it:
@@ -49,14 +37,14 @@ to tune it:
 - `IO_TIMEOUT`: The maximum period of time the module will wait while trying to
   read from or write to a FastCGI application (defaults to `40`)
 
-## Running multiple mapfiles
+## Running multiple Mapfiles
 
-This section is for if you would like to use more than one mapfile, or use a mapfile
+This section is for if you would like to use more than one Mapfile, or use a Mapfile
 that isn't `/etc/mapserver/mapserver.map`.
 
-In this example we have two mapfiles we want to use that both reference data in
-different directories. My mapfiles are `wms.map` and `wfs.map` and are located
-in `/mapfiles/` on the host, and the data for these mapfiles is located in the
+In this example we have two Mapfiles we want to use that both reference data in
+different directories. My Mapfiles are `wms.map` and `wfs.map` and are located
+in `/mapfiles/` on the host, and the data for these Mapfiles is located in the
 host in the directory `/mapdata/wms` and `/mapdata/wfs`.
 
 ```bash
@@ -76,3 +64,10 @@ your query string. Here is the URL for a `GetCapabilities` request:
 
 Similarly, for accessing maps for the WMS service add `map=/etc/mapserver/wms.map` to
 your query string.
+
+## Changelog
+
+### 8.0
+
+- `confd` and `entrypoints.d` are removed, you should replace it by a `volume_from` a configuration image
+  or an init container.
