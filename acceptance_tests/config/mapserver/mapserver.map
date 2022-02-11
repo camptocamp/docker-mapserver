@@ -95,7 +95,7 @@ MAP
             "gml_include_items" "all" # For GetFeatureInfo and WFS GetFeature (QueryBuilder)
             "ows_geom_type" "Polygon" # For returning geometries in GetFeatureInfo
             "ows_geometries" "geom" # For returning geometries in GetFeatureInfo
-            "wfs_featureid" "name"
+            "gml_featureid" "name"
 
             "wms_metadataurl_href" "http://www.example.com/bar" # For metadata URL
             "wms_metadataurl_format" "text/html" # For metadata URL

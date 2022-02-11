@@ -1,7 +1,11 @@
 #!/bin/bash -e
 
+# save the environment to be able to restore it in the FCGI daemon (used
+# in /usr/local/bin/qgis_mapsev_wrapper) for the startup code.
+${GET_ENV} | sed -e 's/^\([^=]*\)=.*/PassEnv \1/' > /tmp/pass-env
+
 # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
-env | sed -e 's/.\+/export "\0"/' > /tmp/init_env
+${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
 
 if [ "${UID}" != 0 ] && [ "${LISTEN_PORT_80}" != 1 ]
 then

@@ -43,6 +43,8 @@ jobs:
       - run: make pull
       - run: make build
       - run: make acceptance
+      - run: (cd acceptance_tests && c2cciutils-docker-logs)
+        if: always()
 
       - name: Publish
         run: c2cciutils-publish --type=rebuild --branch=${{ matrix.branch }}
