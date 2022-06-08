@@ -5,25 +5,25 @@ updates:
   - package-ecosystem: pip
     directory: /ci
     schedule:
-      interval: daily
+      interval: monthly
     ignore:
       - dependency-name: none
   - package-ecosystem: pip
     directory: '/acceptance_tests'
     schedule:
-      interval: daily
+      interval: monthly
     ignore:
       - dependency-name: none
 
   - package-ecosystem: docker
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
     ignore:
       - dependency-name: none
   - package-ecosystem: docker
     directory: '/acceptance_tests'
     schedule:
-      interval: daily
+      interval: monthly
     ignore:
       - dependency-name: none
