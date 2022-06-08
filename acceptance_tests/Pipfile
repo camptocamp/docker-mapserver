@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest = "==7.0.1"
+pytest = "==7.1.2"
 c2cwsgiutils = "==5.0.0"
 boltons = "==21.0.0"
 netifaces = "==0.11.0"
