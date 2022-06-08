@@ -1,7 +1,7 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 RUN \
     apt-get update && \
-    apt-get install --assume-yes --no-install-recommends python3-pip && \
+    apt-get install --assume-yes --no-install-recommends python3-pip python3-dev gcc && \
     apt-get clean && \
     rm --recursive --force /var/lib/apt/lists/*
 
