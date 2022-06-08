@@ -1,16 +1,8 @@
 # Docker image for MapServer
 
-Here is a sample Dockerfile for using it:
+The main Mapfile should be in `/etc/mapserver/`.
 
-```
-FROM camptocamp/mapserver
-
-COPY *.map /etc/mapserver/
-```
-
-The main Mapfile should be `/etc/mapserver/mapserver.map`.
-
-Or you can use the image as is and mount volumes to customize it.
+You can use the image as is and mount a volume in `/etc/mapserver/` to customize it.
 
 Only tags for minor releases exist, not tag for bug fixes.
 
@@ -71,3 +63,4 @@ your query string.
 
 - `confd` and `entrypoints.d` are removed, you should replace it by a `volume_from` a configuration image
   or an init container.
+- The `MS_MAPFILE` has no more default value, was `/etc/mapserver/mapserver.map`.

@@ -50,6 +50,7 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
       -DWITH_CLIENT_WMS=1 \
       -DWITH_CLIENT_WFS=1 \
+      -DWITH_OGCAPI=1 \
       -DWITH_KML=1 \
       -DWITH_SOS=1 \
       -DWITH_XMLMAPFILE=1 \
@@ -57,6 +58,8 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
       -DWITH_CAIRO=1 \
       -DWITH_RSVG=1 \
       -DUSE_PROJ=1 \
+      -DUSE_WFS_SVR=1 \
+      -DUSE_OGCAPI_SVR=1 \
       -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
 # hadolint-ignore double RUN
@@ -78,7 +81,6 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
     LANG=C \
     TERM=linux \
-    MS_MAPFILE=/etc/mapserver/mapserver.map \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
 
 RUN apt-get update && \
@@ -109,6 +111,9 @@ EXPOSE 8080
 
 COPY --from=builder /usr/local/bin /usr/local/bin/
 COPY --from=builder /usr/local/lib /usr/local/lib/
+COPY --from=builder /usr/local/share/mapserver /usr/local/share/mapserver/
+COPY --from=builder /src/share/ogcapi/templates/html-bootstrap4 /usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/
+
 COPY runtime /
 
 RUN ldconfig
@@ -121,7 +126,8 @@ ENV MS_DEBUGLEVEL=0 \
     MAX_PROCESSES=5 \
     BUSY_TIMEOUT=300 \
     IDLE_TIMEOUT=300 \
-    IO_TIMEOUT=40
+    IO_TIMEOUT=40 \
+    GET_ENV=env
 
 RUN adduser www-data root && \
     chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /var/lib/apache2/fcgid /var/log && \
