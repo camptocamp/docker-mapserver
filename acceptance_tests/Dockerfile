@@ -1,19 +1,19 @@
 FROM ubuntu:22.04
 RUN \
-    apt-get update && \
-    apt-get install --assume-yes --no-install-recommends python3-pip python3-dev gcc && \
-    apt-get clean && \
-    rm --recursive --force /var/lib/apt/lists/*
+    apt-get update \
+    && apt-get install --assume-yes --no-install-recommends python3-pip python3-dev gcc \
+    && apt-get clean \
+    && rm --recursive --force /var/lib/apt/lists/*
 
 WORKDIR /tmp
 
 COPY requirements.txt ./
-RUN python3 -m pip install --disable-pip-version-check --no-cache-dir --requirement=requirements.txt && \
-    rm --recursive --force /tmp/*
+RUN python3 -m pip install --disable-pip-version-check --no-cache-dir --requirement=requirements.txt \
+    && rm --recursive --force /tmp/*
 
 COPY Pipfile Pipfile.lock ./
-RUN pipenv sync --system --clear && \
-    rm --recursive --force /usr/local/lib/python3.*/dist-packages/tests/ /tmp/* /root/.cache/*
+RUN pipenv sync --system --clear \
+    && rm --recursive --force /usr/local/lib/python3.*/dist-packages/tests/ /tmp/* /root/.cache/*
 
 WORKDIR /acceptance_tests
 COPY . ./

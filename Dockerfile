@@ -1,17 +1,17 @@
 FROM osgeo/gdal:ubuntu-small-3.5.0 as builder
 LABEL maintainer="info@camptocamp.com"
 
-RUN apt-get update && \
-    apt-get upgrade --assume-yes && \
-    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends bison \
-    flex python-lxml libfribidi-dev swig \
-    cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
-    libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
-    libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
-    clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
+RUN apt-get update \
+    && apt-get upgrade --assume-yes \
+    && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends bison \
+        flex python-lxml libfribidi-dev swig \
+        cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
+        libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
+        libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
+        clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
@@ -19,8 +19,8 @@ ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
 RUN git clone ${MAPSERVER_REPO} --branch=${MAPSERVER_BRANCH} --depth=100 /src
 
 COPY checkout_release /tmp
-RUN cd /src && \
-    /tmp/checkout_release ${MAPSERVER_BRANCH}
+RUN cd /src \
+    && /tmp/checkout_release ${MAPSERVER_BRANCH}
 
 COPY instantclient /tmp/instantclient
 
@@ -43,28 +43,28 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
       export ORACLE_HOME=/usr/local/lib; \
     fi; \
     cmake .. \
-      -GNinja \
-      -DCMAKE_C_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
-      -DCMAKE_CXX_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/usr/local \
-      -DWITH_CLIENT_WMS=1 \
-      -DWITH_CLIENT_WFS=1 \
-      -DWITH_OGCAPI=1 \
-      -DWITH_KML=1 \
-      -DWITH_SOS=1 \
-      -DWITH_XMLMAPFILE=1 \
-      -DWITH_POINT_Z_M=1 \
-      -DWITH_CAIRO=1 \
-      -DWITH_RSVG=1 \
-      -DUSE_PROJ=1 \
-      -DUSE_WFS_SVR=1 \
-      -DUSE_OGCAPI_SVR=1 \
-      -DWITH_ORACLESPATIAL=${WITH_ORACLE}
+    -GNinja \
+    -DCMAKE_C_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
+    -DCMAKE_CXX_FLAGS="-O2 -DPROJ_RENAME_SYMBOLS" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DWITH_CLIENT_WMS=1 \
+    -DWITH_CLIENT_WFS=1 \
+    -DWITH_OGCAPI=1 \
+    -DWITH_KML=1 \
+    -DWITH_SOS=1 \
+    -DWITH_XMLMAPFILE=1 \
+    -DWITH_POINT_Z_M=1 \
+    -DWITH_CAIRO=1 \
+    -DWITH_RSVG=1 \
+    -DUSE_PROJ=1 \
+    -DUSE_WFS_SVR=1 \
+    -DUSE_OGCAPI_SVR=1 \
+    -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
 # hadolint-ignore double RUN
-RUN ninja install && \
-    if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
+RUN ninja install \
+    && if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
 FROM osgeo/gdal:ubuntu-small-3.5.0 as runner
 LABEL maintainer="info@camptocamp.com"
@@ -83,29 +83,29 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     TERM=linux \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
 
-RUN apt-get update && \
-    apt-get upgrade --assume-yes && \
-    apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
-    libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-    libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    echo 'Allow apache2 to bind to port <1024 for any user' && \
-    setcap cap_net_bind_service=+ep /usr/sbin/apache2 && \
-    apt-get --purge autoremove --yes curl libcap2-bin
+RUN apt-get update \
+    && apt-get upgrade --assume-yes \
+    && apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
+        libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
+        libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && echo 'Allow apache2 to bind to port <1024 for any user' \
+    && setcap cap_net_bind_service=+ep /usr/sbin/apache2 \
+    && apt-get --purge autoremove --yes curl libcap2-bin
 
 # hadolint-ignore double RUN
-RUN a2enmod fcgid headers status && \
-    a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir && \
-    rm /etc/apache2/mods-enabled/alias.conf && \
-    mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver && \
-    find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
+RUN a2enmod fcgid headers status \
+    && a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir \
+    && rm /etc/apache2/mods-enabled/alias.conf \
+    && mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver \
+    && find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
     s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
     s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
-    ' '{}' ';' && \
-    sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf && \
-    echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf && \
-    mkdir --parent /etc/mapserver
+    ' '{}' ';' \
+    && sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf \
+    && echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf \
+    && mkdir --parent /etc/mapserver
 
 EXPOSE 8080
 
@@ -129,9 +129,9 @@ ENV MS_DEBUGLEVEL=0 \
     IO_TIMEOUT=40 \
     GET_ENV=env
 
-RUN adduser www-data root && \
-    chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /var/lib/apache2/fcgid /var/log && \
-    chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
+RUN adduser www-data root \
+    && chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /var/lib/apache2/fcgid /var/log \
+    && chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
 
 CMD ["/usr/local/bin/start-server"]
 
