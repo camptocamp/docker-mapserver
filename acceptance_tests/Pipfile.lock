@@ -33,9 +33,7 @@
             "version": "==21.0.0"
         },
         "c2cwsgiutils": {
-            "hashes": [
-                "sha256:ebaf0f110bb1c5fccc9034daeb13c51bd932eca6eb12e76af7c57ffa4ca9a9cf"
-            ],
+            "hashes": ["sha256:ebaf0f110bb1c5fccc9034daeb13c51bd932eca6eb12e76af7c57ffa4ca9a9cf"],
             "index": "pypi",
             "version": "==5.0.0"
         },
