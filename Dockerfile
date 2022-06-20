@@ -1,16 +1,17 @@
 FROM osgeo/gdal:ubuntu-small-3.5.0 as builder
-LABEL maintainer="info@camptocamp.com"
+LABEL maintainer Camptocamp "info@camptocamp.com"
+SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache,sharing=locked \
+    --mount=type=cache,target=/root/.cache \
+    apt-get update \
     && apt-get upgrade --assume-yes \
-    && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends bison \
+    && LC_ALL=C apt-get install --assume-yes --no-install-recommends bison \
         flex python-lxml libfribidi-dev swig \
         cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
         libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
     && ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
 
 ARG MAPSERVER_BRANCH
@@ -26,12 +27,12 @@ COPY instantclient /tmp/instantclient
 
 ARG WITH_ORACLE=OFF
 
-RUN (if test "${WITH_ORACLE}" = "ON"; then \
+RUN --mount=type=cache,target=/var/cache,sharing=locked \
+    --mount=type=cache,target=/root/.cache \
+    (if test "${WITH_ORACLE}" = "ON"; then \
        apt-get update && \
-       LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends \
+       LC_ALL=C apt-get install --assume-yes --no-install-recommends \
        libarchive-tools libaio-dev && \
-       apt-get clean && \
-       rm -rf /var/lib/apt/lists/* && \
        mkdir -p /usr/local/lib && \
        cd /usr/local/lib && \
        (for i in /tmp/instantclient/*.zip; do bsdtar --strip-components=1 -xvf "$i"; done) && \
@@ -62,12 +63,12 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
     -DUSE_OGCAPI_SVR=1 \
     -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
-# hadolint-ignore double RUN
 RUN ninja install \
     && if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
 FROM osgeo/gdal:ubuntu-small-3.5.0 as runner
-LABEL maintainer="info@camptocamp.com"
+LABEL maintainer Camptocamp "info@camptocamp.com"
+SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
 # Let's copy a few of the settings from /etc/init.d/apache2
 ENV APACHE_CONFDIR=/etc/apache2 \
@@ -83,18 +84,17 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     TERM=linux \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
 
-RUN apt-get update \
+RUN --mount=type=cache,target=/var/cache,sharing=locked \
+    --mount=type=cache,target=/root/.cache \
+    apt-get update \
     && apt-get upgrade --assume-yes \
     && apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
         libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
         libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
     && echo 'Allow apache2 to bind to port <1024 for any user' \
     && setcap cap_net_bind_service=+ep /usr/sbin/apache2 \
     && apt-get --purge autoremove --yes curl libcap2-bin
 
-# hadolint-ignore double RUN
 RUN a2enmod fcgid headers status \
     && a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir \
     && rm /etc/apache2/mods-enabled/alias.conf \

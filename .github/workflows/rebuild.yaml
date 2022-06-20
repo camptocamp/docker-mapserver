@@ -40,7 +40,6 @@ jobs:
       - name: Checks
         run: c2cciutils-checks
 
-      - run: make pull
       - run: make build
       - run: make acceptance
       - run: (cd acceptance_tests && (c2cciutils-docker-logs || docker-compose logs))
