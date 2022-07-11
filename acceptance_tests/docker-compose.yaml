@@ -48,7 +48,7 @@ services:
     user: www-data
 
   db:
-    image: camptocamp/postgres:9.6
+    image: camptocamp/postgres:11.4
     environment:
       POSTGRES_USER: www-data
       POSTGRES_PASSWORD: www-data
