@@ -30,7 +30,7 @@ python-versions = "*"
 
 [[package]]
 name = "c2cwsgiutils"
-version = "5.0.0"
+version = "5.1.0"
 description = "Common utilities for Camptocamp WSGI applications"
 category = "main"
 optional = false
@@ -38,8 +38,7 @@ python-versions = "*"
 
 [package.extras]
 broadcast = ["redis"]
-profiler = ["linesman"]
-standard = ["alembic", "boltons", "cornice", "gunicorn", "lxml", "netifaces", "objgraph", "pipfile", "psycopg2", "pyramid", "pyramid-tm", "sentry-sdk", "requests", "ujson", "cee-syslog-handler", "sqlalchemy", "sqlalchemy-utils", "zope.interface", "zope.sqlalchemy", "pyyaml", "pyjwt", "requests-oauthlib", "setuptools", "waitress"]
+standard = ["alembic", "boltons", "cee-syslog-handler", "cornice", "gunicorn", "lxml", "netifaces", "objgraph", "pipfile", "psycopg2", "pyjwt", "pyramid", "pyramid-tm", "pyyaml", "requests", "requests-oauthlib", "sentry-sdk", "sqlalchemy", "sqlalchemy-utils", "ujson", "waitress", "zope.interface", "zope.sqlalchemy"]
 
 [[package]]
 name = "certifi"
@@ -211,7 +210,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.11"
-content-hash = "8333b9b91e0b6e9f7764a78c8bcb09d9e3546463ff1c45cf752e463a1d0531fc"
+content-hash = "f0623c89c693cab53170f3ac4dada4660880ab7c79a63055c0e6cf962044de41"
 
 [metadata.files]
 atomicwrites = [
@@ -226,7 +225,7 @@ boltons = [
     {file = "boltons-21.0.0.tar.gz", hash = "sha256:65e70a79a731a7fe6e98592ecfb5ccf2115873d01dbc576079874629e5c90f13"},
 ]
 c2cwsgiutils = [
-    {file = "c2cwsgiutils-5.0.0-py3-none-any.whl", hash = "sha256:ebaf0f110bb1c5fccc9034daeb13c51bd932eca6eb12e76af7c57ffa4ca9a9cf"},
+    {file = "c2cwsgiutils-5.1.0-py3-none-any.whl", hash = "sha256:e203358c25f1fa1affc3ab2d33318f4666d62e21aae6e4df3bc542369b98a216"},
 ]
 certifi = [
     {file = "certifi-2022.6.15-py3-none-any.whl", hash = "sha256:fe86415d55e84719d75f8b69414f6438ac3547d2078ab91b67e779ef69378412"},
