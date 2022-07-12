@@ -4,6 +4,10 @@ checks:
     audit.yaml: False
   versions:
     audit: False
+  codespell:
+    ignore_re:
+      - (.*/)?poetry\.lock
+      - .github/changelog-generator-cache/.*
 
 version:
   branch_to_version_re:
