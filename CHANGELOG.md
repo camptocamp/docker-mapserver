@@ -6,6 +6,7 @@
 
 #### :wrench: Build, CI, Tests, Code style
 
+- Update the changelog [\#302](https://github.com/camptocamp/docker-mapserver/pull/302) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Fix the changelog generation [\#301](https://github.com/camptocamp/docker-mapserver/pull/301) ([sbrunner](https://github.com/sbrunner))
 - Update the changelog [\#299](https://github.com/camptocamp/docker-mapserver/pull/299) ([github-actions[bot]](https://github.com/apps/github-actions))
 
