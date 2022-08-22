@@ -6,11 +6,14 @@
 
 #### :wrench: Build, CI, Tests, Code style
 
+- Update the changelog [\#302](https://github.com/camptocamp/docker-mapserver/pull/302) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Fix the changelog generation [\#301](https://github.com/camptocamp/docker-mapserver/pull/301) ([sbrunner](https://github.com/sbrunner))
 - Update the changelog [\#299](https://github.com/camptocamp/docker-mapserver/pull/299) ([github-actions[bot]](https://github.com/apps/github-actions))
 
 #### :package: Dependencies update
 
+- Update camptocamp/postgres Docker tag to v14 [\#312](https://github.com/camptocamp/docker-mapserver/pull/312) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency poetry to v1.1.15 [\#310](https://github.com/camptocamp/docker-mapserver/pull/310) ([renovate[bot]](https://github.com/apps/renovate))
 - Lock file maintenance [\#308](https://github.com/camptocamp/docker-mapserver/pull/308) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency c2cciutils to v1.2.1 [\#307](https://github.com/camptocamp/docker-mapserver/pull/307) ([renovate[bot]](https://github.com/apps/renovate))
 - Lock file maintenance [\#306](https://github.com/camptocamp/docker-mapserver/pull/306) ([renovate[bot]](https://github.com/apps/renovate))
