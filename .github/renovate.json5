@@ -7,10 +7,15 @@
   separateMinorPatch: true,
   lockFileMaintenance: { enabled: true, automerge: true },
   packageRules: [
-    /** Less strict version for Docker images */
+    /** Docker images versioning */
     {
       matchDatasources: ['docker'],
       versioning: 'loose',
+    },
+    {
+      matchFiles: ['acceptance_tests/Dockerfile'],
+      matchDatasources: ['docker'],
+      versioning: 'ubuntu',
     },
     /** Automerge the patch, the minor and the dev dependency */
     {
