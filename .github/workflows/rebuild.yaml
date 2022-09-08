@@ -1,9 +1,8 @@
----
 name: Rebuild
 
 on:
   schedule:
-    - cron: '30 2 * * *'
+    - cron: 30 2 * * *
 
 jobs:
   rebuild:
@@ -20,9 +19,10 @@ jobs:
           - '7.2'
           - '7.4'
           - '7.6'
-          - '7.6-20-04'
+          - 7.6-20-04
 
     steps:
+      - run: docker system prune --all --force
       - uses: actions/checkout@v3
         with:
           ref: ${{ matrix.branch }}
