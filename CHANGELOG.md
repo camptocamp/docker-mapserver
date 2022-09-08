@@ -1,21 +1,5 @@
 # Changelog
 
-## [Unreleased](https://github.com/camptocamp/docker-mapserver/tree/HEAD)
-
-[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.0.2...HEAD)
-
-#### :wrench: Build, CI, Tests, Code style
-
-- Fix the changelog generation [\#301](https://github.com/camptocamp/docker-mapserver/pull/301) ([sbrunner](https://github.com/sbrunner))
-- Update the changelog [\#299](https://github.com/camptocamp/docker-mapserver/pull/299) ([github-actions[bot]](https://github.com/apps/github-actions))
-
-#### :package: Dependencies update
-
-- Lock file maintenance [\#308](https://github.com/camptocamp/docker-mapserver/pull/308) ([renovate[bot]](https://github.com/apps/renovate))
-- Update dependency c2cciutils to v1.2.1 [\#307](https://github.com/camptocamp/docker-mapserver/pull/307) ([renovate[bot]](https://github.com/apps/renovate))
-- Lock file maintenance [\#306](https://github.com/camptocamp/docker-mapserver/pull/306) ([renovate[bot]](https://github.com/apps/renovate))
-- Lock file maintenance [\#303](https://github.com/camptocamp/docker-mapserver/pull/303) ([renovate[bot]](https://github.com/apps/renovate))
-
 ## [7.0.2](https://github.com/camptocamp/docker-mapserver/tree/7.0.2) (2022-07-11)
 
 [Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.0.1...7.0.2)
