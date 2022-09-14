@@ -20,6 +20,7 @@ jobs:
           - '7.4'
           - '7.6'
           - 7.6-20-04
+          - '8.0'
 
     steps:
       - run: docker system prune --all --force
