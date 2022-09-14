@@ -1,15 +1,76 @@
 # Changelog
 
-## [7.0.2](https://github.com/camptocamp/docker-mapserver/tree/7.0.2) (2022-07-11)
+## [8.0.0](https://github.com/camptocamp/docker-mapserver/tree/8.0.0) (2022-09-12)
 
-[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.0.1...7.0.2)
+[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.6.0...8.0.0)
+
+#### :sparkles: Enhancements
+
+- Add landing page - RFC-134 - Fix master [\#256](https://github.com/camptocamp/docker-mapserver/pull/256) ([sbrunner](https://github.com/sbrunner))
+- Remove entrypoint and confd [\#250](https://github.com/camptocamp/docker-mapserver/pull/250) ([sbrunner](https://github.com/sbrunner))
+- Fix master branch, add configuration file [\#227](https://github.com/camptocamp/docker-mapserver/pull/227) ([sbrunner](https://github.com/sbrunner))
+- Add 7.6 version base on gdal:ubuntu-small-3.3.2 [\#211](https://github.com/camptocamp/docker-mapserver/pull/211) ([sbrunner](https://github.com/sbrunner))
+- Add default value for MS_MAP_PATTERN [\#124](https://github.com/camptocamp/docker-mapserver/pull/124) ([sbrunner](https://github.com/sbrunner))
+- \[Backport master\] Use Ubuntu 20.04 [\#73](https://github.com/camptocamp/docker-mapserver/pull/73) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- Enable use_proj and tile mode \#61 [\#62](https://github.com/camptocamp/docker-mapserver/pull/62) ([ivorbosloper](https://github.com/ivorbosloper))
+- Dockerfile: add support for optional build against OracleSpatial client library [\#60](https://github.com/camptocamp/docker-mapserver/pull/60) ([rouault](https://github.com/rouault))
+- Use GDAL as base image [\#58](https://github.com/camptocamp/docker-mapserver/pull/58) ([sbrunner](https://github.com/sbrunner))
+
+#### :bug: Bug Fixes
+
+- Fix dash in MS_MAP_PATTERN [\#172](https://github.com/camptocamp/docker-mapserver/pull/172) ([sbrunner](https://github.com/sbrunner))
+- Add missing file [\#164](https://github.com/camptocamp/docker-mapserver/pull/164) ([sbrunner](https://github.com/sbrunner))
+- Add the missing escapes [\#154](https://github.com/camptocamp/docker-mapserver/pull/154) ([sbrunner](https://github.com/sbrunner))
+- Fix typo in MS_MAP_PATTERN regexp [\#144](https://github.com/camptocamp/docker-mapserver/pull/144) ([yjacolin](https://github.com/yjacolin))
+- Fix exposed port [\#94](https://github.com/camptocamp/docker-mapserver/pull/94) ([sbrunner](https://github.com/sbrunner))
+- start-server: run apache2 under exec so that 'docker stop' SIGTERM signal is well propagated [\#63](https://github.com/camptocamp/docker-mapserver/pull/63) ([rouault](https://github.com/rouault))
 
 #### :books: Documentation
 
 - Add generated changelog [\#295](https://github.com/camptocamp/docker-mapserver/pull/295) ([sbrunner](https://github.com/sbrunner))
 
+#### :wrench: Build, CI, Tests, Code style
+
+- Fix the changelog generator workflow [\#326](https://github.com/camptocamp/docker-mapserver/pull/326) ([sbrunner](https://github.com/sbrunner))
+- Clean all the images already present in the image given by GitHub [\#325](https://github.com/camptocamp/docker-mapserver/pull/325) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog generation workflow [\#324](https://github.com/camptocamp/docker-mapserver/pull/324) ([sbrunner](https://github.com/sbrunner))
+- Update the Renovate configuration [\#323](https://github.com/camptocamp/docker-mapserver/pull/323) ([sbrunner](https://github.com/sbrunner))
+- Remove Dependabot configuration [\#322](https://github.com/camptocamp/docker-mapserver/pull/322) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#314](https://github.com/camptocamp/docker-mapserver/pull/314) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update the changelog [\#302](https://github.com/camptocamp/docker-mapserver/pull/302) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Fix the changelog generation [\#301](https://github.com/camptocamp/docker-mapserver/pull/301) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#299](https://github.com/camptocamp/docker-mapserver/pull/299) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Use Poetry instead of Pipenv [\#288](https://github.com/camptocamp/docker-mapserver/pull/288) ([sbrunner](https://github.com/sbrunner))
+- Don't run 2 CI jobs in a pull request [\#283](https://github.com/camptocamp/docker-mapserver/pull/283) ([sbrunner](https://github.com/sbrunner))
+- Configure Renovate [\#281](https://github.com/camptocamp/docker-mapserver/pull/281) ([sbrunner](https://github.com/sbrunner))
+- Upgrade for Python 3.6 \(with pyupgrade\) [\#191](https://github.com/camptocamp/docker-mapserver/pull/191) ([sbrunner](https://github.com/sbrunner))
+- Test MapServer with MAP [\#159](https://github.com/camptocamp/docker-mapserver/pull/159) ([sbrunner](https://github.com/sbrunner))
+- Fix dependabot config [\#102](https://github.com/camptocamp/docker-mapserver/pull/102) ([sbrunner](https://github.com/sbrunner))
+- Remove unused [\#101](https://github.com/camptocamp/docker-mapserver/pull/101) ([sbrunner](https://github.com/sbrunner))
+- Fix rebuild [\#93](https://github.com/camptocamp/docker-mapserver/pull/93) ([sbrunner](https://github.com/sbrunner))
+- python3-wheel already installed [\#91](https://github.com/camptocamp/docker-mapserver/pull/91) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- Use c2cciutils [\#83](https://github.com/camptocamp/docker-mapserver/pull/83) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- \[Backport master\] Publish Docker images to GitHub Container Registry [\#78](https://github.com/camptocamp/docker-mapserver/pull/78) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- \[Backport master\] Fix clean Docker hub tags [\#72](https://github.com/camptocamp/docker-mapserver/pull/72) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- \[Backport master\] Use secret defined in organisation [\#68](https://github.com/camptocamp/docker-mapserver/pull/68) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- \[Backport master\] Add Clean docker hub tags workflow [\#67](https://github.com/camptocamp/docker-mapserver/pull/67) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- Never push on latest branch, use apt instead apt-get, code style [\#59](https://github.com/camptocamp/docker-mapserver/pull/59) ([sbrunner](https://github.com/sbrunner))
+
 #### :package: Dependencies update
 
+- Update dependency c2cwsgiutils to v5.1.5 [\#329](https://github.com/camptocamp/docker-mapserver/pull/329) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#328](https://github.com/camptocamp/docker-mapserver/pull/328) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency poetry to v1.2.0 [\#321](https://github.com/camptocamp/docker-mapserver/pull/321) ([renovate[bot]](https://github.com/apps/renovate))
+- Update all patch versions \(patch\) [\#320](https://github.com/camptocamp/docker-mapserver/pull/320) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#319](https://github.com/camptocamp/docker-mapserver/pull/319) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#316](https://github.com/camptocamp/docker-mapserver/pull/316) ([renovate[bot]](https://github.com/apps/renovate))
+- Update osgeo/gdal Docker tag to vubuntu-small-3.5.1 [\#315](https://github.com/camptocamp/docker-mapserver/pull/315) ([renovate[bot]](https://github.com/apps/renovate))
+- Update camptocamp/postgres Docker tag to v14 [\#312](https://github.com/camptocamp/docker-mapserver/pull/312) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency poetry to v1.1.15 [\#310](https://github.com/camptocamp/docker-mapserver/pull/310) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#308](https://github.com/camptocamp/docker-mapserver/pull/308) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency c2cciutils to v1.2.1 [\#307](https://github.com/camptocamp/docker-mapserver/pull/307) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#306](https://github.com/camptocamp/docker-mapserver/pull/306) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#303](https://github.com/camptocamp/docker-mapserver/pull/303) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency camptocamp/postgres to v11 [\#300](https://github.com/camptocamp/docker-mapserver/pull/300) ([renovate[bot]](https://github.com/apps/renovate))
 - Lock file maintenance [\#298](https://github.com/camptocamp/docker-mapserver/pull/298) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency c2cwsgiutils to v5.1.0 [\#297](https://github.com/camptocamp/docker-mapserver/pull/297) ([renovate[bot]](https://github.com/apps/renovate))
@@ -125,43 +186,13 @@
 - OGR WFS connection does not forward BBOX to some servers [\#184](https://github.com/camptocamp/docker-mapserver/issues/184)
 - MS_MAP_PATTERN regex cannot be compiled [\#151](https://github.com/camptocamp/docker-mapserver/issues/151)
 - Incomplete WMS request: VERSION parameter missing [\#123](https://github.com/camptocamp/docker-mapserver/issues/123)
-- SVG symbol are not supported in MapServer docker image [\#25](https://github.com/camptocamp/docker-mapserver/issues/25)
-- WMS connection error. MapServer not built with WMS Client support, unable to render layer [\#14](https://github.com/camptocamp/docker-mapserver/issues/14)
-- Utilisation d'un Alias plus standard pour l'accès au script mapserv [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
-- Can't start container after kill/crash [\#8](https://github.com/camptocamp/docker-mapserver/issues/8)
+
+## [7.6.0](https://github.com/camptocamp/docker-mapserver/tree/7.6.0) (2020-04-16)
+
+[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.4.0...7.6.0)
 
 **Merged pull requests:**
 
-- Use Poetry instead of Pipenv [\#288](https://github.com/camptocamp/docker-mapserver/pull/288) ([sbrunner](https://github.com/sbrunner))
-- Don't run 2 CI jobs in a pull request [\#283](https://github.com/camptocamp/docker-mapserver/pull/283) ([sbrunner](https://github.com/sbrunner))
-- Configure Renovate [\#281](https://github.com/camptocamp/docker-mapserver/pull/281) ([sbrunner](https://github.com/sbrunner))
-- Add landing page - RFC-134 - Fix master [\#256](https://github.com/camptocamp/docker-mapserver/pull/256) ([sbrunner](https://github.com/sbrunner))
-- Remove entrypoint and confd [\#250](https://github.com/camptocamp/docker-mapserver/pull/250) ([sbrunner](https://github.com/sbrunner))
-- Fix master branch, add configuration file [\#227](https://github.com/camptocamp/docker-mapserver/pull/227) ([sbrunner](https://github.com/sbrunner))
-- Add 7.6 version base on gdal:ubuntu-small-3.3.2 [\#211](https://github.com/camptocamp/docker-mapserver/pull/211) ([sbrunner](https://github.com/sbrunner))
-- Upgrade for Python 3.6 \(with pyupgrade\) [\#191](https://github.com/camptocamp/docker-mapserver/pull/191) ([sbrunner](https://github.com/sbrunner))
-- Fix dash in MS_MAP_PATTERN [\#172](https://github.com/camptocamp/docker-mapserver/pull/172) ([sbrunner](https://github.com/sbrunner))
-- Add missing file [\#164](https://github.com/camptocamp/docker-mapserver/pull/164) ([sbrunner](https://github.com/sbrunner))
-- Test MapServer with MAP [\#159](https://github.com/camptocamp/docker-mapserver/pull/159) ([sbrunner](https://github.com/sbrunner))
-- Add the missing escapes [\#154](https://github.com/camptocamp/docker-mapserver/pull/154) ([sbrunner](https://github.com/sbrunner))
-- Fix typo in MS_MAP_PATTERN regexp [\#144](https://github.com/camptocamp/docker-mapserver/pull/144) ([yjacolin](https://github.com/yjacolin))
-- Add default value for MS_MAP_PATTERN [\#124](https://github.com/camptocamp/docker-mapserver/pull/124) ([sbrunner](https://github.com/sbrunner))
-- Fix dependabot config [\#102](https://github.com/camptocamp/docker-mapserver/pull/102) ([sbrunner](https://github.com/sbrunner))
-- Remove unused [\#101](https://github.com/camptocamp/docker-mapserver/pull/101) ([sbrunner](https://github.com/sbrunner))
-- Fix exposed port [\#94](https://github.com/camptocamp/docker-mapserver/pull/94) ([sbrunner](https://github.com/sbrunner))
-- Fix rebuild [\#93](https://github.com/camptocamp/docker-mapserver/pull/93) ([sbrunner](https://github.com/sbrunner))
-- python3-wheel already installed [\#91](https://github.com/camptocamp/docker-mapserver/pull/91) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- Use c2cciutils [\#83](https://github.com/camptocamp/docker-mapserver/pull/83) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Publish Docker images to GitHub Container Registry [\#78](https://github.com/camptocamp/docker-mapserver/pull/78) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Use Ubuntu 20.04 [\#73](https://github.com/camptocamp/docker-mapserver/pull/73) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Fix clean Docker hub tags [\#72](https://github.com/camptocamp/docker-mapserver/pull/72) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Use secret defined in organisation [\#68](https://github.com/camptocamp/docker-mapserver/pull/68) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Add Clean docker hub tags workflow [\#67](https://github.com/camptocamp/docker-mapserver/pull/67) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- start-server: run apache2 under exec so that 'docker stop' SIGTERM signal is well propagated [\#63](https://github.com/camptocamp/docker-mapserver/pull/63) ([rouault](https://github.com/rouault))
-- Enable use_proj and tile mode \#61 [\#62](https://github.com/camptocamp/docker-mapserver/pull/62) ([ivorbosloper](https://github.com/ivorbosloper))
-- Dockerfile: add support for optional build against OracleSpatial client library [\#60](https://github.com/camptocamp/docker-mapserver/pull/60) ([rouault](https://github.com/rouault))
-- Never push on latest branch, use apt instead apt-get, code style [\#59](https://github.com/camptocamp/docker-mapserver/pull/59) ([sbrunner](https://github.com/sbrunner))
-- Use GDAL as base image [\#58](https://github.com/camptocamp/docker-mapserver/pull/58) ([sbrunner](https://github.com/sbrunner))
 - add mapserver repository as --build-arg [\#57](https://github.com/camptocamp/docker-mapserver/pull/57) ([danduk82](https://github.com/danduk82))
 - No error on removing unexisting tag [\#56](https://github.com/camptocamp/docker-mapserver/pull/56) ([sbrunner](https://github.com/sbrunner))
 - Fix master [\#54](https://github.com/camptocamp/docker-mapserver/pull/54) ([sbrunner](https://github.com/sbrunner))
@@ -174,6 +205,17 @@
 - \[Backport master\] Log directly to stderr [\#42](https://github.com/camptocamp/docker-mapserver/pull/42) ([backporting[bot]](https://github.com/apps/backporting))
 - \[Backport master\] Add some additional information to the logs [\#37](https://github.com/camptocamp/docker-mapserver/pull/37) ([backporting[bot]](https://github.com/apps/backporting))
 - Added fcgi timeout configuration override. [\#32](https://github.com/camptocamp/docker-mapserver/pull/32) ([ochriste](https://github.com/ochriste))
+
+## [7.4.0](https://github.com/camptocamp/docker-mapserver/tree/7.4.0) (2019-04-10)
+
+[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.2.0...7.4.0)
+
+**Closed issues:**
+
+- SVG symbol are not supported in MapServer docker image [\#25](https://github.com/camptocamp/docker-mapserver/issues/25)
+
+**Merged pull requests:**
+
 - Make the number fgci processes configurable [\#29](https://github.com/camptocamp/docker-mapserver/pull/29) ([pvalsecc](https://github.com/pvalsecc))
 - Bind apache2 to port 80 for any user [\#28](https://github.com/camptocamp/docker-mapserver/pull/28) ([Toilal](https://github.com/Toilal))
 - Add SVG symbols support [\#26](https://github.com/camptocamp/docker-mapserver/pull/26) ([yjacolin](https://github.com/yjacolin))
@@ -182,8 +224,21 @@
 - Fix the comment [\#21](https://github.com/camptocamp/docker-mapserver/pull/21) ([sbrunner](https://github.com/sbrunner))
 - Add no-install-recommends option to apt-get [\#20](https://github.com/camptocamp/docker-mapserver/pull/20) ([sbrunner](https://github.com/sbrunner))
 - Build fix 7.0 [\#18](https://github.com/camptocamp/docker-mapserver/pull/18) ([fredj](https://github.com/fredj))
-- Install libgd-dev instead of libgd2-xpm-dev [\#17](https://github.com/camptocamp/docker-mapserver/pull/17) ([fredj](https://github.com/fredj))
 - Update ubuntu base image to 18.04 [\#16](https://github.com/camptocamp/docker-mapserver/pull/16) ([fredj](https://github.com/fredj))
+
+## [7.2.0](https://github.com/camptocamp/docker-mapserver/tree/7.2.0) (2018-05-14)
+
+[Full Changelog](https://github.com/camptocamp/docker-mapserver/compare/7.0.1...7.2.0)
+
+**Closed issues:**
+
+- WMS connection error. MapServer not built with WMS Client support, unable to render layer [\#14](https://github.com/camptocamp/docker-mapserver/issues/14)
+- Utilisation d'un Alias plus standard pour l'accès au script mapserv [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
+- Can't start container after kill/crash [\#8](https://github.com/camptocamp/docker-mapserver/issues/8)
+
+**Merged pull requests:**
+
+- Install libgd-dev instead of libgd2-xpm-dev [\#17](https://github.com/camptocamp/docker-mapserver/pull/17) ([fredj](https://github.com/fredj))
 - Update ubuntu base image to 18.04 [\#15](https://github.com/camptocamp/docker-mapserver/pull/15) ([fredj](https://github.com/fredj))
 - Update the versions in the README [\#13](https://github.com/camptocamp/docker-mapserver/pull/13) ([sbrunner](https://github.com/sbrunner))
 - Switch to a home build [\#12](https://github.com/camptocamp/docker-mapserver/pull/12) ([pvalsecc](https://github.com/pvalsecc))
