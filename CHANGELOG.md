@@ -52,7 +52,7 @@
 - Use c2cciutils [\#83](https://github.com/camptocamp/docker-mapserver/pull/83) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
 - \[Backport master\] Publish Docker images to GitHub Container Registry [\#78](https://github.com/camptocamp/docker-mapserver/pull/78) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
 - \[Backport master\] Fix clean Docker hub tags [\#72](https://github.com/camptocamp/docker-mapserver/pull/72) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
-- \[Backport master\] Use secret defined in organisation [\#68](https://github.com/camptocamp/docker-mapserver/pull/68) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
+- \[Backport master\] Use secret defined in organization [\#68](https://github.com/camptocamp/docker-mapserver/pull/68) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
 - \[Backport master\] Add Clean docker hub tags workflow [\#67](https://github.com/camptocamp/docker-mapserver/pull/67) ([c2c-bot-gis-ci](https://github.com/c2c-bot-gis-ci))
 - Never push on latest branch, use apt instead apt-get, code style [\#59](https://github.com/camptocamp/docker-mapserver/pull/59) ([sbrunner](https://github.com/sbrunner))
 
@@ -233,7 +233,7 @@
 **Closed issues:**
 
 - WMS connection error. MapServer not built with WMS Client support, unable to render layer [\#14](https://github.com/camptocamp/docker-mapserver/issues/14)
-- Utilisation d'un Alias plus standard pour l'accès au script mapserv [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
+- Utilization d'un Alias plus standard pour l'accès au script mapserv [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
 - Can't start container after kill/crash [\#8](https://github.com/camptocamp/docker-mapserver/issues/8)
 
 **Merged pull requests:**
