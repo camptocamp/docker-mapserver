@@ -233,7 +233,7 @@
 **Closed issues:**
 
 - WMS connection error. MapServer not built with WMS Client support, unable to render layer [\#14](https://github.com/camptocamp/docker-mapserver/issues/14)
-- Utilization d'un Alias plus standard pour l'accès au script mapserv [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
+- Use a more standard Alias for the mapserv script [\#9](https://github.com/camptocamp/docker-mapserver/issues/9)
 - Can't start container after kill/crash [\#8](https://github.com/camptocamp/docker-mapserver/issues/8)
 
 **Merged pull requests:**
