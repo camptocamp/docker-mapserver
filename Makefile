@@ -20,7 +20,7 @@ all: acceptance
 
 .PHONY: build
 build: ## Build the Docker image
-	docker build --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
+	docker $(DOCKER_BUILDX) build $(DOCKER_BUILD_ARGS) --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
 
 .PHONY: acceptance
 acceptance: build ## Run the acceptance tests
