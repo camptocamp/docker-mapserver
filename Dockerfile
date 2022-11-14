@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-small-3.5.3 as builder
+FROM osgeo/gdal:ubuntu-small-3.6.0 as builder
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
@@ -6,11 +6,11 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
     --mount=type=cache,target=/root/.cache \
     apt-get update \
     && apt-get upgrade --assume-yes \
-    && LC_ALL=C apt-get install --assume-yes --no-install-recommends bison \
-        flex python-lxml libfribidi-dev swig \
+    && DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends bison \
+        flex python3-lxml libfribidi-dev swig \
         cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
-        libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
+        libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
     && ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
 
@@ -31,7 +31,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
     --mount=type=cache,target=/root/.cache \
     (if test "${WITH_ORACLE}" = "ON"; then \
        apt-get update && \
-       LC_ALL=C apt-get install --assume-yes --no-install-recommends \
+       apt-get install --assume-yes --no-install-recommends \
        libarchive-tools libaio-dev && \
        mkdir -p /usr/local/lib && \
        cd /usr/local/lib && \
@@ -66,7 +66,7 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
 RUN ninja install \
     && if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
-FROM osgeo/gdal:ubuntu-small-3.5.3 as runner
+FROM osgeo/gdal:ubuntu-small-3.6.0 as runner
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
@@ -90,7 +90,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
     && apt-get upgrade --assume-yes \
     && apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
         libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-        libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 \
+        libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 glibc-tools \
     && echo 'Allow apache2 to bind to port <1024 for any user' \
     && setcap cap_net_bind_service=+ep /usr/sbin/apache2 \
     && apt-get --purge autoremove --yes curl libcap2-bin
