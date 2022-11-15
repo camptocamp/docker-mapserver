@@ -8,7 +8,7 @@ jobs:
   rebuild:
     runs-on: ubuntu-20.04
     name: Rebuild
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     strategy:
       fail-fast: false
@@ -45,5 +45,13 @@ jobs:
       - run: (cd acceptance_tests && (c2cciutils-docker-logs || docker-compose logs))
         if: always()
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - run: make build
+        env:
+          DOCKER_BUILD_ARGS: --platform=linux/arm64
+          DOCKER_TAG: latest-arm64
+
       - name: Publish
         run: c2cciutils-publish --type=rebuild --branch=${{ matrix.branch }}
+        if: matrix.branch == '8.0'

@@ -24,3 +24,6 @@ publish:
   docker:
     images:
       - name: camptocamp/mapserver
+        tags:
+          - '{version}'
+          - '{version}-arm64'
