@@ -80,8 +80,6 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     APACHE_PID_FILE=/var/run/apache2/apache2.pid \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
-    LANG=C \
-    TERM=linux \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
 
 RUN --mount=type=cache,target=/var/cache,sharing=locked \
