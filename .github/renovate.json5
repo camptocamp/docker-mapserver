@@ -8,6 +8,7 @@
   prHourlyLimit: 0,
   prConcurrentLimit: 0,
   lockFileMaintenance: { enabled: true, automerge: true },
+  baseBranches: ['master', '7.0', '7.2', '7.4', '7.6', '7.6-20-04', '8.0'],
   packageRules: [
     /** Docker images versioning */
     {
@@ -48,6 +49,12 @@
       automerge: true,
       separateMajorMinor: false,
       separateMinorPatch: false,
+    },
+    /** Accept only the patch on the stabilization branches */
+    {
+      matchBaseBranches: ['/[1-9]\\..*/'],
+      matchUpdateTypes: ['major', 'minor', 'pin', 'digest', 'lockFileMaintenance', 'rollback', 'bump'],
+      enabled: false,
     },
   ],
 }
