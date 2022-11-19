@@ -1,4 +1,4 @@
-FROM osgeo/gdal:ubuntu-small-3.3.2 as builder
+FROM osgeo/gdal:ubuntu-small-3.3.3 as builder
 LABEL maintainer="info@camptocamp.com"
 
 RUN apt-get update && \
@@ -40,7 +40,7 @@ RUN cmake .. \
 RUN ninja install
 
 
-FROM osgeo/gdal:ubuntu-small-3.3.2 as runner
+FROM osgeo/gdal:ubuntu-small-3.3.3 as runner
 LABEL maintainer="info@camptocamp.com"
 
 # let's copy a few of the settings from /etc/init.d/apache2
