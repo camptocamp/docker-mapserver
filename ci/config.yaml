@@ -6,6 +6,7 @@ checks:
     dependabot-auto-merge.yaml: False
   versions:
     audit: False
+  black: false
 
 publish:
   pypi:
