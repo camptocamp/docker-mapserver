@@ -8,14 +8,13 @@ jobs:
   rebuild:
     runs-on: ubuntu-20.04
     name: Rebuild
-    timeout-minutes: 30
+    timeout-minutes: 40
 
     strategy:
       fail-fast: false
       matrix:
         branch:
           - master
-          - '7.0'
           - '7.2'
           - '7.4'
           - '7.6'
