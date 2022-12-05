@@ -1,7 +1,4 @@
 checks:
-  required_workflows:
-    codeql.yaml: False
-    audit.yaml: False
   versions:
     audit: False
   codespell:
