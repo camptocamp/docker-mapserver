@@ -35,7 +35,7 @@ test_images = ["scikit-image"]
 
 [[package]]
 name = "certifi"
-version = "2022.6.15.1"
+version = "2022.12.7"
 description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
 optional = false
@@ -202,7 +202,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10,<3.11"
-content-hash = "f11226a8c37948066fffdcebcd3a790229e67fa177555e6d0f8790eaf2fd7ed0"
+content-hash = "1274505f5088933a9fe5873760755916e129ee5827e2b7b8567c8698563f948b"
 
 [metadata.files]
 attrs = [
