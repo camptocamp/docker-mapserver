@@ -1,6 +1,4 @@
 checks:
-  versions:
-    audit: False
   codespell:
     ignore_re:
       - (.*/)?poetry\.lock
