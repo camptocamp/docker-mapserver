@@ -17,6 +17,7 @@ publish:
   pypi:
     packages: []
   docker:
+    dispatch: {}
     images:
       - name: camptocamp/mapserver
         tags:
