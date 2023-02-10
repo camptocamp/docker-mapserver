@@ -7,11 +7,11 @@ ${GET_ENV} | sed -e 's/^\([^=]*\)=.*/PassEnv \1/' > /tmp/pass-env
 # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
 ${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
 
-if [ "${UID}" != 0 ] && [ "${LISTEN_PORT_80}" != 1 ]; then
-    echo "Switching listen port to 8080"
+if [ "${UID}" == 0 ]; then
+    echo "Switching listen port to 80"
     cd /tmp
-    sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf
-    sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf
+    sed -i -e 's/<VirtualHost \*:8080>/<VirtualHost *:80>/' /etc/apache2/sites-available/000-default.conf
+    sed -i -e 's/Listen 8080$/Listen 80/' /etc/apache2/ports.conf
 fi
 
 trap '' WINCH
