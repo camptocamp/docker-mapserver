@@ -96,13 +96,15 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
 RUN a2enmod fcgid headers status \
     && a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir \
     && rm /etc/apache2/mods-enabled/alias.conf \
-    && mkdir --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver \
+    && mkdir -m 777 --parent ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /mod_fcgid \
     && find "$APACHE_CONFDIR" -type f -exec sed -ri ' \
     s!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g; \
     s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
     ' '{}' ';' \
     && sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf \
     && echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf \
+    && sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf \
+    && sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf \
     && mkdir --parent /etc/mapserver
 
 EXPOSE 8080
@@ -127,9 +129,9 @@ ENV MS_DEBUGLEVEL=0 \
     IO_TIMEOUT=40 \
     GET_ENV=env
 
-RUN adduser www-data root \
-    && chmod -R g+w ${APACHE_CONFDIR} ${APACHE_RUN_DIR} ${APACHE_LOCK_DIR} ${APACHE_LOG_DIR} /etc/mapserver /var/lib/apache2/fcgid /var/log \
-    && chgrp -R root ${APACHE_LOG_DIR} /var/lib/apache2/fcgid
+RUN adduser www-data root
+
+VOLUME /mod_fcgid
 
 CMD ["/usr/local/bin/start-server"]
 
