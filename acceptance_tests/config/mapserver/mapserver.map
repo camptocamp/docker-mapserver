@@ -73,7 +73,6 @@ MAP
         LABEL
             ENCODING "UTF-8"
             TYPE TRUETYPE
-            FONT "Arial"
             SIZE 9
         END
     END
