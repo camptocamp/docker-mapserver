@@ -14,7 +14,7 @@ services:
     #   - 8380:8080
     volumes:
       - ./config/mapserver/:/etc/mapserver
-    user: www-data
+    user: 12311:12311
 
   # Used to test the server using the MAP parameter of the query string
   mapserver-map:
