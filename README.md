@@ -61,12 +61,12 @@ host in the directory `/mapdata/wms` and `/mapdata/wfs`.
 
 ```bash
 docker run -d \
-        --restart=unless-stopped \
-        --volume=/mapfiles/wms.map/:/etc/mapserver/wms.map:ro \
-        --volume=/mapfiles/wfs.map/:/etc/mapserver/wfs.map:ro \
-        --volume=/mapdata/wms/:/mapdata/wms/:ro \
-        --volume=/mapdata/wfs/:/mapdata/wfs/:ro \
-        camptocamp/mapserver
+  --restart=unless-stopped \
+  --volume=/mapfiles/wms.map/:/etc/mapserver/wms.map:ro \
+  --volume=/mapfiles/wfs.map/:/etc/mapserver/wfs.map:ro \
+  --volume=/mapdata/wms/:/mapdata/wms/:ro \
+  --volume=/mapdata/wfs/:/mapdata/wfs/:ro \
+  camptocamp/mapserver
 ```
 
 For accessing maps for the "wfs" service add `map=/etc/mapserver/wfs.map` to

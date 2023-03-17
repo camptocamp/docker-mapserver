@@ -1,18 +1,17 @@
 #!/bin/bash -eux
 
-if [ "$#" -ne 1 ]
-then
-  echo "Usage: checkout_release.sh {BRANCH}"
-  echo
-  echo "Checkout the last tag matching final-* of the given branch"
-  exit 1
+if [ "$#" -ne 1 ]; then
+    echo "Usage: checkout_release.sh {BRANCH}"
+    echo
+    echo "Checkout the last tag matching final-* of the given branch"
+    exit 1
 fi
 
 BRANCH=$1
-TAG_PREFIX=`echo $BRANCH | sed -e 's/branch-/rel-/'`
+TAG_PREFIX=$(echo $BRANCH | sed -e 's/branch-/rel-/')
 
 git fetch --tags
-LAST_RELEASE=`git log --format=%H --tags=$TAG_PREFIX* --no-walk | head -1`
+LAST_RELEASE=$(git log --format=%H --tags=$TAG_PREFIX* --no-walk | head -1)
 git checkout --detach $LAST_RELEASE
 
 echo
