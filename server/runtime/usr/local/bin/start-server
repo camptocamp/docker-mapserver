@@ -2,16 +2,14 @@
 set -e
 
 # Be able to install fonts without creating a new image
-if [ -e /etc/mapserver/fonts/ ]
-then
+if [ -e /etc/mapserver/fonts/ ]; then
     fc-cache --really-force --system-only
 fi
 
 # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
 env | sed -e 's/.\+/export "\0"/' > /tmp/init_env
 
-if [ "${UID}" != 0 ] && [ "${LISTEN_PORT_80}" != 1 ]
-then
+if [ "${UID}" != 0 ] && [ "${LISTEN_PORT_80}" != 1 ]; then
     echo "Switching listen port to 8080"
     cd /tmp
     sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf
