@@ -8,11 +8,15 @@ if [ "$#" -ne 1 ]; then
 fi
 
 BRANCH=$1
-TAG_PREFIX=$(echo $BRANCH | sed -e 's/branch-/rel-/')
+TAG_PREFIX=${BRANCH//branch-/rel-}
 
 git fetch --tags
-LAST_RELEASE=$(git log --format=%H --tags=$TAG_PREFIX* --no-walk | head -1)
-git checkout --detach $LAST_RELEASE
+LAST_RELEASE=$(git log --format=%H "--tags=$TAG_PREFIX*" --no-walk | head -1)
+if [ -z "$LAST_RELEASE" ]; then
+    echo "No release found for branch $BRANCH"
+else
+    git checkout --detach "$LAST_RELEASE"
+fi
 
 echo
 echo "Will build: -----------------------------------------"

@@ -16,6 +16,6 @@ fi
 
 trap '' WINCH
 
-rm -f $APACHE_RUN_DIR/apache2.pid
+rm -f "$APACHE_RUN_DIR/apache2.pid"
 
 exec apache2 -DFOREGROUND

@@ -61,3 +61,12 @@ your query string.
 - `confd` and `entrypoints.d` are removed, you should replace it by a `volume_from` a configuration image
   or an init container.
 - The `MS_MAPFILE` has no more default value, was `/etc/mapserver/mapserver.map`.
+
+## Contributing
+
+Install the pre-commit hooks:
+
+```bash
+pip install pre-commit
+pre-commit install --allow-missing-config
+```
