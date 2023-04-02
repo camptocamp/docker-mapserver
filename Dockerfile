@@ -1,4 +1,4 @@
-FROM ghcr.io/osgeo/gdal:ubuntu-small-3.6.2 as builder
+FROM ghcr.io/osgeo/gdal:ubuntu-small-3.6.3 as builder
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
@@ -66,7 +66,7 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
 RUN ninja install \
     && if test "${WITH_ORACLE}" = "ON"; then rm -rf /usr/local/lib/sdk; fi
 
-FROM ghcr.io/osgeo/gdal:ubuntu-small-3.6.2 as runner
+FROM ghcr.io/osgeo/gdal:ubuntu-small-3.6.3 as runner
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
