@@ -17,7 +17,7 @@ jobs:
           - '7.2'
           - '7.4'
           - '7.6'
-          - '7.6-20-04'
+          - 7.6-20-04
           - '8.0'
 
     steps:
@@ -39,7 +39,7 @@ jobs:
         run: ~/.venv/bin/c2cciutils-audit --branch=${{ matrix.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GOPASS_CI_GITHUB_TOKEN }}
-      - name: Audit Snyk debug
+      - name: Audit
         run: ~/.venv/bin/c2cciutils-audit --branch=${{ matrix.branch }} || true
         if: failure()
         env:
