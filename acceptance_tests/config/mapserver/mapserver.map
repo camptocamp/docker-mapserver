@@ -19,8 +19,8 @@ MAP
     IMAGECOLOR 255 255 255
     STATUS ON
 
-    #FONTSET "fonts.conf"
-    #SYMBOLSET "symbol.sym"
+    FONTSET "fonts.conf"
+    SYMBOLSET "symbol.sym"
 
     OUTPUTFORMAT
         NAME jpeg
@@ -102,8 +102,9 @@ MAP
         END
         STATUS ON
         PROJECTION
-        "init=epsg:4326"
+            "init=epsg:4326"
         END
+        LABELITEM 'name'
         CLASS
             NAME "polygon"
             STYLE
@@ -114,7 +115,22 @@ MAP
                 COLOR 255 0 0
                 OPACITY 40
             END
+            STYLE
+                SYMBOL "square"
+                # Size should be > 0 from MapServer 7.6.5
+                SIZE 16
+                # Size should be >= 0 from MapServer 7.6.5
+                ANGLE 45
+                COLOR 0 0 0
+                OUTLINECOLOR 0 0 0
+            END
+            LABEL
+                FONT "dejavusans"
+                TYPE truetype
+                SIZE 10
+                COLOR 0 0 0
+                ANGLE -45
+            END
         END
     END
-
 END
