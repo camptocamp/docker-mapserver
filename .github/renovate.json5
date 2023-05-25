@@ -12,7 +12,7 @@
     automerge: true,
     schedule: 'after 5pm on the first day of the month',
   },
-  baseBranches: ['master', '7.2', '7.4', '7.6', '7.6-20-04', '8.0'],
+  baseBranches: ['master', '7.4', '7.6', '7.6-20-04', '8.0'],
   'pre-commit': { enabled: true },
   regexManagers: [
     {
