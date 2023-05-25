@@ -54,4 +54,3 @@ jobs:
 
       - name: Publish
         run: c2cciutils-publish --type=rebuild --branch=${{ matrix.branch }}
-        if: matrix.branch == '8.0'
