@@ -1,2 +1,3 @@
+*.pyc
+__pycache__/
 /acceptance_tests/junitxml
-/.github/changelog-generator-cache
