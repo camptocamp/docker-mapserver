@@ -1,3 +1,5 @@
+*.pyc
+__pycache__/
 /acceptance_tests/junitxml
 /server/build
 /server/target
