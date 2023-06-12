@@ -25,6 +25,8 @@ to tune it:
   this period of time will be terminated (defaults to `300`)
 - `IO_TIMEOUT`: The maximum period of time the module will wait while trying to
   read from or write to a FastCGI application (defaults to `40`)
+- `APACHE_LIMIT_REQUEST_LINE`: The maximum size of the HTTP request line in
+  bytes (defaults to `8190`)
 
 ## Running multiple Mapfiles
 

@@ -125,6 +125,7 @@ ENV MS_DEBUGLEVEL=0 \
     BUSY_TIMEOUT=300 \
     IDLE_TIMEOUT=300 \
     IO_TIMEOUT=40 \
+    APACHE_LIMIT_REQUEST_LINE=8190 \
     GET_ENV=env
 
 CMD ["/usr/local/bin/start-server"]
