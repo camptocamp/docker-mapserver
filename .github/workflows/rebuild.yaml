@@ -8,7 +8,7 @@ jobs:
   rebuild:
     runs-on: ubuntu-22.04
     name: Rebuild
-    timeout-minutes: 40
+    timeout-minutes: 60
 
     strategy:
       fail-fast: false
