@@ -1,6 +1,7 @@
 import pytest
-from .conftest import BASE_URL, BASE_URL_BASE_PATH
 from owslib.wms import WebMapService
+
+from .conftest import BASE_URL, BASE_URL_BASE_PATH
 
 
 def test_get_capabilities(connection):

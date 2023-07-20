@@ -1,5 +1,6 @@
-from .conftest import BASE_URL_OGCAPI
 from owslib.ogcapi.features import Features
+
+from .conftest import BASE_URL_OGCAPI
 
 
 def test_ogcapi(connection_ogcapi):
