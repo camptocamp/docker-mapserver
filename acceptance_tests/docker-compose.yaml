@@ -46,7 +46,7 @@ services:
       - ./config/mapserver/:/etc/mapserver
     user: www-data
 
-  # Used to test the server ogcapi capabilities
+  # Used to test the server ogcapi capabilities and the landing page
   mapserver-ogcapi:
     image: camptocamp/mapserver:${DOCKER_TAG}
     environment:
