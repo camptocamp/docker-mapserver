@@ -66,6 +66,8 @@ MAP
             "wfs_enable_request" "!*"
             "wfs_encoding" "UTF-8"
             "wfs_getfeature_formatlist" "gml,geojson"
+            "oga_onlineresource" "http://mapserver-ogcapi:8080/mymap/ogcapi"
+            "ows_enable_request" "*"
         END
     END
 
