@@ -22,8 +22,12 @@ all: acceptance
 build: ## Build the Docker image
 	docker $(DOCKER_BUILDX) build $(DOCKER_BUILD_ARGS) --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
 
+.PHONY: build-no-cache
+build-no-cache: ## Build the Docker image (no cache)
+	docker $(DOCKER_BUILDX) build --no-cache $(DOCKER_BUILD_ARGS) --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
+
 .PHONY: acceptance
-acceptance: build ## Run the acceptance tests
+acceptance: # build ## Run the acceptance tests
 	(cd acceptance_tests/ && docker-compose down)
 	(cd acceptance_tests/ && docker-compose build)
 	(cd acceptance_tests/ && docker-compose up -d)
