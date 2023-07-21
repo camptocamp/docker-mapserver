@@ -76,8 +76,8 @@ ENV APACHE_CONFDIR=/etc/apache2 \
     # And then a few more from $APACHE_CONFDIR/envvars itself
     APACHE_RUN_USER=www-data \
     APACHE_RUN_GROUP=www-data \
-    APACHE_RUN_DIR=/var/run/apache2 \
-    APACHE_PID_FILE=/var/run/apache2/apache2.pid \
+    APACHE_RUN_DIR=/tmp/apache2 \
+    APACHE_PID_FILE=/tmp/apache2/apache2.pid \
     APACHE_LOCK_DIR=/var/lock/apache2 \
     APACHE_LOG_DIR=/var/log/apache2 \
     MS_MAP_PATTERN=^\\/etc\\/mapserver\\/([^\\.][-_A-Za-z0-9\\.]+\\/{1})*([-_A-Za-z0-9\\.]+\\.map)$
@@ -103,7 +103,8 @@ RUN a2enmod fcgid headers status \
     && sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf \
     && echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf \
     && sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf \
-    && sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf
+    && sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf \
+    && rm -rf /etc/apache2/conf-enabled/other-vhosts-access-log.conf
 
 EXPOSE 8080
 
