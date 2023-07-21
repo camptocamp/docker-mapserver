@@ -2,7 +2,7 @@ DOCKER_TAG ?= latest
 export DOCKER_TAG
 MAPSERVER_BRANCH ?= main
 WITH_ORACLE ?= OFF
-DOCKER_IMAGE = camptocamp/mapserver
+DOCKER_IMAGE ?= camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)
 UID = $(shell id -u)
@@ -21,6 +21,10 @@ all: acceptance
 .PHONY: build
 build: ## Build the Docker image
 	docker $(DOCKER_BUILDX) build $(DOCKER_BUILD_ARGS) --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
+
+.PHONY: build-no-cache
+build-no-cache: ## Build the Docker image (no cache)
+	docker $(DOCKER_BUILDX) build --no-cache $(DOCKER_BUILD_ARGS) --tag=$(DOCKER_IMAGE):$(DOCKER_TAG) --target=runner --build-arg=MAPSERVER_BRANCH=$(MAPSERVER_BRANCH) --build-arg=WITH_ORACLE=$(WITH_ORACLE) .
 
 .PHONY: acceptance
 acceptance: build ## Run the acceptance tests

@@ -30,9 +30,24 @@ services:
       - ./config/mapserver/:/etc/mapserver
     user: www-data
 
-  # Used to test the server in landing page mode
-  # TODO make it working, add tests
-  mapserver-landingpage:
+  # Used to test the server using the MAPSERVER_BASE_PATH environment variable
+  mapserver-path:
+    image: camptocamp/mapserver:${DOCKER_TAG}
+    environment:
+      MS_DEBUGLEVEL: '5'
+      MS_MAPFILE: '/etc/mapserver/mapserver.map'
+      MAPSERVER_CATCH_SEGV: '1'
+      MAPSERVER_BASE_PATH: '/this/is/a/test'
+    links:
+      - db
+    # ports:
+    #   - 8383:8080
+    volumes:
+      - ./config/mapserver/:/etc/mapserver
+    user: www-data
+
+  # Used to test the server ogcapi capabilities and the landing page
+  mapserver-ogcapi:
     image: camptocamp/mapserver:${DOCKER_TAG}
     environment:
       MS_DEBUGLEVEL: '5'

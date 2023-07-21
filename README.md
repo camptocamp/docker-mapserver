@@ -20,6 +20,7 @@ to tune it:
 - `MIN_PROCESSES`: The minimum number of fcgi processes to keep (defaults to `1`)
 - `MAX_PROCESSES`: The maximum number of fcgi processes to keep (defaults to `5`)
 - `MAPSERVER_CATCH_SEGV`: Set to `1` to have the stacktraces in case of crash
+- `MAPSERVER_BASE_PATH`: To setup which is the base path of mapserver (defaults to `/`)
 - `BUSY_TIMEOUT`: The maximum time limit for request handling (defaults to `300`)
 - `IDLE_TIMEOUT`: Application processes which have not handled a request for
   this period of time will be terminated (defaults to `300`)
