@@ -19,6 +19,13 @@
       fileMatch: ['^.pre-commit-config.yaml$'],
       matchStrings: [" +- '?(?<depName>[^' @=]+)(@|==)(?<currentValue>[^' @=]+)'? # (?<datasource>.+)"],
     },
+    {
+      fileMatch: ['^ci/config\\\\.yaml$'],
+      matchStrings: [
+        '.*https://raw\\\\.githubusercontent\\\\.com/(?<depName>[^\\\\s]+)/(?<currentValue>[0-9\\\\.]+)/.*',
+      ],
+      datasourceTemplate: 'github-tags',
+    },
   ],
   packageRules: [
     /** Docker images versioning */
@@ -66,6 +73,10 @@
       matchBaseBranches: ['/[1-9]\\..*/'],
       matchUpdateTypes: ['major', 'minor', 'pin', 'digest', 'lockFileMaintenance', 'rollback', 'bump'],
       enabled: false,
+    },
+    {
+      matchPackageNames: ['shellcheck-py/shellcheck-py'],
+      versioning: 'regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$',
     },
   ],
 }
