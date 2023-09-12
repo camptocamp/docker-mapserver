@@ -12,3 +12,10 @@ publish:
   docker:
     images:
       - name: camptocamp/mapserver
+
+version:
+  branch_to_version_re:
+    - from: ([0-9]+.[0-9]+-ubuntu[0-9]+.[0-9]+)
+      to: \1
+    - from: master
+      to: master
