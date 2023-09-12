@@ -10,7 +10,7 @@
 | 7.6-ubuntu18.04 | Best effort     |                                                 | 7.6           | Version based on Ubuntu 18.04 |
 | 7.6-gdal3.3     | Best effort     |                                                 | 7.6-20-04     | Version based on Ubuntu 20.04 |
 | 8.0             | 31/12/2025      | 18/04/2023                                      |               |                               |
-| 8.0-gdal3.6     | Best effort     |                                                 | 8.0           | Version based on Ubuntu 22.04 |
+| 8.0-gdal3.6     | Best effort     |                                                 | 8.0, latest   | Version based on Ubuntu 22.04 |
 
 The tags 7.6 and 8.0 will soon point to an image based on Gdal 3.7, Ubuntu 22.04.
 
