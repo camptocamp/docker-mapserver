@@ -15,9 +15,9 @@ jobs:
       matrix:
         branch:
           - '7.4'
-          - '7.6'
-          - 7.6-20-04
-          - '8.0'
+          - 7.6-ubuntu18.04
+          - 7.6-gdal3.3
+          - 8.0-gdal3.6
 
     steps:
       - uses: actions/checkout@v3
