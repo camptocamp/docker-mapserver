@@ -55,7 +55,6 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
     -DWITH_KML=1 \
     -DWITH_SOS=1 \
     -DWITH_XMLMAPFILE=1 \
-    -DWITH_POINT_Z_M=1 \
     -DWITH_CAIRO=1 \
     -DWITH_RSVG=1 \
     -DUSE_PROJ=1 \
