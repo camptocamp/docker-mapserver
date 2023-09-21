@@ -4,10 +4,10 @@ FROM gdal as builder
 LABEL maintainer="info@camptocamp.com"
 
 RUN apt-get update && \
-    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt install -y bison flex python-lxml libfribidi-dev swig \
+    LC_ALL=C DEBIAN_FRONTEND=noninteractive apt install -y bison flex python3-lxml libfribidi-dev swig \
     cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
     libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
-    libxslt1-dev python-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
+    libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
     clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
