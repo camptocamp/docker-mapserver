@@ -63,7 +63,7 @@ RUN apt-get update && \
     apt-get --assume-yes upgrade && \
     apt install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid curl \
     libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-    libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 && \
+    libxslt1.1 libprotobuf-c1 libcap2-bin libaio1 glibc-tools && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     echo 'Allow apache2 to bind to port <1024 for any user' && \
