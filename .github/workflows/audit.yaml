@@ -22,7 +22,7 @@ jobs:
           - 8.0-gdal3.7
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.branch }}
           token: ${{ secrets.GOPASS_CI_GITHUB_TOKEN }}
