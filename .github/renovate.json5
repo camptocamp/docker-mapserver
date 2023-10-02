@@ -86,5 +86,11 @@
       matchPackageNames: ['shellcheck-py/shellcheck-py'],
       versioning: 'regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)\\.(?<build>\\d+)$',
     },
+    /** Disable upgrading the supported Python version */
+    {
+      matchFileNames: ['acceptance_tests/pyproject.toml'],
+      matchPackageNames: ['python'],
+      enabled: false,
+    },
   ],
 }
