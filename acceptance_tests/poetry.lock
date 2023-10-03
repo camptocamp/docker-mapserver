@@ -13,13 +13,13 @@ files = [
 
 [[package]]
 name = "c2cwsgiutils"
-version = "6.0.1"
+version = "6.0.2"
 description = "Common utilities for Camptocamp WSGI applications"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "c2cwsgiutils-6.0.1-py3-none-any.whl", hash = "sha256:05c03b12978377694c73f5a076f6a38c51357558f0a82d6ae119f2814b380caa"},
-    {file = "c2cwsgiutils-6.0.1.tar.gz", hash = "sha256:d78b78bbc4f1b4ac3017cf073c8b9b01e3231eae42d9f70ac703768843f904e4"},
+    {file = "c2cwsgiutils-6.0.2-py3-none-any.whl", hash = "sha256:2da638f4a6ff68f38fa63317e11ee2b61f6a561d2e5a75afe9ef69e5573e5dc1"},
+    {file = "c2cwsgiutils-6.0.2.tar.gz", hash = "sha256:42813ddc8ff22acb8308147d239ac7423cd4615a016a50948dfd4cab3836ab44"},
 ]
 
 [package.dependencies]
@@ -33,7 +33,7 @@ pyramid_mako = "*"
 pyramid-tm = "*"
 pyyaml = "*"
 requests = "*"
-SQLAlchemy = ">=1.4.0,<3.0.0"
+SQLAlchemy = "*"
 SQLAlchemy-Utils = "*"
 ujson = "*"
 "zope.interface" = "*"
@@ -1273,4 +1273,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.11"
-content-hash = "a984c150b678328879a0bdebdbc9cb38569b09086f2686d1b08aa8f304c4928b"
+content-hash = "44d320a92d4de7b28d1dc91c5daa7cc740d838a88d1704d152b1e6e7dc911b1b"
