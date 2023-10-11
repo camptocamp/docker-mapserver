@@ -1,9 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/camptocamp/c2cciutils/1.0/c2cciutils/schema.json
+
 checks:
-  required_workflows:
-    codeql.yaml: False
-    audit.yaml: False
-    dependabot-auto-merge.yaml: False
-  versions: False
+  required_workflows: false
+  versions: false
   black: false
 
 publish:
