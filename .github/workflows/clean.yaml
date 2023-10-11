@@ -22,5 +22,5 @@ jobs:
           sudo apt update
           sudo apt install --yes python3-wheel
       - run: sudo python3 -m pip install --requirement=ci/requirements.txt
-      - name: Clean docker hub tags
+      - name: Clean Docker hub tags
         run: c2cciutils-clean
