@@ -45,8 +45,8 @@ jobs:
           SKIP: poetry-lock
       - run: git diff && false
         if: failure()
-      - name: Checks
-        run: c2cciutils-checks
+      - name: Print environment information
+        run: c2cciutils-env
 
       - run: make build
       - run: make acceptance
