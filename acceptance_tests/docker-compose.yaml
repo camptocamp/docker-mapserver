@@ -24,7 +24,7 @@ services:
       - ./config/db/:/docker-entrypoint-initdb.d
 
   acceptance:
-    image: camptocamp/c2cwsgiutils:3.10.0
+    image: camptocamp/c2cwsgiutils:6.0.4
     command:
       - tail
       - -f
