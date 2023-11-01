@@ -13,7 +13,7 @@ jobs:
     steps:
       # Versions
       - run: docker --version
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - uses: camptocamp/initialise-gopass-summon-action@v2
         with:
