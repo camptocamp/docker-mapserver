@@ -88,7 +88,7 @@
     },
     /** Accept only the patch on stabilization branches */
     {
-      matchBaseBranches: ['/^[0-9]+\\.[0-9]+$/'],
+      matchBaseBranches: ['/^[0-9]+\\.[0-9]+$/', '/^[0-9]+\\.[0-9]+-gdal[0-9]+\\.[0-9]+$/'],
       matchUpdateTypes: ['major', 'minor', 'pin', 'digest', 'lockFileMaintenance', 'rollback', 'bump'],
       enabled: false,
     },
@@ -105,7 +105,7 @@
     },
     /** Update dpkg versions at any time */
     {
-      matchBaseBranches: ['/^[0-9]+\\.[0-9]+$/'],
+      matchBaseBranches: ['/^[0-9]+\\.[0-9]+$/', '/^[0-9]+\\.[0-9]+-gdal[0-9]+\\.[0-9]+$/'],
       matchPaths: ['^ci/dpkg\\-versions\\.yaml$'],
       schedule: ['at any time'],
       groupName: 'dpkg',
