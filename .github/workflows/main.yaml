@@ -44,7 +44,7 @@ jobs:
         if: always()
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
       - run: make build
         env:
           DOCKER_BUILD_ARGS: --platform=linux/arm64
