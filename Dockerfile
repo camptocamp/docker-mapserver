@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
+RUN ln -s /usr/local/lib/libproj.so.25 /usr/local/lib/libproj.so
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
