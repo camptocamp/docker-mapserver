@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
         libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
-    && ln -s /usr/local/lib/libproj.so.* /usr/local/lib/libproj.so
+    && ln -s /usr/local/lib/libproj.so.25 /usr/local/lib/libproj.so
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
