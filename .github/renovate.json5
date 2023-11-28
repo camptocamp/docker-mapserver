@@ -36,13 +36,6 @@
       ],
       datasourceTemplate: 'github-tags',
     },
-    /** Do update on packages update (trigger a rebuild) */
-    {
-      fileMatch: ['^ci/dpkg\\-versions\\.yaml$'],
-      matchStrings: [" *(?<depName>[^'\\s]+): '?(?<currentValue>[^'\\s/]*[0-9][^'\\s/]*)'?"],
-      datasourceTemplate: 'repology',
-      versioningTemplate: 'loose',
-    },
   ],
   packageRules: [
     /** Docker images versioning */
@@ -107,16 +100,9 @@
       matchPackageNames: ['python'],
       enabled: false,
     },
-    /** Update dpkg versions at any time */
+    /** Auto merge the GitHub action and pre-commit updates */
     {
-      matchBaseBranches: [
-        '/^[0-9]+\\.[0-9]+$/',
-        '/^[0-9]+\\.[0-9]+-gdal[0-9]+\\.[0-9]+$/',
-        '/^[0-9]+\\.[0-9]+-ubuntu[0-9]+\\.[0-9]+$/',
-      ],
-      matchPaths: ['^ci/dpkg\\-versions\\.yaml$'],
-      schedule: ['at any time'],
-      groupName: 'dpkg',
+      matchDatasources: ['github-actions', 'pre-commit'],
       automerge: true,
     },
   ],
