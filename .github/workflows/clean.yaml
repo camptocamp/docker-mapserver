@@ -4,8 +4,8 @@ on: delete
 
 jobs:
   clean:
-    runs-on: ubuntu-22.04
     name: Clean docker hub tags
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
 
     steps:
@@ -22,5 +22,5 @@ jobs:
           sudo apt update
           sudo apt install --yes python3-wheel
       - run: sudo python3 -m pip install --requirement=ci/requirements.txt
-      - name: Clean docker hub tags
+      - name: Clean Docker hub tags
         run: c2cciutils-clean

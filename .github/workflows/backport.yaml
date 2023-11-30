@@ -8,9 +8,11 @@ on:
 
 jobs:
   backport:
-    runs-on: ubuntu-22.04
     name: Backport
+    runs-on: ubuntu-22.04
     timeout-minutes: 5
 
     steps:
       - uses: camptocamp/backport-action@master
+        with:
+          token: ${{ secrets.GOPASS_CI_GITHUB_TOKEN }}
