@@ -1,4 +1,4 @@
-FROM ghcr.io/osgeo/gdal:ubuntu-small-3.7.3 as gdal
+FROM ghcr.io/osgeo/gdal:ubuntu-full-3.7.3 as gdal
 
 FROM gdal as builder
 LABEL maintainer Camptocamp "info@camptocamp.com"
@@ -61,6 +61,7 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
     -DWITH_RSVG=1 \
     -DUSE_PROJ=1 \
     -DUSE_WFS_SVR=1 \
+    -DGDAL_USE_ARROW=1 \
     -DUSE_OGCAPI_SVR=1 \
     -DWITH_ORACLESPATIAL=${WITH_ORACLE}
 
