@@ -10,8 +10,8 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-pytest = "7.4.3"
-c2cwsgiutils = "6.0.4"
+pytest = "7.4.4"
+c2cwsgiutils = "6.0.6"
 boltons = "23.1.1"
 netifaces = "0.11.0"
 requests = "2.31.0"
