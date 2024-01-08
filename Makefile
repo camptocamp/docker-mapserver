@@ -26,7 +26,7 @@ all: acceptance
 
 .PHONY: pull
 pull:
-	for image in `find -name Dockerfile | xargs grep --no-filename ^FROM | awk '{print $$2}'`; do docker pull $$image; done
+	for image in `find -name Dockerfile | xargs grep --no-filename '^FROM .*/' | awk '{print $$2}'`; do docker pull $$image; done
 
 .PHONY: build
 build:
