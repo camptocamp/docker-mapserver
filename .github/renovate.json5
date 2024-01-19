@@ -12,15 +12,7 @@
     automerge: true,
     schedule: 'after 5pm on the first day of the month',
   },
-  baseBranches: [
-    'master',
-    '7.4',
-    '7.6-ubuntu18.04',
-    '7.6-gdal3.3',
-    '7.6-gdal3.7',
-    '8.0-gdal3.6',
-    '8.0-gdal3.7',
-  ],
+  baseBranches: ['master', '7.6-ubuntu18.04', '7.6-gdal3.3', '7.6-gdal3.7', '8.0-gdal3.6', '8.0-gdal3.7'],
   'pre-commit': { enabled: true },
   regexManagers: [
     /** Do updates on pre-commit additional dependencies */

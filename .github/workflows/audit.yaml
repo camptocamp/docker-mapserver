@@ -14,7 +14,6 @@ jobs:
       fail-fast: false
       matrix:
         branch:
-          - '7.4'
           - 7.6-ubuntu18.04
           - 7.6-gdal3.3
           - 7.6-gdal3.7
