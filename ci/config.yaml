@@ -2,12 +2,13 @@
 
 checks:
   required_workflows:
-    codeql.yaml: False
-    audit.yaml: False
-    dependabot-auto-merge.yaml: False
-  versions: False
-  dependabot_config: False
+    codeql.yaml: false
+    audit.yaml: false
+    dependabot-auto-merge.yaml: false
+  versions: false
+  dependabot_config: false
 
+  codespell: false
 version:
   branch_to_version_re:
     - from: ([0-9]+.[0-9]+-gdal[0-9]+.[0-9]+)
