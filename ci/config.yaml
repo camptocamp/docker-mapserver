@@ -2,15 +2,11 @@
 
 checks:
   required_workflows:
-    codeql.yaml: False
-    audit.yaml: False
+    codeql.yaml: false
+    audit.yaml: false
   versions:
-    audit: False
-  codespell:
-    ignore_re:
-      - (.*/)?poetry\.lock
-      - .github/changelog-generator-cache/.*
-
+    audit: false
+  codespell: false
 version:
   branch_to_version_re:
     - from: ([0-9]+.[0-9]+-gdal[0-9]+.[0-9]+)
