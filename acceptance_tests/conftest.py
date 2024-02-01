@@ -1,6 +1,7 @@
 """
 Common fixtures for every tests.
 """
+
 import pytest
 from c2cwsgiutils.acceptance import utils
 from c2cwsgiutils.acceptance.connection import Connection
