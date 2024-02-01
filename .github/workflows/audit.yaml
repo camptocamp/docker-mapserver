@@ -49,7 +49,7 @@ jobs:
         if: failure()
       - name: Check ci/dpkg-versions.yaml file existence
         id: dpkg-versions
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: ci/dpkg-versions.yaml
       - name: Update dpkg packages versions
