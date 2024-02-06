@@ -1,8 +1,8 @@
-c2cciutils[publish]==1.6.11
+c2cciutils[publish]==1.6.16
 oauthlib>=3.2.1 # not directly required, pinned by Snyk to avoid a vulnerability
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 certifi>=2022.12.7 # not directly required, pinned by Snyk to avoid a vulnerability
-cryptography>=41.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
+cryptography>=42.0.2 # not directly required, pinned by Snyk to avoid a vulnerability
 requests>=2.31.0 # not directly required, pinned by Snyk to avoid a vulnerability
 pygments>=2.15.0 # not directly required, pinned by Snyk to avoid a vulnerability
 urllib3>=1.26.17 # not directly required, pinned by Snyk to avoid a vulnerability
