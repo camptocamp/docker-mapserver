@@ -24,11 +24,11 @@ repos:
       - id: copyright
       - id: poetry-check
         additional_dependencies:
-          - poetry==1.8.1 # pypi
+          - poetry==1.8.2 # pypi
         exclude: ^pyproject.toml$
       - id: poetry-lock
         additional_dependencies:
-          - poetry==1.8.1 # pypi
+          - poetry==1.8.2 # pypi
         exclude: ^pyproject.toml$
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
@@ -40,7 +40,7 @@ repos:
             |.github/changelog-generator-cache/.*
           )
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.9.0.6
+    rev: v0.10.0.1
     hooks:
       - id: shellcheck
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
@@ -82,7 +82,7 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: 24.2.0
+    rev: 24.3.0
     hooks:
       - id: black
   - repo: https://github.com/sbrunner/jsonschema-validator
