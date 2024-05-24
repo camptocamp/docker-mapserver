@@ -55,6 +55,25 @@ your query string. Here is the URL for a `GetCapabilities` request:
 Similarly, for accessing maps for the WMS service add `map=/etc/mapserver/wms.map` to
 your query string.
 
+## OGC API
+
+This image can be used to serve OGC API Features and OGC API Tiles.
+
+Some details about the configuration.
+
+You should define the `OGCAPI_HTML_TEMPLATE_DIRECTORY` generally to `/usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/`.
+
+If you want to serve MapServer on a subpath, you can use the `MAPSERVER_BASE_PATH` with the subpath.
+
+If you want to serve multiple MapFiles you should have a [Config file](https://mapserver.org/mapfile/config.html) with the `MAPS` directive.
+
+In the Mapfile metadata you should have the following metadata (`MAP`.`WEB`.`METADATA`):
+
+- `"ows_enable_request"` or `"oga_enable_request"` set to `"*"`.
+- `"oga_onlineresource"` set to the URL (or path) of the OGC API.
+
+The landing page is served by on `http://<host>:<port>/<base_path>/<map_name>/ogcapi`.
+
 ## Changelog
 
 ### 8.0
