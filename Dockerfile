@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
         libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
-    && ln -s /usr/local/lib/libproj.so.25 /usr/local/lib/libproj.so
+    && ln -s /usr/lib/*-linux-gnu/libproj.so.*[0] $(echo /usr/lib/*-linux-gnu)/libproj.so
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
@@ -89,7 +89,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
     && apt-get upgrade --assume-yes \
     && apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid \
         libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-        libxslt1.1 libprotobuf-c1 libaio1 libpcre2-posix3 glibc-tools \
+        libxslt1.1 libprotobuf-c1 libaio1t64 libpcre2-posix3 glibc-tools \
         spawn-fcgi lighttpd
 
 RUN a2enmod fcgid headers status \
