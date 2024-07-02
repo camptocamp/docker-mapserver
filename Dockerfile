@@ -89,7 +89,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
     && apt-get upgrade --assume-yes \
     && apt-get install --assume-yes --no-install-recommends ca-certificates apache2 libapache2-mod-fcgid \
         libfribidi0 librsvg2-2 libpng16-16 libgif7 libfcgi0ldbl \
-        libxslt1.1 libprotobuf-c1 libaio1 glibc-tools
+        libxslt1.1 libprotobuf-c1 libaio1 libpcre2-posix3 glibc-tools
 
 RUN a2enmod fcgid headers status \
     && a2dismod -f auth_basic authn_file authn_core authz_user autoindex dir \
