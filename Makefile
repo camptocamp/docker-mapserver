@@ -36,4 +36,4 @@ acceptance: build ## Run the acceptance tests
 
 .PHONY: run
 run: build
-	(cd acceptance_tests; docker-compose up)
+	(cd acceptance_tests; docker-compose up -d)
