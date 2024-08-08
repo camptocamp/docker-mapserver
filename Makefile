@@ -14,13 +14,7 @@ else
 DOCKER_VERSION = $(DOCKER_VERSION_ACTUAL)
 endif
 
-#Get the docker-compose version (must use the same version for acceptance tests)
-DOCKER_COMPOSE_VERSION_ACTUAL = $(shell docker-compose version --short)
-ifeq ($(DOCKER_COMPOSE_VERSION_ACTUAL),)
-DOCKER_COMPOSE_VERSION = 1.8.0
-else
-DOCKER_COMPOSE_VERSION = $(DOCKER_COMPOSE_VERSION_ACTUAL)
-endif
+DOCKER_COMPOSE_VERSION = 1.29.2
 
 all: acceptance
 
@@ -34,9 +28,9 @@ build:
 
 .PHONY: acceptance
 acceptance: build
-	(cd acceptance_tests/ && docker-compose up -d)
-	(cd acceptance_tests/ && docker-compose exec -T acceptance bash -c 'cd /acceptance_tests ; py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml')
-	(cd acceptance_tests/ && docker-compose down)
+	(cd acceptance_tests/ && docker compose up -d)
+	(cd acceptance_tests/ && docker compose exec -T acceptance bash -c 'cd /acceptance_tests ; py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml')
+	(cd acceptance_tests/ && docker compose down)
 
 .PHONY: clean
 clean:
