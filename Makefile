@@ -28,12 +28,12 @@ build-no-cache: ## Build the Docker image (no cache)
 
 .PHONY: acceptance
 acceptance: build ## Run the acceptance tests
-	(cd acceptance_tests/ && docker-compose down)
-	(cd acceptance_tests/ && docker-compose build)
-	(cd acceptance_tests/ && docker-compose up -d)
-	(cd acceptance_tests/ && docker-compose exec -T acceptance py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml)
-	(cd acceptance_tests/ && docker-compose down)
+	(cd acceptance_tests/ && docker compose down)
+	(cd acceptance_tests/ && docker compose build)
+	(cd acceptance_tests/ && docker compose up -d)
+	(cd acceptance_tests/ && docker compose exec -T acceptance py.test -vv --color=yes --junitxml /tmp/junitxml/results.xml)
+	(cd acceptance_tests/ && docker compose down)
 
 .PHONY: run
 run: build
-	(cd acceptance_tests; docker-compose up)
+	(cd acceptance_tests; docker compose up -d)
