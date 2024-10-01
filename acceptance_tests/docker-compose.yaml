@@ -70,7 +70,7 @@ services:
     user: www-data
 
   db:
-    image: camptocamp/postgres:14-postgis-3
+    image: camptocamp/postgres:17-postgis-3
     environment:
       POSTGRES_USER: www-data
       POSTGRES_PASSWORD: www-data
