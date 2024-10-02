@@ -32,8 +32,12 @@ jobs:
           patterns: docker
         if: env.HAS_SECRETS == 'HAS_SECRETS'
 
-      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - run: python3 -m pip install --user --requirement=ci/requirements.txt
+      - name: Print environment information
+        run: c2cciutils-env
 
       - uses: actions/cache@v4
         with:
@@ -49,8 +53,6 @@ jobs:
           path: /tmp/pre-commit.patch
           retention-days: 1
         if: failure()
-      - name: Print environment information
-        run: c2cciutils-env
 
       - run: make build
       - run: make acceptance
