@@ -25,6 +25,9 @@ jobs:
           sudo rm /etc/apt/sources.list.d/*.list
           sudo apt update
           sudo apt install --yes python3-wheel
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - run: sudo python3 -m pip install --requirement=ci/requirements.txt
       - name: Clean Docker hub tags
         run: c2cciutils-clean
