@@ -1,4 +1,4 @@
-#!/bin/bash -ax
+#!/bin/bash -a
 
 # Add the environment variables that were set when apache was started
 # shellcheck source=/dev/null
