@@ -78,6 +78,11 @@ The landing page is served by on `http://<host>:<port>/<base_path>/<map_name>/og
 
 ## Changelog
 
+### 8.2
+
+ - The default url path is now at "/" (not "/mapserver" or others anymore).
+ - The default "APACHE_RUN_DIR" is now "/tmp/apache2" be sure this folder exists or/and can be created.
+
 ### 8.0
 
 - `confd` and `entrypoints.d` are removed, you should replace it by a `volume_from` a configuration image
