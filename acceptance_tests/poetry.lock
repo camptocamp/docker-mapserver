@@ -13,24 +13,26 @@ files = [
 
 [[package]]
 name = "c2cwsgiutils"
-version = "6.0.8"
+version = "6.0.9"
 description = "Common utilities for Camptocamp WSGI applications"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "c2cwsgiutils-6.0.8-py3-none-any.whl", hash = "sha256:2190e9e064ff7190e434767a13c132911e53d0d15fe99e0072da6e7c9586880f"},
-    {file = "c2cwsgiutils-6.0.8.tar.gz", hash = "sha256:b416a20a8490e30deed307811fba1b93d662c5d849fc36b0f94927f0440f2048"},
+    {file = "c2cwsgiutils-6.0.9-py3-none-any.whl", hash = "sha256:77e91d0bb74a62ab58b10e493b34a94e4a223dd33f35edef30d7b79d5424c374"},
+    {file = "c2cwsgiutils-6.0.9.tar.gz", hash = "sha256:f93ee7cb03a7d72cbb6699710963eb0d0cba25b0afae9a56ff5617b639b2b11d"},
 ]
 
 [package.dependencies]
 cee_syslog_handler = "*"
 certifi = "*"
+idna = "*"
 pillow = "*"
 pyyaml = "*"
 requests = "*"
 scipy = "*"
 ujson = "*"
 urllib3 = "*"
+webob = "*"
 
 [package.extras]
 alembic = ["alembic"]
@@ -901,7 +903,22 @@ h2 = ["h2 (>=4,<5)"]
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
+[[package]]
+name = "webob"
+version = "1.8.9"
+description = "WSGI request and response object"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+files = [
+    {file = "WebOb-1.8.9-py2.py3-none-any.whl", hash = "sha256:45e34c58ed0c7e2ecd238ffd34432487ff13d9ad459ddfd77895e67abba7c1f9"},
+    {file = "webob-1.8.9.tar.gz", hash = "sha256:ad6078e2edb6766d1334ec3dee072ac6a7f95b1e32ce10def8ff7f0f02d56589"},
+]
+
+[package.extras]
+docs = ["Sphinx (>=1.7.5)", "pylons-sphinx-themes"]
+testing = ["coverage", "pytest (>=3.1.0)", "pytest-cov", "pytest-xdist"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "3c763c5aca91f091a9c28231b70b38b69c6e775f9f412632ec774a9fee2e1f44"
+content-hash = "93e7e18359f29ffc203c01badb33d01aaec02f202a2cce697e9102a94b498a7f"
