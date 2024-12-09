@@ -23,3 +23,12 @@ def test_get_folder_map(connection_map):
     )
     assert [e.text for e in answer.findall(f"{ns}Service/{ns}Title")] == ["test"]
     assert [e.text for e in answer.findall(f".//{ns}Layer/{ns}Name")] == ["test", "polygons"]
+
+
+def test_lighttpd(connection_lighttpd):
+    ns = "{http://www.opengis.net/wms}"
+    answer = connection_lighttpd.get_xml(
+        "?MAP=/etc/mapserver/mapserver.map&SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0"
+    )
+    assert [e.text for e in answer.findall(f"{ns}Service/{ns}Title")] == ["test"]
+    assert [e.text for e in answer.findall(f".//{ns}Layer/{ns}Name")] == ["test", "polygons"]
