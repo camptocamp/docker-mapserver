@@ -1,5 +1,3 @@
-version: '2'
-
 volumes:
   tmp:
   logs:
@@ -60,7 +58,6 @@ services:
       MS_DEBUGLEVEL: '5'
       MAPSERVER_CATCH_SEGV: '1'
       MAPSERVER_CONFIG_FILE: /etc/mapserver/landingpage.conf
-      OGCAPI_HTML_TEMPLATE_DIRECTORY: /usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/
     links:
       - db
     # ports:
@@ -68,6 +65,33 @@ services:
     volumes:
       - ./config/mapserver/:/etc/mapserver
     user: www-data
+
+  mapserver-spawn-fcgi:
+    image: camptocamp/mapserver:${DOCKER_TAG}
+    environment:
+      SERVER: spawn-fcgi
+      MS_DEBUGLEVEL: '5'
+      MAPSERVER_CONFIG_FILE: /etc/mapserver/lighttpd.conf
+    read_only: true
+    links:
+      - db
+    volumes:
+      - ./config/mapserver/:/etc/mapserver
+      - tmp:/tmp
+      - logs:/var/log/
+    user: 12311:12311
+
+  mapserver-lighttpd:
+    image: camptocamp/mapserver:${DOCKER_TAG}
+    environment:
+      SERVER: lighttpd
+      LIGHTTPD_FASTCGI_HOST: mapserver-spawn-fcgi
+    read_only: true
+    links:
+      - db
+    # ports:
+    #   - 8385:8080
+    user: 12311:12311
 
   db:
     image: camptocamp/postgres:17-postgis-3

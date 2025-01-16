@@ -1,21 +1,35 @@
 #!/bin/bash -e
 
-# save the environment to be able to restore it in the FCGI daemon (used
-# in /usr/local/bin/qgis_mapsev_wrapper) for the startup code.
-${GET_ENV} | sed -e 's/^\([^=]*\)=.*/PassEnv \1/' > /tmp/pass-env
+if [[ "${SERVER}" == spawn-fcgi ]]; then
+    echo "Starting with spawn-fcgi"
+    # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
+    ${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
+    /usr/bin/spawn-fcgi -p "${LIGHTTPD_FASTCGI_PORT}" -n -- /usr/local/bin/mapserv_wrapper
+else
+    if [[ "${SERVER}" == lighttpd ]]; then
+        echo "Starting lighttpd"
+        exec lighttpd -D -f "${LIGHTTPD_CONF}"
+    else
+        echo "Starting with apache2"
 
-# Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
-${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
+        # save the environment to be able to restore it in the FCGI daemon (used
+        # in /usr/local/bin/qgis_mapsev_wrapper) for the startup code.
+        ${GET_ENV} | sed -e 's/^\([^=]*\)=.*/PassEnv \1/' > /tmp/pass-env
 
-if [ "${UID}" == 0 ]; then
-    echo "Switching listen port to 80"
-    cd /tmp
-    sed -i -e 's/<VirtualHost \*:8080>/<VirtualHost *:80>/' /etc/apache2/sites-available/000-default.conf
-    sed -i -e 's/Listen 8080$/Listen 80/' /etc/apache2/ports.conf
+        # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
+        ${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
+
+        if [[ "${UID}" == 0 ]]; then
+            echo "Switching listen port to 80"
+            cd /tmp
+            sed -i -e 's/<VirtualHost \*:8080>/<VirtualHost *:80>/' /etc/apache2/sites-available/000-default.conf
+            sed -i -e 's/Listen 8080$/Listen 80/' /etc/apache2/ports.conf
+        fi
+
+        trap '' WINCH
+
+        rm -f "${APACHE_PID_FILE}"
+
+        exec apache2 -DFOREGROUND
+    fi
 fi
-
-trap '' WINCH
-
-rm -f "${APACHE_PID_FILE}"
-
-exec apache2 -DFOREGROUND

@@ -1,4 +1,5 @@
 import pytest
+from c2cwsgiutils.acceptance.connection import CacheExpected
 from owslib.wms import WebMapService
 
 from .conftest import BASE_URL, BASE_URL_BASE_PATH
@@ -38,3 +39,17 @@ def test_capabilities_url(wms_url):
 def test_wms_polygon_layer_presence(wms_url):
     wms = WebMapService(wms_url)
     assert "polygons" in wms.contents, f"Layer 'polygons' not found in the WMS capabilities"
+
+
+def test_lighttpd(connection_lighttpd):
+    ns = "{http://www.opengis.net/wms}"
+    answer = connection_lighttpd.get_xml(
+        "?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0",
+        cache_expected=CacheExpected.DONT_CARE,
+        cors=False,
+    )
+    from lxml import etree
+
+    print(etree.tostring(answer, pretty_print=True).decode())
+    assert [e.text for e in answer.findall(f"{ns}Service/{ns}Title")] == ["test"]
+    assert [e.text for e in answer.findall(f".//{ns}Layer/{ns}Name")] == ["test", "polygons"]
