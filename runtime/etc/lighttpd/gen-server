@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+if [[ "${LIGHTTPD_FASTCGI_SOCKET}" == "" ]]; then
+    echo '
+fastcgi.server = ( "" =>
+    (
+        (
+            "host" => env.LIGHTTPD_FASTCGI_HOST,
+            "port" => env.LIGHTTPD_FASTCGI_PORT,
+            "check-local" => "disable",
+        ),
+    )
+)
+'
+else
+    echo 'fastcgi.server = ( "" =>
+    (
+        (
+            "socket" => env.LIGHTTPD_FASTCGI_SOCKET,
+            "check-local" => "disable",
+        ),
+    )
+)
+'
+fi

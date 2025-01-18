@@ -137,6 +137,7 @@ ENV MS_DEBUGLEVEL=0 \
     LIGHTTPD_PORT=8080 \
     LIGHTTPD_FASTCGI_HOST=spawn-fcgi \
     LIGHTTPD_FASTCGI_PORT=3000 \
+    LIGHTTPD_FASTCGI_SOCKET= \
     LIGHTTPD_ACCESSLOG_FORMAT="%h %V %u %t \"%r\" %>s %b"
 
 CMD ["/usr/local/bin/start-server"]

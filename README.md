@@ -9,7 +9,7 @@ Only tags for minor releases exist, not tag for bug fixes.
 If the container is run as root, apache listens on port `80`. If it is run as
 another user, it listens on port `8080`.
 
-## Tunings
+## Apache Tunings
 
 You can use the following environment variables (when starting the container)
 to tune it:
@@ -28,6 +28,27 @@ to tune it:
   read from or write to a FastCGI application (defaults to `40`)
 - `APACHE_LIMIT_REQUEST_LINE`: The maximum size of the HTTP request line in
   bytes (defaults to `8190`)
+
+## Lighttpd
+
+You can also use lighttpd as the web server.
+
+The main benefit of that is to have only one running process per container, that's useful especially on Kubernetes.
+
+For that you need tow containers, one for the MapServer and `spawn-fcgi`, and one for `lighttpd`.
+
+The environment variable needed by mapserver should be on the `spawn-fcgi` container.
+
+The MapServer logs will be available on the 'lighttpd' container.
+
+Used environment variables:
+
+- `LIGHTTPD_CONF`: The lighttpd configuration file (defaults to `/etc/lighttpd/lighttpd.conf`)
+- `LIGHTTPD_PORT`: The port lighttpd will listen on (defaults to `8080`)
+- `LIGHTTPD_FASTCGI_HOST`: The host of the FastCGI server (`spawn-fcgi`, defaults to `spawn-fcgi`)
+- `LIGHTTPD_FASTCGI_PORT`: The port of the FastCGI server (`spawn-fcgi`, defaults to `3000`)
+- `LIGHTTPD_FASTCGI_SOCKET`: The socket of the FastCGI server (defaults to `''`)
+- `LIGHTTPD_ACCESSLOG_FORMAT`: The format of the access log (defaults to `"%h %V %u %t \"%r\" %>s %b"`)
 
 ## Running multiple Mapfiles
 
