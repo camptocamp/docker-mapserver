@@ -4,10 +4,15 @@ if [[ "${SERVER}" == spawn-fcgi ]]; then
     echo "Starting with spawn-fcgi"
     # Save the environment to be able to restore it in the FCGI daemon (used in /usr/local/bin/mapserv_wrapper)
     ${GET_ENV} | sed -e 's/.\+/export "\0"/' > /tmp/init_env
-    /usr/bin/spawn-fcgi -p "${LIGHTTPD_FASTCGI_PORT}" -n -- /usr/local/bin/mapserv_wrapper
+    if [[ "${LIGHTTPD_FASTCGI_SOCKET}" == "" ]]; then
+        exec /usr/bin/spawn-fcgi -p "${LIGHTTPD_FASTCGI_PORT}" -n -- /usr/local/bin/mapserv_wrapper
+    else
+        exec /usr/bin/spawn-fcgi -s "${LIGHTTPD_FASTCGI_SOCKET}" -n -- /usr/local/bin/mapserv_wrapper
+    fi
 else
     if [[ "${SERVER}" == lighttpd ]]; then
         echo "Starting lighttpd"
+        lighttpd -tt -f "${LIGHTTPD_CONF}"
         exec lighttpd -D -f "${LIGHTTPD_CONF}"
     else
         echo "Starting with apache2"
