@@ -1,7 +1,3 @@
-volumes:
-  tmp:
-  logs:
-
 services:
   # Used to test the server using the MS_MAPFILE environment variable
   mapserver:
@@ -17,8 +13,6 @@ services:
     #   - 8380:8080
     volumes:
       - ./config/mapserver/:/etc/mapserver
-      - tmp:/tmp
-      - logs:/var/log/
     user: 12311:12311
 
   # Used to test the server using the MAP parameter of the query string
@@ -77,8 +71,6 @@ services:
       - db
     volumes:
       - ./config/mapserver/:/etc/mapserver
-      - tmp:/tmp
-      - logs:/var/log/
     user: 12311:12311
 
   mapserver-lighttpd:

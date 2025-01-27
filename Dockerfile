@@ -142,4 +142,6 @@ ENV MS_DEBUGLEVEL=0 \
 
 CMD ["/usr/local/bin/start-server"]
 
+VOLUME /tmp
+
 WORKDIR /etc/mapserver
