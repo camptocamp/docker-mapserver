@@ -59,12 +59,12 @@ jobs:
       - run: (cd acceptance_tests && c2cciutils-docker-logs)
         if: always()
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - run: make build
-        env:
-          DOCKER_BUILD_ARGS: --platform=linux/arm64
-          DOCKER_TAG: latest-arm64
+      #- name: Set up QEMU
+      #  uses: docker/setup-qemu-action@v3
+      #- run: make build
+      #  env:
+      #    DOCKER_BUILD_ARGS: --platform=linux/arm64
+      #    DOCKER_TAG: latest-arm64
 
       - name: Publish
         run: c2cciutils-publish
