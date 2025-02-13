@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/camptocamp/tag-publish/0.13.3/tag_publish/schema.json
+
+docker:
+  images:
+    - name: camptocamp/mapserver
+      tags:
+        - '{version}'
+        - '{version}-arm64'
+dispatch:
+  - {}
+version:
+  branch_to_version:
+    - from: ([0-9]+.[0-9]+-gdal[0-9]+.[0-9]+)
+      to: \1
+    - from: ([0-9]+.[0-9]+-ubuntu[0-9]+.[0-9]+)
+      to: \1
+    - from: master
+      to: master

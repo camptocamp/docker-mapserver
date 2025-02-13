@@ -22,10 +22,6 @@ repos:
     rev: 1.2.1
     hooks:
       - id: copyright
-      - id: poetry-check
-        additional_dependencies:
-          - poetry==2.0.1 # pypi
-        exclude: ^pyproject.toml$
       - id: poetry-lock
         additional_dependencies:
           - poetry==2.0.1 # pypi
@@ -60,9 +56,6 @@ repos:
         args:
           - --builtin-schema
           - github-workflows-require-timeout
-      - id: check-renovate
-        additional_dependencies:
-          - pyjson5==1.6.8 # pypi
   - repo: https://github.com/sirwart/ripsecrets
     rev: v0.1.8
     hooks:
@@ -89,7 +82,7 @@ repos:
     rev: 1.0.0
     hooks:
       - id: jsonschema-validator
-        files: ^ci/config\.yaml$
+        files: ^\.github/publish\.yaml$
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 39.156.0
     hooks:
