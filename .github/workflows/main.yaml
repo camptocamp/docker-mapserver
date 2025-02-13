@@ -16,7 +16,7 @@ jobs:
   main:
     name: Continuous integration
     runs-on: ubuntu-24.04
-    timeout-minutes: 40
+    timeout-minutes: 75
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
     steps:
@@ -60,7 +60,10 @@ jobs:
         if: always()
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v3.2.0
+        with:
+          image: docker.io/tonistiigi/binfmt:qemu-v6.2.0
+          platforms: arm64
       - run: make build
         env:
           DOCKER_BUILD_ARGS: --platform=linux/arm64
