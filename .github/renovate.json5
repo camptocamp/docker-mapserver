@@ -4,7 +4,7 @@
     'github>camptocamp/gs-renovate-config-preset:group.json5#0.8.0',
     'github>camptocamp/gs-renovate-config-preset:stabilization-branches.json5#0.8.0',
     'github>camptocamp/gs-renovate-config-preset:ci.json5#0.8.0',
-    'github>camptocamp/gs-renovate-config-preset:preset.json5#0.8.0',
+    'github>camptocamp/gs-renovate-config-preset:preset.json5#0.8.1',
     'github>camptocamp/gs-renovate-config-preset:pre-commit.json5#0.8.0',
     'github>camptocamp/gs-renovate-config-preset:docker.json5#0.8.0',
     'github>camptocamp/gs-renovate-config-preset:own.json5#0.8.0',
