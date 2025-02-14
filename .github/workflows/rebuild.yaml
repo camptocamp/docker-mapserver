@@ -8,7 +8,7 @@ jobs:
   rebuild:
     name: Rebuild
     runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    timeout-minutes: 75
 
     strategy:
       fail-fast: false
@@ -47,7 +47,10 @@ jobs:
         if: always()
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v3.2.0
+        with:
+          image: docker.io/tonistiigi/binfmt:qemu-v8.1.5
+          platforms: arm64
       - run: make build
         env:
           DOCKER_BUILD_ARGS: --platform=linux/arm64
