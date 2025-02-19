@@ -156,7 +156,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.18
   ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.12
-  ubuntu_22_04/libtasn1-6: 4.18.0-4build1
+  ubuntu_22_04/libtasn1-6: 4.18.0-4ubuntu0.1
   ubuntu_22_04/libthai-data: 0.1.29-1build1
   ubuntu_22_04/libthai0: 0.1.29-1build1
   ubuntu_22_04/libtiff5: 4.3.0-6ubuntu0.10
@@ -376,7 +376,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.18
   ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.12
-  ubuntu_22_04/libtasn1-6: 4.18.0-4build1
+  ubuntu_22_04/libtasn1-6: 4.18.0-4ubuntu0.1
   ubuntu_22_04/libthai-data: 0.1.29-1build1
   ubuntu_22_04/libthai0: 0.1.29-1build1
   ubuntu_22_04/libtiff5: 4.3.0-6ubuntu0.10
