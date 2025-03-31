@@ -409,13 +409,13 @@ files = [
 
 [[package]]
 name = "owslib"
-version = "0.32.1"
+version = "0.33.0"
 description = "OGC Web Service utility library"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "OWSLib-0.32.1-py2.py3-none-any.whl", hash = "sha256:79968b85bb920b8d5ff736ad5eb440157adadfdf40f585aad05040f6e10e61b5"},
-    {file = "OWSLib-0.32.1.tar.gz", hash = "sha256:339d499849a14b9c27eeebb67fbcfa52c2e7be82251750dab8b5721669cd1f04"},
+    {file = "owslib-0.33.0-py3-none-any.whl", hash = "sha256:bcfeb8527a601971e975c9196282ce9b330f6f1a0c6d5931131424206a98258e"},
+    {file = "owslib-0.33.0.tar.gz", hash = "sha256:261c76c1a1dd066b011cddac451e3f9a00d3328c7af90d5592c089b5fc590766"},
 ]
 
 [package.dependencies]
@@ -452,13 +452,13 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "pytest"
-version = "8.3.4"
+version = "8.3.5"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pytest-8.3.4-py3-none-any.whl", hash = "sha256:50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6"},
-    {file = "pytest-8.3.4.tar.gz", hash = "sha256:965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761"},
+    {file = "pytest-8.3.5-py3-none-any.whl", hash = "sha256:c69214aa47deac29fad6c2a4f590b9c4a9fdb16a403176fe154b79c0b4d4d820"},
+    {file = "pytest-8.3.5.tar.gz", hash = "sha256:f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"},
 ]
 
 [package.dependencies]
@@ -728,4 +728,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "9caac2ecd788f63f143cdf341127371884302d7230d357baf35037a3908e8524"
+content-hash = "93e3150403b532c66e2850cc5bba7f740b1d2d0020fe298ca3b29091d5626ca4"
