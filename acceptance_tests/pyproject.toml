@@ -24,11 +24,11 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-pytest = "8.3.4"
+pytest = "8.3.5"
 c2cwsgiutils = "6.1.7"
 boltons = "25.0.0"
 netifaces = "0.11.0"
 requests = "2.32.3"
 lxml = "5.3.1"
 certifi = "2025.1.31"
-OWSLib = "0.32.1"
+OWSLib = "0.33.0"
