@@ -26,6 +26,7 @@ repos:
         additional_dependencies:
           - poetry==2.1.2 # pypi
         exclude: ^pyproject.toml$
+      - id: canonicalize
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
