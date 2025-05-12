@@ -62,7 +62,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libdeflate0: 1.19-1build1.1
   ubuntu_24_04/libexpat1: 2.6.1-2ubuntu0.3
   ubuntu_24_04/libext2fs2t64: 1.47.0-2.4~exp1ubuntu4.1
-  ubuntu_24_04/libfcgi0t64: 2.4.2-2.1build1
+  ubuntu_24_04/libfcgi0t64: 2.4.2-2.1ubuntu0.24.04.1
   ubuntu_24_04/libffi8: 3.4.6-1build1
   ubuntu_24_04/libfontconfig1: 2.15.0-1.1ubuntu2
   ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1build3
@@ -280,7 +280,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libdeflate0: 1.19-1build1.1
   ubuntu_24_04/libexpat1: 2.6.1-2ubuntu0.3
   ubuntu_24_04/libext2fs2t64: 1.47.0-2.4~exp1ubuntu4.1
-  ubuntu_24_04/libfcgi0t64: 2.4.2-2.1build1
+  ubuntu_24_04/libfcgi0t64: 2.4.2-2.1ubuntu0.24.04.1
   ubuntu_24_04/libffi8: 3.4.6-1build1
   ubuntu_24_04/libfontconfig1: 2.15.0-1.1ubuntu2
   ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1build3
