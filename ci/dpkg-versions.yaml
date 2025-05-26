@@ -76,7 +76,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
   ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04
   ubuntu_22_04/libgif7: 5.1.9-2ubuntu0.1
-  ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.4
+  ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.5
   ubuntu_22_04/libgmp10: 2:6.2.1+dfsg-3ubuntu1
   ubuntu_22_04/libgnutls30: 3.7.3-4ubuntu1.6
   ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04
@@ -297,7 +297,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
   ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04
   ubuntu_22_04/libgif7: 5.1.9-2ubuntu0.1
-  ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.4
+  ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.5
   ubuntu_22_04/libgmp10: 2:6.2.1+dfsg-3ubuntu1
   ubuntu_22_04/libgnutls30: 3.7.3-4ubuntu1.6
   ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04
