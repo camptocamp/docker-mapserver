@@ -16,9 +16,9 @@ def test_get_map(connection):
     answer = connection.get_raw(
         "?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=polygons&STYLES=&CRS=EPSG:4326&BBOX=-180,-90,180,90&WIDTH=600&HEIGHT=300&FORMAT=image/png"
     )
-    assert (
-        answer.headers["content-type"] == "image/png"
-    ), f"{answer.headers['content-type']} != 'image/png'\n{answer.text}"
+    assert answer.headers["content-type"] == "image/png", (
+        f"{answer.headers['content-type']} != 'image/png'\n{answer.text}"
+    )
 
 
 def test_other_url(connection):
@@ -30,9 +30,9 @@ def test_other_url(connection):
 @pytest.mark.parametrize("wms_url", [BASE_URL, BASE_URL_BASE_PATH])
 def test_capabilities_url(wms_url):
     wms = WebMapService(wms_url)
-    assert (
-        wms.getOperationByName("GetMap").methods[0]["url"].startswith(wms_url)
-    ), f"url mismatch between requested PATH and Capabilities GET path"
+    assert wms.getOperationByName("GetMap").methods[0]["url"].startswith(wms_url), (
+        f"url mismatch between requested PATH and Capabilities GET path"
+    )
 
 
 @pytest.mark.parametrize("wms_url", [BASE_URL, BASE_URL_BASE_PATH])

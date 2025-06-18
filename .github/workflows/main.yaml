@@ -13,6 +13,7 @@ permissions:
   contents: write
   packages: write
 
+  id-token: write
 env:
   HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
 

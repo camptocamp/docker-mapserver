@@ -61,24 +61,6 @@ repos:
     rev: v0.1.9
     hooks:
       - id: ripsecrets
-  - repo: https://github.com/PyCQA/autoflake
-    rev: v2.3.1
-    hooks:
-      - id: autoflake
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.20.0
-    hooks:
-      - id: pyupgrade
-        args:
-          - --py39-plus
-  - repo: https://github.com/PyCQA/isort
-    rev: 6.0.1
-    hooks:
-      - id: isort
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
   - repo: https://github.com/sbrunner/jsonschema-validator
     rev: 1.0.0
     hooks:
@@ -88,3 +70,11 @@ repos:
     rev: 40.36.8
     hooks:
       - id: renovate-config-validator
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.8
+    hooks:
+      - id: ruff-format
+  - repo: https://github.com/sbrunner/python-versions-hook
+    rev: 1.0.0
+    hooks:
+      - id: python-versions
