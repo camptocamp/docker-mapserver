@@ -406,13 +406,13 @@ files = [
 
 [[package]]
 name = "owslib"
-version = "0.33.0"
+version = "0.34.1"
 description = "OGC Web Service utility library"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "owslib-0.33.0-py3-none-any.whl", hash = "sha256:bcfeb8527a601971e975c9196282ce9b330f6f1a0c6d5931131424206a98258e"},
-    {file = "owslib-0.33.0.tar.gz", hash = "sha256:261c76c1a1dd066b011cddac451e3f9a00d3328c7af90d5592c089b5fc590766"},
+    {file = "owslib-0.34.1-py3-none-any.whl", hash = "sha256:54ccde946f7732ac3be1408a35f9123ea9ffe794db2ef42d0d45294a5aa9e2f3"},
+    {file = "owslib-0.34.1.tar.gz", hash = "sha256:9c46d59dc03c753912fc3ef3136dbc843dad7572feb1af2cdf0fc5d1a0959028"},
 ]
 
 [package.dependencies]
@@ -448,26 +448,41 @@ dev = ["pre-commit", "tox"]
 testing = ["coverage", "pytest", "pytest-benchmark"]
 
 [[package]]
-name = "pytest"
-version = "8.3.5"
-description = "pytest: simple powerful testing with Python"
+name = "pygments"
+version = "2.19.2"
+description = "Pygments is a syntax highlighting package written in Python."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pytest-8.3.5-py3-none-any.whl", hash = "sha256:c69214aa47deac29fad6c2a4f590b9c4a9fdb16a403176fe154b79c0b4d4d820"},
-    {file = "pytest-8.3.5.tar.gz", hash = "sha256:f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"},
+    {file = "pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"},
+    {file = "pygments-2.19.2.tar.gz", hash = "sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"},
+]
+
+[package.extras]
+windows-terminal = ["colorama (>=0.4.6)"]
+
+[[package]]
+name = "pytest"
+version = "8.4.1"
+description = "pytest: simple powerful testing with Python"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "pytest-8.4.1-py3-none-any.whl", hash = "sha256:539c70ba6fcead8e78eebbf1115e8b589e7565830d7d006a8723f19ac8a0afb7"},
+    {file = "pytest-8.4.1.tar.gz", hash = "sha256:7c67fd69174877359ed9371ec3af8a3d2b04741818c51e5e99cc1742251fa93c"},
 ]
 
 [package.dependencies]
-colorama = {version = "*", markers = "sys_platform == \"win32\""}
-exceptiongroup = {version = ">=1.0.0rc8", markers = "python_version < \"3.11\""}
-iniconfig = "*"
-packaging = "*"
+colorama = {version = ">=0.4", markers = "sys_platform == \"win32\""}
+exceptiongroup = {version = ">=1", markers = "python_version < \"3.11\""}
+iniconfig = ">=1"
+packaging = ">=20"
 pluggy = ">=1.5,<2"
+pygments = ">=2.7.2"
 tomli = {version = ">=1", markers = "python_version < \"3.11\""}
 
 [package.extras]
-dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
+dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "requests", "setuptools", "xmlschema"]
 
 [[package]]
 name = "python-dateutil"
@@ -547,18 +562,18 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.32.3"
+version = "2.32.4"
 description = "Python HTTP for Humans."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "requests-2.32.3-py3-none-any.whl", hash = "sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6"},
-    {file = "requests-2.32.3.tar.gz", hash = "sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"},
+    {file = "requests-2.32.4-py3-none-any.whl", hash = "sha256:27babd3cda2a6d50b30443204ee89830707d396671944c998b5975b031ac2b2c"},
+    {file = "requests-2.32.4.tar.gz", hash = "sha256:27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"},
 ]
 
 [package.dependencies]
 certifi = ">=2017.4.17"
-charset-normalizer = ">=2,<4"
+charset_normalizer = ">=2,<4"
 idna = ">=2.5,<4"
 urllib3 = ">=1.21.1,<3"
 
@@ -736,4 +751,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "3a4d83ae52fa127b364df85765e94638409b6a98bdd4f165aff69e6b27f018bc"
+content-hash = "a4fb2bca1af719c84bb0517bdf5c6dd592c843aa4ff19dff4812df0950e4b252"
