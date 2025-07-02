@@ -26,7 +26,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu1
   ubuntu_24_04/gpgv: 2.4.4-2ubuntu17.2
   ubuntu_24_04/grep: 3.11-4build1
-  ubuntu_24_04/gzip: 1.12-1ubuntu3
+  ubuntu_24_04/gzip: 1.12-1ubuntu3.1
   ubuntu_24_04/hostname: 3.23+nmu2ubuntu2
   ubuntu_24_04/init-system-helpers: 1.66ubuntu1
   ubuntu_24_04/libacl1: 2.3.2-1build1.1
@@ -244,7 +244,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu1
   ubuntu_24_04/gpgv: 2.4.4-2ubuntu17.2
   ubuntu_24_04/grep: 3.11-4build1
-  ubuntu_24_04/gzip: 1.12-1ubuntu3
+  ubuntu_24_04/gzip: 1.12-1ubuntu3.1
   ubuntu_24_04/hostname: 3.23+nmu2ubuntu2
   ubuntu_24_04/init-system-helpers: 1.66ubuntu1
   ubuntu_24_04/libacl1: 2.3.2-1build1.1
