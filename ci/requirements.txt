@@ -1,3 +1,4 @@
 c2cciutils[checks,publish]==1.7.3
 pre-commit==4.1.0
 requests>=2.32.4 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
