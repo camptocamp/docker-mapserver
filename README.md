@@ -15,7 +15,7 @@ You can use the following environment variables (when starting the container)
 to tune it:
 
 - `MS_DEBUGLEVEL`: The debug level `0`=off `5`=verbose
-- `MS_ERRORFILE`: If you want the debug to something other than STDOUT
+- `MS_ERRORFILE`: Location of the logging/debug output (defaults to `stderr`)
 - `MAX_REQUESTS_PER_PROCESS`: To work around memory leaks (defaults to `1000`)
 - `MIN_PROCESSES`: The minimum number of fcgi processes to keep (defaults to `1`)
 - `MAX_PROCESSES`: The maximum number of fcgi processes to keep (defaults to `5`)
