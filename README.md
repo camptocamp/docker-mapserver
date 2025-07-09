@@ -35,7 +35,7 @@ You can also use lighttpd as the web server.
 
 The main benefit of that is to have only one running process per container, that's useful especially on Kubernetes.
 
-For that you need tow containers, one for the MapServer and `spawn-fcgi`, and one for `lighttpd`.
+For that you need two containers: one for the MapServer and `spawn-fcgi`, and one for `lighttpd`.
 
 The environment variable needed by mapserver should be on the `spawn-fcgi` container.
 
