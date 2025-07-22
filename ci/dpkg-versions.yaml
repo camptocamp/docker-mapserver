@@ -70,8 +70,8 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
-  ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.3
-  ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.3
+  ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.4
+  ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.4
   ubuntu_22_04/libgeos-c1v5: 3.10.2-1
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
   ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04
@@ -293,8 +293,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
-  ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.3
-  ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.3
+  ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.4
+  ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.4
   ubuntu_22_04/libgeos-c1v5: 3.10.2-1
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
   ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04
