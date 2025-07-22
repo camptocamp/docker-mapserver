@@ -72,8 +72,8 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libgcrypt20: 1.10.3-2build1
   ubuntu_24_04/libgdbm-compat4t64: 1.23-5.1build1
   ubuntu_24_04/libgdbm6t64: 1.23-5.1build1
-  ubuntu_24_04/libgdk-pixbuf-2.0-0: 2.42.10+dfsg-3ubuntu3.1
-  ubuntu_24_04/libgdk-pixbuf2.0-common: 2.42.10+dfsg-3ubuntu3.1
+  ubuntu_24_04/libgdk-pixbuf-2.0-0: 2.42.10+dfsg-3ubuntu3.2
+  ubuntu_24_04/libgdk-pixbuf2.0-common: 2.42.10+dfsg-3ubuntu3.2
   ubuntu_24_04/libgeos-c1t64: 3.12.1-3build1
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
@@ -290,8 +290,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libgcrypt20: 1.10.3-2build1
   ubuntu_24_04/libgdbm-compat4t64: 1.23-5.1build1
   ubuntu_24_04/libgdbm6t64: 1.23-5.1build1
-  ubuntu_24_04/libgdk-pixbuf-2.0-0: 2.42.10+dfsg-3ubuntu3.1
-  ubuntu_24_04/libgdk-pixbuf2.0-common: 2.42.10+dfsg-3ubuntu3.1
+  ubuntu_24_04/libgdk-pixbuf-2.0-0: 2.42.10+dfsg-3ubuntu3.2
+  ubuntu_24_04/libgdk-pixbuf2.0-common: 2.42.10+dfsg-3ubuntu3.2
   ubuntu_24_04/libgeos-c1t64: 3.12.1-3build1
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
