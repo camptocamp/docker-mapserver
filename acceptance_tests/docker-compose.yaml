@@ -54,8 +54,8 @@ services:
       MAPSERVER_CONFIG_FILE: /etc/mapserver/landingpage.conf
     links:
       - db
-    # ports:
-    #   - 8381:8080
+    ports:
+      - 8381:8080
     volumes:
       - ./config/mapserver/:/etc/mapserver
     user: www-data
@@ -78,6 +78,7 @@ services:
     environment:
       SERVER: lighttpd
       LIGHTTPD_FASTCGI_HOST: mapserver-spawn-fcgi
+      MAPSERVER_BASE_PATH: /mapserver
     read_only: true
     links:
       - db
