@@ -81,8 +81,8 @@ services:
     read_only: true
     links:
       - db
-    # ports:
-    #   - 8385:8080
+    ports:
+      - 8385:8080
     user: 12311:12311
 
   db:

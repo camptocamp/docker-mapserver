@@ -1,25 +1,40 @@
 #!/bin/bash -e
 
+# Set default base path if not provided
+MAPSERVER_BASE_PATH="${MAPSERVER_BASE_PATH:-/}"
+
+# Ensure base path starts with / and doesn't end with / (unless it's just "/")
+if [[ ! "${MAPSERVER_BASE_PATH}" =~ ^/ ]]; then
+    MAPSERVER_BASE_PATH="/${MAPSERVER_BASE_PATH}"
+fi
+
+if [[ "${MAPSERVER_BASE_PATH}" != "/" ]] && [[ "${MAPSERVER_BASE_PATH}" =~ /$ ]]; then
+    MAPSERVER_BASE_PATH="${MAPSERVER_BASE_PATH%/}"
+fi
+
 if [[ "${LIGHTTPD_FASTCGI_SOCKET}" == "" ]]; then
-    echo '
-fastcgi.server = ( "" =>
+    echo "
+fastcgi.server = ( \"${MAPSERVER_BASE_PATH}\" =>
     (
         (
-            "host" => env.LIGHTTPD_FASTCGI_HOST,
-            "port" => env.LIGHTTPD_FASTCGI_PORT,
-            "check-local" => "disable",
+            \"host\" => env.LIGHTTPD_FASTCGI_HOST,
+            \"port\" => env.LIGHTTPD_FASTCGI_PORT,
+            \"check-local\" => \"disable\",
+            \"fix-root-scriptname\" => \"enable\",
         ),
     )
 )
-'
+"
 else
-    echo 'fastcgi.server = ( "" =>
+    echo "
+fastcgi.server = ( \"${MAPSERVER_BASE_PATH}\" =>
     (
         (
-            "socket" => env.LIGHTTPD_FASTCGI_SOCKET,
-            "check-local" => "disable",
+            \"socket\" => env.LIGHTTPD_FASTCGI_SOCKET,
+            \"check-local\" => \"disable\",
+            \"fix-root-scriptname\" => \"enable\",
         ),
     )
 )
-'
+"
 fi
