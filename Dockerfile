@@ -39,6 +39,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
        cd /usr/local/lib && \
        (for i in /tmp/instantclient/*.zip; do bsdtar --strip-components=1 -xvf "$i"; done) && \
        ln -s libnnz19.so /usr/local/lib/libnnz18.so; \
+       chown -R root:root /usr/local/lib; \
      fi )
 
 WORKDIR /src/build
@@ -116,6 +117,9 @@ COPY --from=builder /usr/local/share/mapserver /usr/local/share/mapserver/
 COPY --from=builder /src/share/ogcapi/templates/html-bootstrap4 /usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/
 
 COPY runtime /
+
+# Oracle expects libaio.so.1
+RUN if test -f /usr/lib/x86_64-linux-gnu/libaio.so.1t64; then ln -s libaio.so.1t64 /usr/lib/x86_64-linux-gnu/libaio.so.1; fi
 
 RUN ldconfig
 
