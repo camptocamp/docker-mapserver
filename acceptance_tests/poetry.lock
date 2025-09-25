@@ -13,13 +13,13 @@ files = [
 
 [[package]]
 name = "c2cwsgiutils"
-version = "6.1.7"
+version = "6.1.8"
 description = "Common utilities for Camptocamp WSGI applications"
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "c2cwsgiutils-6.1.7-py3-none-any.whl", hash = "sha256:ca141a151a0dd19975f76aba91cac12c4a28aec69fb29cf665d8018d0ace6d61"},
-    {file = "c2cwsgiutils-6.1.7.tar.gz", hash = "sha256:21b43e9b476bc73540279817a2ad4eb69a08216f78c0cdecc4e5c979bf0795e4"},
+    {file = "c2cwsgiutils-6.1.8-py3-none-any.whl", hash = "sha256:c70b5ee20bc22f9279bdb2a263b0cadc2bd8b307cc6109964de43adcd0e87b5e"},
+    {file = "c2cwsgiutils-6.1.8.tar.gz", hash = "sha256:3652aec8ae6a967107a10e0f9869f222b89aa6bce1c12c04a6f7ae744539bf31"},
 ]
 
 [package.dependencies]
@@ -27,6 +27,7 @@ cee_syslog_handler = "*"
 pyyaml = "*"
 requests = "*"
 ujson = "*"
+urllib3 = "*"
 
 [package.extras]
 alembic = ["alembic"]
@@ -712,4 +713,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "db59a6c54cdc0b09268c466e8a5dc6868ef9f7c467652c2f499eabea1bb781e0"
+content-hash = "5fe329e3eb99070405d6578823157f58ce84ad0c563dd98f87a81e6b05dac178"
