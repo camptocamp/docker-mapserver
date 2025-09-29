@@ -159,7 +159,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libtasn1-6: 4.19.0-3ubuntu0.24.04.1
   ubuntu_24_04/libthai-data: 0.1.29-2build1
   ubuntu_24_04/libthai0: 0.1.29-2build1
-  ubuntu_24_04/libtiff6: 4.5.1+git230720-4ubuntu2.3
+  ubuntu_24_04/libtiff6: 4.5.1+git230720-4ubuntu2.4
   ubuntu_24_04/libtinfo6: 6.4+20240113-1ubuntu2
   ubuntu_24_04/libudev1: 255.4-1ubuntu8.10
   ubuntu_24_04/libunistring5: 1.1-2build1.1
@@ -377,7 +377,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libtasn1-6: 4.19.0-3ubuntu0.24.04.1
   ubuntu_24_04/libthai-data: 0.1.29-2build1
   ubuntu_24_04/libthai0: 0.1.29-2build1
-  ubuntu_24_04/libtiff6: 4.5.1+git230720-4ubuntu2.3
+  ubuntu_24_04/libtiff6: 4.5.1+git230720-4ubuntu2.4
   ubuntu_24_04/libtinfo6: 6.4+20240113-1ubuntu2
   ubuntu_24_04/libudev1: 255.4-1ubuntu8.10
   ubuntu_24_04/libunistring5: 1.1-2build1.1
