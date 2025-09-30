@@ -153,7 +153,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libsqlite3-0: 3.45.1-1ubuntu2.5
   ubuntu_24_04/libss2: 1.47.0-2.4~exp1ubuntu4.1
   ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.1
-  ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.5
+  ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.6
   ubuntu_24_04/libstdc++6: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libsystemd0: 255.4-1ubuntu8.10
   ubuntu_24_04/libtasn1-6: 4.19.0-3ubuntu0.24.04.1
@@ -190,7 +190,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/ncurses-base: 6.4+20240113-1ubuntu2
   ubuntu_24_04/ncurses-bin: 6.4+20240113-1ubuntu2
   ubuntu_24_04/netbase: '6.4'
-  ubuntu_24_04/openssl: 3.0.13-0ubuntu3.5
+  ubuntu_24_04/openssl: 3.0.13-0ubuntu3.6
   ubuntu_24_04/passwd: 1:4.13+dfsg1-4ubuntu3.2
   ubuntu_24_04/perl: 5.38.2-3.2ubuntu0.2
   ubuntu_24_04/perl-base: 5.38.2-3.2ubuntu0.2
@@ -371,7 +371,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libsqlite3-0: 3.45.1-1ubuntu2.5
   ubuntu_24_04/libss2: 1.47.0-2.4~exp1ubuntu4.1
   ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.1
-  ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.5
+  ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.6
   ubuntu_24_04/libstdc++6: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libsystemd0: 255.4-1ubuntu8.10
   ubuntu_24_04/libtasn1-6: 4.19.0-3ubuntu0.24.04.1
@@ -408,7 +408,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/ncurses-base: 6.4+20240113-1ubuntu2
   ubuntu_24_04/ncurses-bin: 6.4+20240113-1ubuntu2
   ubuntu_24_04/netbase: '6.4'
-  ubuntu_24_04/openssl: 3.0.13-0ubuntu3.5
+  ubuntu_24_04/openssl: 3.0.13-0ubuntu3.6
   ubuntu_24_04/passwd: 1:4.13+dfsg1-4ubuntu3.2
   ubuntu_24_04/perl: 5.38.2-3.2ubuntu0.2
   ubuntu_24_04/perl-base: 5.38.2-3.2ubuntu0.2
