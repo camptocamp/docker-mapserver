@@ -1,4 +1,4 @@
-FROM ghcr.io/osgeo/gdal:ubuntu-small-3.11.3 AS gdal
+FROM ghcr.io/osgeo/gdal:ubuntu-small-3.11.4 AS gdal
 
 FROM gdal AS builder
 LABEL maintainer="Camptocamp <info@camptocamp.com>"
