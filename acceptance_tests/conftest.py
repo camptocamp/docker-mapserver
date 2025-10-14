@@ -10,7 +10,7 @@ BASE_URL = "http://mapserver:8080"
 BASE_URL_MAP = "http://mapserver-map:8080"
 BASE_URL_OGCAPI = "http://mapserver-ogcapi:8080/mymap/ogcapi"
 BASE_URL_BASE_PATH = "http://mapserver-path:8080/this/is/a/test"
-BASE_URL_LIGHTTPD = "http://mapserver-lighttpd:8080"
+BASE_URL_LIGHTTPD = "http://mapserver-lighttpd:8080/mapserver/mymap"
 
 
 @pytest.fixture

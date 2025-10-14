@@ -7,7 +7,7 @@ def test_ogcapi(connection_ogcapi):
     # test if the url templating is correct in HTML document
     answer = connection_ogcapi.get_raw("collections/polygons?f=html")
     print(answer)
-    assert "http://mapserver-ogcapi:8080/mymap/ogcapi/collections/polygons/items?f=html" in answer.text
+    assert "http://localhost:8385/mapserver/mymap/ogcapi/collections/polygons/items?f=html" in answer.text
 
 
 def test_ogcapi_valid_feature():
