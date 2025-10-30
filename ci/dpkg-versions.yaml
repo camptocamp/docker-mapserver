@@ -152,7 +152,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libspatialite7: 5.0.1-2build2
   ubuntu_22_04/libsqlite3-0: 3.37.2-2ubuntu0.5
   ubuntu_22_04/libss2: 1.46.5-2ubuntu1.2
-  ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.4
+  ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.5
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.20
   ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.2
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.16
@@ -178,7 +178,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libxdmcp6: 1:1.1.3-0ubuntu5
   ubuntu_22_04/libxerces-c3.2: 3.2.3+debian-3ubuntu0.1
   ubuntu_22_04/libxext6: 2:1.3.4-1build1
-  ubuntu_22_04/libxml2: 2.9.13+dfsg-1ubuntu0.9
+  ubuntu_22_04/libxml2: 2.9.13+dfsg-1ubuntu0.10
   ubuntu_22_04/libxrender1: 1:0.9.10-1build4
   ubuntu_22_04/libxslt1.1: 1.1.34-4ubuntu0.22.04.4
   ubuntu_22_04/libxxhash0: 0.8.1-1
@@ -372,7 +372,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libspatialite7: 5.0.1-2build2
   ubuntu_22_04/libsqlite3-0: 3.37.2-2ubuntu0.5
   ubuntu_22_04/libss2: 1.46.5-2ubuntu1.2
-  ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.4
+  ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.5
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.20
   ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.2
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.16
@@ -398,7 +398,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libxdmcp6: 1:1.1.3-0ubuntu5
   ubuntu_22_04/libxerces-c3.2: 3.2.3+debian-3ubuntu0.1
   ubuntu_22_04/libxext6: 2:1.3.4-1build1
-  ubuntu_22_04/libxml2: 2.9.13+dfsg-1ubuntu0.9
+  ubuntu_22_04/libxml2: 2.9.13+dfsg-1ubuntu0.10
   ubuntu_22_04/libxrender1: 1:0.9.10-1build4
   ubuntu_22_04/libxslt1.1: 1.1.34-4ubuntu0.22.04.4
   ubuntu_22_04/libxxhash0: 0.8.1-1
