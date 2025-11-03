@@ -84,7 +84,7 @@ This image can be used to serve OGC API Features and OGC API Tiles.
 
 Some details about the configuration.
 
-You should define the `OGCAPI_HTML_TEMPLATE_DIRECTORY` generally to `/usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/`.
+You should define the `OGCAPI_HTML_TEMPLATE_DIRECTORY` generally to `/usr/local/share/mapserver/ogcapi/templates/html-bootstrap/`.
 
 If you want to serve MapServer on a subpath, you can use the `MAPSERVER_BASE_PATH` with the subpath.
 

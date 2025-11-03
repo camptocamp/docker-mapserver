@@ -114,7 +114,7 @@ EXPOSE 8080
 COPY --from=builder /usr/local/bin /usr/local/bin/
 COPY --from=builder /usr/local/lib /usr/local/lib/
 COPY --from=builder /usr/local/share/mapserver /usr/local/share/mapserver/
-COPY --from=builder /src/share/ogcapi/templates/html-bootstrap4 /usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/
+COPY --from=builder /src/share/ogcapi/templates/html-bootstrap /usr/local/share/mapserver/ogcapi/templates/html-bootstrap/
 
 COPY runtime /
 
@@ -127,7 +127,7 @@ ENV MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr \
     MAPSERVER_CONFIG_FILE=/etc/mapserver.conf \
     MAPSERVER_BASE_PATH= \
-    OGCAPI_HTML_TEMPLATE_DIRECTORY=/usr/local/share/mapserver/ogcapi/templates/html-bootstrap4/ \
+    OGCAPI_HTML_TEMPLATE_DIRECTORY=/usr/local/share/mapserver/ogcapi/templates/html-bootstrap/ \
     MAX_REQUESTS_PER_PROCESS=1000 \
     MIN_PROCESSES=1 \
     MAX_PROCESSES=5 \
