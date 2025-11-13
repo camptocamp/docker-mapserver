@@ -131,7 +131,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libproj25: 9.4.0-1build2
   ubuntu_24_04/libprotobuf-c1: 1.4.1-1ubuntu4
   ubuntu_24_04/libpsl5t64: 0.21.2-1.1build1
-  ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2
+  ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2.1
   ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.8
   ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.8
   ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.8
@@ -198,8 +198,8 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/procps: 2:4.0.4-4ubuntu3.2
   ubuntu_24_04/proj-data: 9.4.0-1build2
   ubuntu_24_04/python-is-python3: 3.11.4-1
-  ubuntu_24_04/python3: 3.12.3-0ubuntu2
-  ubuntu_24_04/python3-minimal: 3.12.3-0ubuntu2
+  ubuntu_24_04/python3: 3.12.3-0ubuntu2.1
+  ubuntu_24_04/python3-minimal: 3.12.3-0ubuntu2.1
   ubuntu_24_04/python3-numpy: 1:1.26.4+ds-6ubuntu1
   ubuntu_24_04/python3-pil: 10.2.0-1ubuntu1
   ubuntu_24_04/python3-pkg-resources: 68.1.2-2ubuntu1.2
@@ -349,7 +349,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libproj25: 9.4.0-1build2
   ubuntu_24_04/libprotobuf-c1: 1.4.1-1ubuntu4
   ubuntu_24_04/libpsl5t64: 0.21.2-1.1build1
-  ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2
+  ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2.1
   ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.8
   ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.8
   ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.8
@@ -416,8 +416,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/procps: 2:4.0.4-4ubuntu3.2
   ubuntu_24_04/proj-data: 9.4.0-1build2
   ubuntu_24_04/python-is-python3: 3.11.4-1
-  ubuntu_24_04/python3: 3.12.3-0ubuntu2
-  ubuntu_24_04/python3-minimal: 3.12.3-0ubuntu2
+  ubuntu_24_04/python3: 3.12.3-0ubuntu2.1
+  ubuntu_24_04/python3-minimal: 3.12.3-0ubuntu2.1
   ubuntu_24_04/python3-numpy: 1:1.26.4+ds-6ubuntu1
   ubuntu_24_04/python3-pil: 10.2.0-1ubuntu1
   ubuntu_24_04/python3-pkg-resources: 68.1.2-2ubuntu1.2
