@@ -104,7 +104,7 @@ RUN a2enmod fcgid headers status \
     s!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g; \
     ' '{}' ';' \
     && sed -ri 's!LogFormat "(.*)" combined!LogFormat "%{us}T %{X-Request-Id}i \1" combined!g' /etc/apache2/apache2.conf \
-    && echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' >> /etc/apache2/apache2.conf \
+    && echo 'ErrorLogFormat "%{X-Request-Id}i [%l] [pid %P] %M"' > /etc/apache2/conf-enabled/000-error-log-format.conf \
     && sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf \
     && sed -i -e 's/Listen 80$/Listen 8080/' /etc/apache2/ports.conf \
     && rm -rf /etc/apache2/conf-enabled/other-vhosts-access-log.conf
