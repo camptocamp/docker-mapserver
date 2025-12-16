@@ -59,14 +59,13 @@ MAP
         METADATA
             "wms_title" "test"
             "wms_abstract" "MapServer Docker test"
-            #"wms_onlineresource" "http://mapserver//mapserv"
             "wms_srs" "EPSG:4326"
             "wms_encoding" "UTF-8"
             "wms_enable_request" "*"
             "wfs_enable_request" "!*"
             "wfs_encoding" "UTF-8"
             "wfs_getfeature_formatlist" "gml,geojson"
-            "oga_onlineresource" "http://mapserver-ogcapi:8080/mymap/ogcapi"
+            "oga_onlineresource" "http://localhost:8385/mapserver/mymap/ogcapi"
             "ows_enable_request" "*"
         END
     END
