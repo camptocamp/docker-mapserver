@@ -103,6 +103,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/liblz4-1: 1.9.3-2build2
   ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1
   ubuntu_22_04/libmd0: 1.0.4-1build1
+  ubuntu_22_04/libmemcached11: 1.0.18-4.2ubuntu4
   ubuntu_22_04/libminizip1: 1.1-8build1
   ubuntu_22_04/libmount1: 2.37.2-4ubuntu3.4
   ubuntu_22_04/libmpdec3: 2.5.1-2build2
@@ -184,6 +185,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libxxhash0: 0.8.1-1
   ubuntu_22_04/libzstd1: 1.4.8+dfsg-3build1
   ubuntu_22_04/lighttpd: 1.4.63-1ubuntu3.1
+  ubuntu_22_04/lighttpd-modules-lua: 1.4.63-1ubuntu3.1
   ubuntu_22_04/login: 1:4.8.1-2ubuntu2.2
   ubuntu_22_04/logsave: 1.46.5-2ubuntu1.2
   ubuntu_22_04/lsb-base: 11.1.0ubuntu4
@@ -326,6 +328,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/liblz4-1: 1.9.3-2build2
   ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1
   ubuntu_22_04/libmd0: 1.0.4-1build1
+  ubuntu_22_04/libmemcached11: 1.0.18-4.2ubuntu4
   ubuntu_22_04/libminizip1: 1.1-8build1
   ubuntu_22_04/libmount1: 2.37.2-4ubuntu3.4
   ubuntu_22_04/libmpdec3: 2.5.1-2build2
@@ -406,6 +409,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libxxhash0: 0.8.1-1
   ubuntu_22_04/libzstd1: 1.4.8+dfsg-3build1
   ubuntu_22_04/lighttpd: 1.4.63-1ubuntu3.1
+  ubuntu_22_04/lighttpd-modules-lua: 1.4.63-1ubuntu3.1
   ubuntu_22_04/login: 1:4.8.1-2ubuntu2.2
   ubuntu_22_04/logsave: 1.46.5-2ubuntu1.2
   ubuntu_22_04/lsb-base: 11.1.0ubuntu4
