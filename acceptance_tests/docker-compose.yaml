@@ -86,9 +86,11 @@ services:
     environment:
       SERVER: lighttpd
       LIGHTTPD_FASTCGI_HOST: mapserver-spawn-fcgi
+      MAPSERVER_BASE_PATH: /mapserver
     read_only: true
     links:
       - db
+      - mapserver-spawn-fcgi
     # ports:
     #   - 8385:8080
     user: 12311:12311
