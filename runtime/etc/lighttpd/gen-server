@@ -13,7 +13,8 @@ fastcgi.server = ( "" =>
 )
 '
 else
-    echo 'fastcgi.server = ( "" =>
+    echo '
+fastcgi.server = ( "" =>
     (
         (
             "socket" => env.LIGHTTPD_FASTCGI_SOCKET,
