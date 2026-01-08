@@ -78,7 +78,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libgif7: 5.2.2-1ubuntu1
-  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.6
+  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.5
   ubuntu_24_04/libgmp10: 2:6.3.0+dfsg-2ubuntu6.1
   ubuntu_24_04/libgnutls30t64: 3.8.3-1.1ubuntu3.4
   ubuntu_24_04/libgomp1: 14.2.0-4ubuntu2~24.04
@@ -297,7 +297,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libgif7: 5.2.2-1ubuntu1
-  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.6
+  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.5
   ubuntu_24_04/libgmp10: 2:6.3.0+dfsg-2ubuntu6.1
   ubuntu_24_04/libgnutls30t64: 3.8.3-1.1ubuntu3.4
   ubuntu_24_04/libgomp1: 14.2.0-4ubuntu2~24.04
