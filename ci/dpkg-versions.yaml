@@ -1,9 +1,9 @@
 camptocamp/mapserver:latest:
   ubuntu_22_04/adduser: 3.118ubuntu5
-  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.16
+  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.18
   ubuntu_22_04/apt: 2.4.14
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
@@ -225,10 +225,10 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/util-linux: 2.37.2-4ubuntu3.4
 camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/adduser: 3.118ubuntu5
-  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.16
-  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.16
+  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.18
+  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.18
   ubuntu_22_04/apt: 2.4.14
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
