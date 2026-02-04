@@ -16,9 +16,11 @@
 | 8.0-gdal3.8     | Best effort     |                                                 | 8.0           | Version based on Ubuntu 22.04 |
 | 8.2             | 30/04/2029      | 02/09/2024                                      |               |                               |
 | 8.2-gdal3.8     | Best effort     |                                                 | 8.2           | Version based on Ubuntu 22.04 |
-| 8.4             | To be defined   | 01/15/2025                                      |               |                               |
+| 8.4             | To be defined   | 19/09/2025                                      |               |                               |
 | 8.4-gdal3.8     | Best effort     |                                                 |               | Version based on Ubuntu 22.04 |
-| 8.4-gdal3.10    | Best effort     |                                                 | 8.4, latest   | Version based on Ubuntu 24.04 |
+| 8.4-gdal3.10    | Best effort     |                                                 | 8.4           | Version based on Ubuntu 24.04 |
+| 8.6             | To be defined   | 03/12/2025                                      |               |                               |
+| 8.6-gdal3.12    | Best effort     |                                                 | 8.6, latest   | Version based on Ubuntu 24.04 |
 
 [Reporting Upstream Vulnerability](https://www.mapserver.org/development/bugs.html?highlight=security)
 
