@@ -46,8 +46,8 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libbrotli1: 1.1.0-2build2
   ubuntu_24_04/libbsd0: 0.12.1-1build1.1
   ubuntu_24_04/libbz2-1.0: 1.0.8-5.1build0.1
-  ubuntu_24_04/libc-bin: 2.39-0ubuntu8.6
-  ubuntu_24_04/libc6: 2.39-0ubuntu8.6
+  ubuntu_24_04/libc-bin: 2.39-0ubuntu8.7
+  ubuntu_24_04/libc6: 2.39-0ubuntu8.7
   ubuntu_24_04/libcairo-gobject2: 1.18.0-3build1
   ubuntu_24_04/libcairo2: 1.18.0-3build1
   ubuntu_24_04/libcap-ng0: 0.8.4-2build2
@@ -265,8 +265,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libbrotli1: 1.1.0-2build2
   ubuntu_24_04/libbsd0: 0.12.1-1build1.1
   ubuntu_24_04/libbz2-1.0: 1.0.8-5.1build0.1
-  ubuntu_24_04/libc-bin: 2.39-0ubuntu8.6
-  ubuntu_24_04/libc6: 2.39-0ubuntu8.6
+  ubuntu_24_04/libc-bin: 2.39-0ubuntu8.7
+  ubuntu_24_04/libc6: 2.39-0ubuntu8.7
   ubuntu_24_04/libcairo-gobject2: 1.18.0-3build1
   ubuntu_24_04/libcairo2: 1.18.0-3build1
   ubuntu_24_04/libcap-ng0: 0.8.4-2build2
