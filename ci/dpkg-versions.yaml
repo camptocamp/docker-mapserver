@@ -78,7 +78,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libgif7: 5.2.2-1ubuntu1
-  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.7
+  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.8
   ubuntu_24_04/libgmp10: 2:6.3.0+dfsg-2ubuntu6.1
   ubuntu_24_04/libgnutls30t64: 3.8.3-1.1ubuntu3.4
   ubuntu_24_04/libgomp1: 14.2.0-4ubuntu2~24.04
@@ -132,9 +132,9 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libprotobuf-c1: 1.4.1-1ubuntu4
   ubuntu_24_04/libpsl5t64: 0.21.2-1.1build1
   ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2.1
-  ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.10
+  ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.11
   ubuntu_24_04/libraqm0: 0.10.1-1build1
   ubuntu_24_04/libreadline8t64: 8.2-4build1
   ubuntu_24_04/librsvg2-2: 2.58.0+dfsg-1build1
@@ -204,8 +204,8 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/python3-numpy: 1:1.26.4+ds-6ubuntu1
   ubuntu_24_04/python3-pil: 10.2.0-1ubuntu1
   ubuntu_24_04/python3-pkg-resources: 68.1.2-2ubuntu1.2
-  ubuntu_24_04/python3.12: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/python3.12-minimal: 3.12.3-1ubuntu0.10
+  ubuntu_24_04/python3.12: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/python3.12-minimal: 3.12.3-1ubuntu0.11
   ubuntu_24_04/readline-common: 8.2-4build1
   ubuntu_24_04/sed: 4.9-2build1
   ubuntu_24_04/sensible-utils: 0.0.22
@@ -297,7 +297,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libgeos3.12.1t64: 3.12.1-3build1
   ubuntu_24_04/libgfortran5: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libgif7: 5.2.2-1ubuntu1
-  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.7
+  ubuntu_24_04/libglib2.0-0t64: 2.80.0-6ubuntu3.8
   ubuntu_24_04/libgmp10: 2:6.3.0+dfsg-2ubuntu6.1
   ubuntu_24_04/libgnutls30t64: 3.8.3-1.1ubuntu3.4
   ubuntu_24_04/libgomp1: 14.2.0-4ubuntu2~24.04
@@ -351,9 +351,9 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libprotobuf-c1: 1.4.1-1ubuntu4
   ubuntu_24_04/libpsl5t64: 0.21.2-1.1build1
   ubuntu_24_04/libpython3-stdlib: 3.12.3-0ubuntu2.1
-  ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.10
+  ubuntu_24_04/libpython3.12-minimal: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/libpython3.12-stdlib: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/libpython3.12t64: 3.12.3-1ubuntu0.11
   ubuntu_24_04/libraqm0: 0.10.1-1build1
   ubuntu_24_04/libreadline8t64: 8.2-4build1
   ubuntu_24_04/librsvg2-2: 2.58.0+dfsg-1build1
@@ -423,8 +423,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/python3-numpy: 1:1.26.4+ds-6ubuntu1
   ubuntu_24_04/python3-pil: 10.2.0-1ubuntu1
   ubuntu_24_04/python3-pkg-resources: 68.1.2-2ubuntu1.2
-  ubuntu_24_04/python3.12: 3.12.3-1ubuntu0.10
-  ubuntu_24_04/python3.12-minimal: 3.12.3-1ubuntu0.10
+  ubuntu_24_04/python3.12: 3.12.3-1ubuntu0.11
+  ubuntu_24_04/python3.12-minimal: 3.12.3-1ubuntu0.11
   ubuntu_24_04/readline-common: 8.2-4build1
   ubuntu_24_04/sed: 4.9-2build1
   ubuntu_24_04/sensible-utils: 0.0.22
