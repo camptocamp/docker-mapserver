@@ -14,10 +14,11 @@
     'github>camptocamp/gs-renovate-config-preset:security.json5#1.8.5',
   ],
   baseBranchPatterns: [
+    'master',
+    '7.6-ubuntu18.04',
     '7.6-gdal3.3',
     '7.6-gdal3.7',
     '7.6-gdal3.8',
-    '7.6-ubuntu18.04',
     '8.0-gdal3.6',
     '8.0-gdal3.7',
     '8.0-gdal3.8',
@@ -25,7 +26,6 @@
     '8.4-gdal3.8',
     '8.4-gdal3.10',
     '8.6-gdal3.12',
-    'master',
   ],
   packageRules: [
     /** Docker images versioning */
