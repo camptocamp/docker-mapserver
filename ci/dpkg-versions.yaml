@@ -125,7 +125,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libpcre2-posix3: 10.42-4ubuntu2.1
   ubuntu_24_04/libperl5.38t64: 5.38.2-3.2ubuntu0.2
   ubuntu_24_04/libpixman-1-0: 0.42.2-1build1
-  ubuntu_24_04/libpng16-16t64: 1.6.43-5ubuntu0.4
+  ubuntu_24_04/libpng16-16t64: 1.6.43-5ubuntu0.5
   ubuntu_24_04/libpq5: 16.11-0ubuntu0.24.04.1
   ubuntu_24_04/libproc2-0: 2:4.0.4-4ubuntu3.2
   ubuntu_24_04/libproj25: 9.4.0-1build2
@@ -344,7 +344,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libpcre2-posix3: 10.42-4ubuntu2.1
   ubuntu_24_04/libperl5.38t64: 5.38.2-3.2ubuntu0.2
   ubuntu_24_04/libpixman-1-0: 0.42.2-1build1
-  ubuntu_24_04/libpng16-16t64: 1.6.43-5ubuntu0.4
+  ubuntu_24_04/libpng16-16t64: 1.6.43-5ubuntu0.5
   ubuntu_24_04/libpq5: 16.11-0ubuntu0.24.04.1
   ubuntu_24_04/libproc2-0: 2:4.0.4-4ubuntu3.2
   ubuntu_24_04/libproj25: 9.4.0-1build2
