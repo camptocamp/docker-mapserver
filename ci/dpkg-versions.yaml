@@ -152,7 +152,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libspatialite8t64: 5.1.0-3build1
   ubuntu_24_04/libsqlite3-0: 3.45.1-1ubuntu2.5
   ubuntu_24_04/libss2: 1.47.0-2.4~exp1ubuntu4.1
-  ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.2
+  ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.3
   ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.7
   ubuntu_24_04/libstdc++6: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libsystemd0: 255.4-1ubuntu8.10
@@ -371,7 +371,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libspatialite8t64: 5.1.0-3build1
   ubuntu_24_04/libsqlite3-0: 3.45.1-1ubuntu2.5
   ubuntu_24_04/libss2: 1.47.0-2.4~exp1ubuntu4.1
-  ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.2
+  ubuntu_24_04/libssh-4: 0.10.6-2ubuntu0.3
   ubuntu_24_04/libssl3t64: 3.0.13-0ubuntu3.7
   ubuntu_24_04/libstdc++6: 14.2.0-4ubuntu2~24.04
   ubuntu_24_04/libsystemd0: 255.4-1ubuntu8.10
