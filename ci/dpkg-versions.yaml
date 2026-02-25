@@ -10,7 +10,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.4
   ubuntu_22_04/ca-certificates: 20240203~22.04.1
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.2
-  ubuntu_22_04/curl: 7.81.0-1ubuntu1.21
+  ubuntu_22_04/curl: 7.81.0-1ubuntu1.22
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
   ubuntu_22_04/debconf: 1.5.79ubuntu1
   ubuntu_22_04/debianutils: 5.5-1ubuntu2
@@ -21,7 +21,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/fontconfig: 2.13.1-4.2ubuntu5
   ubuntu_22_04/fontconfig-config: 2.13.1-4.2ubuntu5
   ubuntu_22_04/fonts-dejavu-core: 2.37-2build1
-  ubuntu_22_04/gcc-12-base: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/gcc-12-base: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu1
   ubuntu_22_04/gpgv: 2.2.27-3ubuntu2.5
   ubuntu_22_04/grep: 3.7-1build1
@@ -52,8 +52,8 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libcap2: 1:2.44-1ubuntu0.22.04.2
   ubuntu_22_04/libcom-err2: 1.46.5-2ubuntu1.2
   ubuntu_22_04/libcrypt1: 1:4.4.27-1
-  ubuntu_22_04/libcurl3-gnutls: 7.81.0-1ubuntu1.21
-  ubuntu_22_04/libcurl4: 7.81.0-1ubuntu1.21
+  ubuntu_22_04/libcurl3-gnutls: 7.81.0-1ubuntu1.22
+  ubuntu_22_04/libcurl4: 7.81.0-1ubuntu1.22
   ubuntu_22_04/libdatrie1: 0.2.13-2
   ubuntu_22_04/libdb5.3: 5.3.28+dfsg1-0.8ubuntu3
   ubuntu_22_04/libdebconfclient0: 0.261ubuntu1
@@ -66,7 +66,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libfreetype6: 2.11.1+dfsg-1ubuntu0.3
   ubuntu_22_04/libfreexl1: 1.0.6-1
   ubuntu_22_04/libfribidi0: 1.0.8-2ubuntu3.1
-  ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
@@ -74,12 +74,12 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.4
   ubuntu_22_04/libgeos-c1v5: 3.10.2-1
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
-  ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgif7: 5.1.9-2ubuntu0.1
   ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.9
   ubuntu_22_04/libgmp10: 2:6.2.1+dfsg-3ubuntu1
   ubuntu_22_04/libgnutls30: 3.7.3-4ubuntu1.8
-  ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgpg-error0: 1.43-3
   ubuntu_22_04/libgraphite2-3: 1.3.14-1build2
   ubuntu_22_04/libgssapi-krb5-2: 1.19.2-2ubuntu0.7
@@ -136,7 +136,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libpython3.10: 3.10.12-1~22.04.14
   ubuntu_22_04/libpython3.10-minimal: 3.10.12-1~22.04.14
   ubuntu_22_04/libpython3.10-stdlib: 3.10.12-1~22.04.14
-  ubuntu_22_04/libquadmath0: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libquadmath0: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libraqm0: 0.7.0-4ubuntu1
   ubuntu_22_04/libreadline8: 8.1.2-1
   ubuntu_22_04/librsvg2-2: 2.52.5+dfsg-3ubuntu0.2
@@ -155,7 +155,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libss2: 1.46.5-2ubuntu1.2
   ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.6
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.21
-  ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.16
   ubuntu_22_04/libtasn1-6: 4.18.0-4ubuntu0.2
   ubuntu_22_04/libthai-data: 0.1.29-1build1
@@ -235,7 +235,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.4
   ubuntu_22_04/ca-certificates: 20240203~22.04.1
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.2
-  ubuntu_22_04/curl: 7.81.0-1ubuntu1.21
+  ubuntu_22_04/curl: 7.81.0-1ubuntu1.22
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
   ubuntu_22_04/debconf: 1.5.79ubuntu1
   ubuntu_22_04/debianutils: 5.5-1ubuntu2
@@ -246,7 +246,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/fontconfig: 2.13.1-4.2ubuntu5
   ubuntu_22_04/fontconfig-config: 2.13.1-4.2ubuntu5
   ubuntu_22_04/fonts-dejavu-core: 2.37-2build1
-  ubuntu_22_04/gcc-12-base: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/gcc-12-base: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu1
   ubuntu_22_04/gpgv: 2.2.27-3ubuntu2.5
   ubuntu_22_04/grep: 3.7-1build1
@@ -277,8 +277,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libcap2: 1:2.44-1ubuntu0.22.04.2
   ubuntu_22_04/libcom-err2: 1.46.5-2ubuntu1.2
   ubuntu_22_04/libcrypt1: 1:4.4.27-1
-  ubuntu_22_04/libcurl3-gnutls: 7.81.0-1ubuntu1.21
-  ubuntu_22_04/libcurl4: 7.81.0-1ubuntu1.21
+  ubuntu_22_04/libcurl3-gnutls: 7.81.0-1ubuntu1.22
+  ubuntu_22_04/libcurl4: 7.81.0-1ubuntu1.22
   ubuntu_22_04/libdatrie1: 0.2.13-2
   ubuntu_22_04/libdb5.3: 5.3.28+dfsg1-0.8ubuntu3
   ubuntu_22_04/libdebconfclient0: 0.261ubuntu1
@@ -291,7 +291,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libfreetype6: 2.11.1+dfsg-1ubuntu0.3
   ubuntu_22_04/libfreexl1: 1.0.6-1
   ubuntu_22_04/libfribidi0: 1.0.8-2ubuntu3.1
-  ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
@@ -299,12 +299,12 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libgdk-pixbuf2.0-common: 2.42.8+dfsg-1ubuntu0.4
   ubuntu_22_04/libgeos-c1v5: 3.10.2-1
   ubuntu_22_04/libgeos3.10.2: 3.10.2-1
-  ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgfortran5: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgif7: 5.1.9-2ubuntu0.1
   ubuntu_22_04/libglib2.0-0: 2.72.4-0ubuntu2.9
   ubuntu_22_04/libgmp10: 2:6.2.1+dfsg-3ubuntu1
   ubuntu_22_04/libgnutls30: 3.7.3-4ubuntu1.8
-  ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libgomp1: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libgpg-error0: 1.43-3
   ubuntu_22_04/libgraphite2-3: 1.3.14-1build2
   ubuntu_22_04/libgssapi-krb5-2: 1.19.2-2ubuntu0.7
@@ -379,7 +379,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libss2: 1.46.5-2ubuntu1.2
   ubuntu_22_04/libssh-4: 0.9.6-2ubuntu0.22.04.6
   ubuntu_22_04/libssl3: 3.0.2-0ubuntu1.21
-  ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.2
+  ubuntu_22_04/libstdc++6: 12.3.0-1ubuntu1~22.04.3
   ubuntu_22_04/libsystemd0: 249.11-0ubuntu3.16
   ubuntu_22_04/libtasn1-6: 4.18.0-4ubuntu0.2
   ubuntu_22_04/libthai-data: 0.1.29-1build1
