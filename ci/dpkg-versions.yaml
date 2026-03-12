@@ -65,7 +65,7 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libfcgi0t64: 2.4.2-2.1ubuntu0.24.04.1
   ubuntu_24_04/libffi8: 3.4.6-1build1
   ubuntu_24_04/libfontconfig1: 2.15.0-1.1ubuntu2
-  ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1build3
+  ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1ubuntu0.1
   ubuntu_24_04/libfreexl1: 2.0.0-1build2
   ubuntu_24_04/libfribidi0: 1.0.13-3build1
   ubuntu_24_04/libgcc-s1: 14.2.0-4ubuntu2~24.04.1
@@ -284,7 +284,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libfcgi0t64: 2.4.2-2.1ubuntu0.24.04.1
   ubuntu_24_04/libffi8: 3.4.6-1build1
   ubuntu_24_04/libfontconfig1: 2.15.0-1.1ubuntu2
-  ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1build3
+  ubuntu_24_04/libfreetype6: 2.13.2+dfsg-1ubuntu0.1
   ubuntu_24_04/libfreexl1: 2.0.0-1build2
   ubuntu_24_04/libfribidi0: 1.0.13-3build1
   ubuntu_24_04/libgcc-s1: 14.2.0-4ubuntu2~24.04.1
