@@ -28,7 +28,7 @@ repos:
         exclude: ^pyproject.toml$
       - id: canonicalize
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
+    rev: v2.4.2
     hooks:
       - id: codespell
         exclude: |-
@@ -67,11 +67,11 @@ repos:
       - id: jsonschema-validator
         files: ^\.github/publish\.yaml$
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 43.46.5
+    rev: 43.89.4
     hooks:
       - id: renovate-config-validator
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.4
+    rev: v0.15.7
     hooks:
       - id: ruff-format
   - repo: https://github.com/sbrunner/python-versions-hook
