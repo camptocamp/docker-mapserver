@@ -67,11 +67,11 @@ repos:
       - id: jsonschema-validator
         files: ^\.github/publish\.yaml$
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 43.141.1
+    rev: 43.141.2
     hooks:
       - id: renovate-config-validator
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.11
+    rev: v0.15.12
     hooks:
       - id: ruff-format
   - repo: https://github.com/sbrunner/python-versions-hook
