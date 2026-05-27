@@ -67,7 +67,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libfreexl1: 1.0.6-1
   ubuntu_22_04/libfribidi0: 1.0.8-2ubuntu3.1
   ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.3
-  ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
+  ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3.2
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
   ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.5
@@ -288,7 +288,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libfreexl1: 1.0.6-1
   ubuntu_22_04/libfribidi0: 1.0.8-2ubuntu3.1
   ubuntu_22_04/libgcc-s1: 12.3.0-1ubuntu1~22.04.3
-  ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3
+  ubuntu_22_04/libgcrypt20: 1.9.4-3ubuntu3.2
   ubuntu_22_04/libgdbm-compat4: 1.23-1
   ubuntu_22_04/libgdbm6: 1.23-1
   ubuntu_22_04/libgdk-pixbuf-2.0-0: 2.42.8+dfsg-1ubuntu0.5
