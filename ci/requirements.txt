@@ -9,3 +9,4 @@ cryptography>=42.0.2 # not directly required, pinned by Snyk to avoid a vulnerab
 idna>=3.7 # not directly required, pinned by Snyk to avoid a vulnerability
 markdown>=3.8.1 # not directly required, pinned by Snyk to avoid a vulnerability
 virtualenv>=20.36.1 # not directly required, pinned by Snyk to avoid a vulnerability
+pip>=26.1.2 # not directly required, pinned by Snyk to avoid a vulnerability
