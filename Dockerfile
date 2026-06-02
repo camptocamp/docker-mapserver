@@ -13,8 +13,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
         cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
         libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
-        clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
-    && ln -s /usr/lib/*-linux-gnu/libproj.so.*[0] $(echo /usr/lib/*-linux-gnu)/libproj.so
+        clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev
 
 ARG MAPSERVER_BRANCH
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
@@ -61,6 +60,8 @@ RUN if test "${WITH_ORACLE}" = "ON"; then \
     -DWITH_CAIRO=1 \
     -DWITH_RSVG=1 \
     -DUSE_PROJ=1 \
+    -DPROJ_INCLUDE_DIR=/usr/local/gdal-internal/include \
+    -DPROJ_LIBRARY=/usr/local/gdal-internal/lib/libinternalproj.so \
     -DUSE_WFS_SVR=1 \
     -DUSE_OGCAPI_SVR=1 \
     -DWITH_ORACLESPATIAL=${WITH_ORACLE}
