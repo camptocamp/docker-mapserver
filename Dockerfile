@@ -122,6 +122,9 @@ COPY runtime /
 # Oracle expects libaio.so.1
 RUN if test -f /usr/lib/x86_64-linux-gnu/libaio.so.1t64; then ln -s libaio.so.1t64 /usr/lib/x86_64-linux-gnu/libaio.so.1; fi
 
+# proj-data is at /usr/share/proj, but some configs expect /usr/local/share/proj
+RUN ln -s /usr/share/proj /usr/local/share/proj
+
 RUN ldconfig
 
 ENV MS_DEBUGLEVEL=0 \
