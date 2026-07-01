@@ -28,7 +28,7 @@ jobs:
       # Versions
       - run: docker system prune --all --force
       - run: docker --version
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - uses: camptocamp/initialise-gopass-summon-action@v2
         with:
@@ -44,7 +44,7 @@ jobs:
       - name: Print environment information
         run: c2cciutils-env
 
-      - uses: actions/cache@v5
+      - uses: actions/cache@2c8a9bd7457de244a408f35966fab2fb45fda9c8 # v6.0.0
         with:
           path: ~/.cache/pre-commit
           key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
