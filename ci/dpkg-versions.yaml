@@ -114,10 +114,10 @@ camptocamp/mapserver:latest:
   ubuntu_24_04/libnpth0t64: 1.6-3.1build1
   ubuntu_24_04/libopenjp2-7: 2.5.0-2ubuntu0.5
   ubuntu_24_04/libp11-kit0: 0.25.3-4ubuntu2.1
-  ubuntu_24_04/libpam-modules: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam-modules-bin: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam-runtime: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam0g: 1.5.3-5ubuntu5.5
+  ubuntu_24_04/libpam-modules: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam-modules-bin: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam-runtime: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam0g: 1.5.3-5ubuntu5.6
   ubuntu_24_04/libpango-1.0-0: 1.52.1+ds-1build1
   ubuntu_24_04/libpangocairo-1.0-0: 1.52.1+ds-1build1
   ubuntu_24_04/libpangoft2-1.0-0: 1.52.1+ds-1build1
@@ -333,10 +333,10 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_24_04/libnpth0t64: 1.6-3.1build1
   ubuntu_24_04/libopenjp2-7: 2.5.0-2ubuntu0.5
   ubuntu_24_04/libp11-kit0: 0.25.3-4ubuntu2.1
-  ubuntu_24_04/libpam-modules: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam-modules-bin: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam-runtime: 1.5.3-5ubuntu5.5
-  ubuntu_24_04/libpam0g: 1.5.3-5ubuntu5.5
+  ubuntu_24_04/libpam-modules: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam-modules-bin: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam-runtime: 1.5.3-5ubuntu5.6
+  ubuntu_24_04/libpam0g: 1.5.3-5ubuntu5.6
   ubuntu_24_04/libpango-1.0-0: 1.52.1+ds-1build1
   ubuntu_24_04/libpangocairo-1.0-0: 1.52.1+ds-1build1
   ubuntu_24_04/libpangoft2-1.0-0: 1.52.1+ds-1build1
