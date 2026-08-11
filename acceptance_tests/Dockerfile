@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS base-all
+FROM ubuntu:26.04 AS base-all
 LABEL org.opencontainers.image.authors="Camptocamp <info@camptocamp.com>"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
@@ -38,7 +38,7 @@ WORKDIR /tmp
 
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,from=poetry,source=/tmp,target=/poetry \
-    python3 -m pip install --disable-pip-version-check --no-deps --requirement=/poetry/requirements.txt
+    python3 -m pip install --disable-pip-version-check --ignore-installed --no-deps --requirement=/poetry/requirements.txt
 
 WORKDIR /acceptance_tests
 COPY . ./
