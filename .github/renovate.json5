@@ -34,7 +34,7 @@
       versioning: 'loose',
     },
     {
-      matchFiles: ['acceptance_tests/Dockerfile'],
+      matchFileNames: ['acceptance_tests/Dockerfile'],
       matchDatasources: ['docker'],
       versioning: 'ubuntu',
     },
