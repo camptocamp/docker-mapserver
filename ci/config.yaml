@@ -8,14 +8,3 @@ version:
       to: \1
     - from: master
       to: master
-
-publish:
-  pypi:
-    packages: []
-  docker:
-    dispatch: {}
-    images:
-      - name: camptocamp/mapserver
-        tags:
-          - '{version}'
-          - '{version}-arm64'
