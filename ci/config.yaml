@@ -15,10 +15,3 @@ version:
       to: \1
     - from: master
       to: master
-
-publish:
-  pypi:
-    packages: []
-  docker:
-    images:
-      - name: camptocamp/mapserver
