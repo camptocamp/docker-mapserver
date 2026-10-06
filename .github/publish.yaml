@@ -19,6 +19,3 @@ docker:
         - tag
         - default_branch
         - stabilization_branch
-
-dispatch:
-  - {}
