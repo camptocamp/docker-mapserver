@@ -9,6 +9,11 @@ on:
       - '*'
   pull_request:
 
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
 env:
   HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
 
@@ -25,7 +30,7 @@ jobs:
       - run: docker --version
       - uses: actions/checkout@v4
 
-      - uses: camptocamp/initialise-gopass-summon-action@17703c87720ba3766abc90da60b437783b530d93 # v2.0.1
+      - uses: camptocamp/initialise-gopass-summon-action@17703c87720ba3766abc90da60b437783b530d93 # v2
         with:
           ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
           github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
@@ -70,7 +75,9 @@ jobs:
           DOCKER_TAG: latest-arm64
 
       - name: Publish
-        run: c2cciutils-publish
+        run: tag-publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: env.HAS_SECRETS == 'HAS_SECRETS'
       - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch || true
         if: failure()
