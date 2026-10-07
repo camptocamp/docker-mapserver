@@ -1,6 +1,6 @@
 DOCKER_TAG ?= latest
 export DOCKER_TAG
-MAPSERVER_BRANCH ?= main
+MAPSERVER_BRANCH ?= branch-8-6
 WITH_ORACLE ?= OFF
 DOCKER_IMAGE ?= camptocamp/mapserver
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
