@@ -1,21 +1,21 @@
 camptocamp/mapserver:latest:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.1
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.4
   ubuntu_26_04/apt: 3.2.0
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
   ubuntu_26_04/bash-completion: 1:2.16.0-8build1
-  ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2
-  ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.1
-  ubuntu_26_04/ca-certificates: '20260223'
+  ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2.2
+  ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.3
+  ubuntu_26_04/ca-certificates: 20260601~26.04.1
   ubuntu_26_04/coreutils: 9.5-1ubuntu2+0.0.0~ubuntu25
   ubuntu_26_04/coreutils-from-uutils: 0.0.0~ubuntu25
   ubuntu_26_04/dash: 0.5.12-12ubuntu3
   ubuntu_26_04/debconf: 1.5.92
   ubuntu_26_04/debianutils: 5.23.2build1
-  ubuntu_26_04/diffutils: 1:3.12-1
+  ubuntu_26_04/diffutils: 1:3.12-1ubuntu0.1
   ubuntu_26_04/dpkg: 1.23.7ubuntu1
   ubuntu_26_04/e2fsprogs: 1.47.2-3ubuntu4
   ubuntu_26_04/findutils: 4.10.0-3build2
@@ -27,55 +27,55 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu2
   ubuntu_26_04/glycin-loaders: 2.1.1+ds-0ubuntu1
   ubuntu_26_04/glycin-thumbnailers: 2.1.1+ds-0ubuntu1
-  ubuntu_26_04/gnu-coreutils: 9.7-3ubuntu2
-  ubuntu_26_04/gpgv: 2.4.8-4ubuntu3
+  ubuntu_26_04/gnu-coreutils: 9.7-3ubuntu2.1
+  ubuntu_26_04/gpgv: 2.4.8-4ubuntu3.1
   ubuntu_26_04/grep: 3.12-1
-  ubuntu_26_04/gzip: 1.14-1~exp2ubuntu1
+  ubuntu_26_04/gzip: 1.14-1~exp2ubuntu1.1
   ubuntu_26_04/hostname: 3.25build1
   ubuntu_26_04/init-system-helpers: '1.69'
   ubuntu_26_04/libacl1: 2.3.2-2
   ubuntu_26_04/libaio1t64: 0.3.113-8build1
-  ubuntu_26_04/libaom3: 3.13.1-2
+  ubuntu_26_04/libaom3: 3.13.1-2ubuntu0.1
   ubuntu_26_04/libapache2-mod-fcgid: 1:2.3.9-4build1
   ubuntu_26_04/libapr1t64: 1.7.6-3
-  ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3
-  ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3
-  ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3
+  ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3.1
+  ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3.1
+  ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libapt-pkg7.0: 3.2.0
   ubuntu_26_04/libatomic1: 16-20260322-1ubuntu1
-  ubuntu_26_04/libattr1: 1:2.5.2-4
+  ubuntu_26_04/libattr1: 1:2.5.2-4ubuntu0.1
   ubuntu_26_04/libaudit-common: 1:4.1.2-1build1
   ubuntu_26_04/libaudit1: 1:4.1.2-1build1
   ubuntu_26_04/libblas3: 3.12.1-7ubuntu1
-  ubuntu_26_04/libblkid1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libblkid1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libbrotli1: 1.2.0-3build1
   ubuntu_26_04/libbsd0: 0.12.2-2build2
-  ubuntu_26_04/libbz2-1.0: 1.0.8-6build2
-  ubuntu_26_04/libc-bin: 2.43-2ubuntu2
-  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2
-  ubuntu_26_04/libc6: 2.43-2ubuntu2
+  ubuntu_26_04/libbz2-1.0: 1.0.8-6ubuntu0.1
+  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc6: 2.43-2ubuntu2.4
   ubuntu_26_04/libcairo-gobject2: 1.18.4-3
   ubuntu_26_04/libcairo2: 1.18.4-3
   ubuntu_26_04/libcap-ng0: 0.8.5-4build5
   ubuntu_26_04/libcap2: 1:2.75-10ubuntu2
   ubuntu_26_04/libcom-err2: 1.47.2-3ubuntu4
   ubuntu_26_04/libcrypt1: 1:4.5.1-1
-  ubuntu_26_04/libcurl3t64-gnutls: 8.18.0-1ubuntu2.1
-  ubuntu_26_04/libcurl4t64: 8.18.0-1ubuntu2.1
+  ubuntu_26_04/libcurl3t64-gnutls: 8.18.0-1ubuntu2.7
+  ubuntu_26_04/libcurl4t64: 8.18.0-1ubuntu2.7
   ubuntu_26_04/libdatrie1: 0.2.14-1
   ubuntu_26_04/libdb5.3t64: 5.3.28+dfsg2-10ubuntu1
   ubuntu_26_04/libdebconfclient0: 0.280ubuntu1
   ubuntu_26_04/libdeflate0: 1.23-2ubuntu1
-  ubuntu_26_04/libexpat1: 2.7.4-1
+  ubuntu_26_04/libexpat1: 2.7.4-1ubuntu0.2
   ubuntu_26_04/libext2fs2t64: 1.47.2-3ubuntu4
   ubuntu_26_04/libfcgi0t64: 2.4.5-0.1build2
   ubuntu_26_04/libffi8: 3.5.2-4
   ubuntu_26_04/libfontconfig1: 2.17.1-3ubuntu1
-  ubuntu_26_04/libfreetype6: 2.14.2+dfsg-1
+  ubuntu_26_04/libfreetype6: 2.14.2+dfsg-1ubuntu0.2
   ubuntu_26_04/libfreexl1: 2.0.0-1build3
   ubuntu_26_04/libfribidi0: 1.0.16-5
   ubuntu_26_04/libgcc-s1: 16-20260322-1ubuntu1
-  ubuntu_26_04/libgcrypt20: 1.12.0-2ubuntu0.1
+  ubuntu_26_04/libgcrypt20: 1.12.0-2ubuntu1.1
   ubuntu_26_04/libgdbm-compat4t64: 1.26-1build1
   ubuntu_26_04/libgdbm6t64: 1.26-1build1
   ubuntu_26_04/libgdk-pixbuf-2.0-0: 2.44.5+dfsg-4ubuntu1
@@ -83,18 +83,18 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libgeos-c1t64: 3.14.1-2
   ubuntu_26_04/libgeos3.14.1: 3.14.1-2
   ubuntu_26_04/libgfortran5: 16-20260322-1ubuntu1
-  ubuntu_26_04/libgif7: 5.2.2-1ubuntu3
-  ubuntu_26_04/libglib2.0-0t64: 2.88.0-1
+  ubuntu_26_04/libgif7: 5.2.2-1ubuntu3.2
+  ubuntu_26_04/libglib2.0-0t64: 2.88.0-1ubuntu0.1
   ubuntu_26_04/libglycin-2-0: 2.1.1+ds-0ubuntu1
   ubuntu_26_04/libgmp10: 2:6.3.0+dfsg-5ubuntu2
   ubuntu_26_04/libgnutls30t64: 3.8.12-2ubuntu1.1
   ubuntu_26_04/libgomp1: 16-20260322-1ubuntu1
   ubuntu_26_04/libgpg-error0: 1.58-2
-  ubuntu_26_04/libgraphite2-3: 1.3.14-11ubuntu1
-  ubuntu_26_04/libgssapi-krb5-2: 1.22.1-2ubuntu4
+  ubuntu_26_04/libgraphite2-3: 1.3.14-11ubuntu1.1
+  ubuntu_26_04/libgssapi-krb5-2: 1.22.1-2ubuntu4.1
   ubuntu_26_04/libharfbuzz0b: 12.3.2-2
-  ubuntu_26_04/libheif-plugin-aomdec: 1.21.2-3
-  ubuntu_26_04/libheif1: 1.21.2-3
+  ubuntu_26_04/libheif-plugin-aomdec: 1.21.2-3ubuntu0.6
+  ubuntu_26_04/libheif1: 1.21.2-3ubuntu0.6
   ubuntu_26_04/libhogweed6t64: 3.10.2-1
   ubuntu_26_04/libhwy1t64: 1.3.0-2
   ubuntu_26_04/libicu78: 78.2-2ubuntu1
@@ -103,11 +103,11 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libjbig0: 2.1-6.1ubuntu3
   ubuntu_26_04/libjpeg-turbo8: 2.1.5-4ubuntu4
   ubuntu_26_04/libjpeg8: 8c-2ubuntu12
-  ubuntu_26_04/libjxl0.11: 0.11.1-6ubuntu4
-  ubuntu_26_04/libk5crypto3: 1.22.1-2ubuntu4
+  ubuntu_26_04/libjxl0.11: 0.11.1-6ubuntu4.2
+  ubuntu_26_04/libk5crypto3: 1.22.1-2ubuntu4.1
   ubuntu_26_04/libkeyutils1: 1.6.3-6ubuntu3
-  ubuntu_26_04/libkrb5-3: 1.22.1-2ubuntu4
-  ubuntu_26_04/libkrb5support0: 1.22.1-2ubuntu4
+  ubuntu_26_04/libkrb5-3: 1.22.1-2ubuntu4.1
+  ubuntu_26_04/libkrb5support0: 1.22.1-2ubuntu4.1
   ubuntu_26_04/liblapack3: 3.12.1-7ubuntu1
   ubuntu_26_04/liblcms2-2: 2.17-1ubuntu0.2
   ubuntu_26_04/libldap-common: 2.6.10+dfsg-1ubuntu5
@@ -117,37 +117,37 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/liblz4-1: 1.10.0-8
   ubuntu_26_04/liblzma5: 5.8.3-1
   ubuntu_26_04/libmd0: 1.1.0-2build4
-  ubuntu_26_04/libminizip1t64: 1:1.3.dfsg+really1.3.1-1ubuntu3
-  ubuntu_26_04/libmount1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libminizip1t64: 1:1.3.dfsg+really1.3.1-1ubuntu3.1
+  ubuntu_26_04/libmount1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libmuparser2v5: 2.3.4-2
   ubuntu_26_04/libncursesw6: 6.6+20251231-1
   ubuntu_26_04/libnettle8t64: 3.10.2-1
-  ubuntu_26_04/libnghttp2-14: 1.68.0-2ubuntu0.1
+  ubuntu_26_04/libnghttp2-14: 1.68.0-2ubuntu0.2
   ubuntu_26_04/libopenjp2-7: 2.5.4-1ubuntu0.1
   ubuntu_26_04/libp11-kit0: 0.26.2-2
-  ubuntu_26_04/libpam-modules: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam-modules-bin: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam-runtime: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam0g: 1.7.0-5ubuntu3
+  ubuntu_26_04/libpam-modules: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam-modules-bin: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam-runtime: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam0g: 1.7.0-5ubuntu3.2
   ubuntu_26_04/libpango-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangocairo-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
   ubuntu_26_04/libpcre2-8-0: 10.46-1build1
   ubuntu_26_04/libpcre2-posix3: 10.46-1build1
-  ubuntu_26_04/libperl5.40: 5.40.1-7build1
+  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1
-  ubuntu_26_04/libpq5: 18.4-0ubuntu0.26.04.1
+  ubuntu_26_04/libpq5: 18.6-0ubuntu0.26.04.1
   ubuntu_26_04/libproc2-0: 2:4.0.4-9ubuntu1
   ubuntu_26_04/libproj25: 9.7.1-1
   ubuntu_26_04/libprotobuf-c1: 1.5.1-1ubuntu2
   ubuntu_26_04/libpsl5t64: 0.21.2-1.1build2
   ubuntu_26_04/libpython3-stdlib: 3.14.3-0ubuntu2
-  ubuntu_26_04/libpython3.14: 3.14.4-1
-  ubuntu_26_04/libpython3.14-minimal: 3.14.4-1
-  ubuntu_26_04/libpython3.14-stdlib: 3.14.4-1
+  ubuntu_26_04/libpython3.14: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/libpython3.14-minimal: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/libpython3.14-stdlib: 3.14.4-1ubuntu0.2
   ubuntu_26_04/libreadline8t64: 8.3-4
-  ubuntu_26_04/librsvg2-2: 2.61.3+dfsg-3
+  ubuntu_26_04/librsvg2-2: 2.61.3+dfsg-3ubuntu0.1
   ubuntu_26_04/librtmp1: 2.4+20151223.gitfa8646d.1-3
   ubuntu_26_04/librttopo1: 1.1.0-4build1
   ubuntu_26_04/libsasl2-2: 2.1.28+dfsg1-9ubuntu3
@@ -158,23 +158,23 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libsemanage2: 3.9-1build1
   ubuntu_26_04/libsepol2: 3.9-2
   ubuntu_26_04/libsharpyuv0: 1.5.0-0.1build1
-  ubuntu_26_04/libsmartcols1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libsmartcols1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libspatialite8t64: 5.1.0-3ubuntu2
-  ubuntu_26_04/libsqlite3-0: 3.46.1-9
+  ubuntu_26_04/libsqlite3-0: 3.46.1-9ubuntu0.3
   ubuntu_26_04/libss2: 1.47.2-3ubuntu4
-  ubuntu_26_04/libssh2-1t64: 1.11.1-1ubuntu0.26.04.1
-  ubuntu_26_04/libssl3t64: 3.5.5-1ubuntu3
+  ubuntu_26_04/libssh2-1t64: 1.11.1-1ubuntu0.26.04.4
+  ubuntu_26_04/libssl3t64: 3.5.5-1ubuntu3.7
   ubuntu_26_04/libstdc++6: 16-20260322-1ubuntu1
-  ubuntu_26_04/libsystemd0: 259.5-0ubuntu3
+  ubuntu_26_04/libsystemd0: 259.5-0ubuntu3.4
   ubuntu_26_04/libtasn1-6: 4.21.0-2
   ubuntu_26_04/libtcmalloc-minimal4t64: 2.18.1-1
   ubuntu_26_04/libthai-data: 0.1.30-1
   ubuntu_26_04/libthai0: 0.1.30-1
-  ubuntu_26_04/libtiff6: 4.7.0-3ubuntu4
+  ubuntu_26_04/libtiff6: 4.7.0-3ubuntu5
   ubuntu_26_04/libtinfo6: 6.6+20251231-1
-  ubuntu_26_04/libudev1: 259.5-0ubuntu3
+  ubuntu_26_04/libudev1: 259.5-0ubuntu3.4
   ubuntu_26_04/libunistring5: 1.3-2build1
-  ubuntu_26_04/libuuid1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libuuid1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libwebp7: 1.5.0-0.1build1
   ubuntu_26_04/libx11-6: 2:1.8.13-1
   ubuntu_26_04/libx11-data: 2:1.8.13-1
@@ -185,28 +185,28 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libxdmcp6: 1:1.1.5-2
   ubuntu_26_04/libxerces-c3.2t64: 3.2.4+debian-1.3build2
   ubuntu_26_04/libxext6: 2:1.3.4-1build3
-  ubuntu_26_04/libxml2-16: 2.15.2+dfsg-0.1
+  ubuntu_26_04/libxml2-16: 2.15.2+dfsg-0.1ubuntu0.2
   ubuntu_26_04/libxrender1: 1:0.9.12-1build1
   ubuntu_26_04/libxslt1.1: 1.1.45-0.1
   ubuntu_26_04/libxxhash0: 0.8.3-2build1
   ubuntu_26_04/libzstd1: 1.5.7+dfsg-3
   ubuntu_26_04/lighttpd: 1.4.82-2ubuntu2
   ubuntu_26_04/lighttpd-modules-lua: 1.4.82-2ubuntu2
-  ubuntu_26_04/login: 1:4.16.0-2+really2.41.3-3ubuntu2
+  ubuntu_26_04/login: 1:4.16.0-2+really2.41.3-3ubuntu2.2
   ubuntu_26_04/login.defs: 1:4.17.4-2ubuntu3
   ubuntu_26_04/logsave: 1.47.2-3ubuntu4
   ubuntu_26_04/mawk: 1.3.4.20260129-1
   ubuntu_26_04/media-types: 14.0.0build1
-  ubuntu_26_04/mount: 2.41.3-3ubuntu2
+  ubuntu_26_04/mount: 2.41.3-3ubuntu2.2
   ubuntu_26_04/ncurses-base: 6.6+20251231-1
   ubuntu_26_04/ncurses-bin: 6.6+20251231-1
   ubuntu_26_04/netbase: 6.5build1
-  ubuntu_26_04/openssl: 3.5.5-1ubuntu3
-  ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3
+  ubuntu_26_04/openssl: 3.5.5-1ubuntu3.7
+  ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3.7
   ubuntu_26_04/passwd: 1:4.17.4-2ubuntu3
-  ubuntu_26_04/perl: 5.40.1-7build1
-  ubuntu_26_04/perl-base: 5.40.1-7build1
-  ubuntu_26_04/perl-modules-5.40: 5.40.1-7build1
+  ubuntu_26_04/perl: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/procps: 2:4.0.4-9ubuntu1
   ubuntu_26_04/proj-data: 9.7.1-1
   ubuntu_26_04/python-is-python3: 3.13.3-1+build1
@@ -214,8 +214,8 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/python3-minimal: 3.14.3-0ubuntu2
   ubuntu_26_04/python3-numpy: 1:2.3.5+ds-3ubuntu1
   ubuntu_26_04/python3-numpy-dev: 1:2.3.5+ds-3ubuntu1
-  ubuntu_26_04/python3.14: 3.14.4-1
-  ubuntu_26_04/python3.14-minimal: 3.14.4-1
+  ubuntu_26_04/python3.14: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/python3.14-minimal: 3.14.4-1ubuntu0.2
   ubuntu_26_04/readline-common: 8.3-4
   ubuntu_26_04/rust-coreutils: 0.8.0-0ubuntu3
   ubuntu_26_04/sed: 4.9-2ubuntu1
@@ -223,29 +223,29 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/shared-mime-info: 2.4-5build3
   ubuntu_26_04/spawn-fcgi: 1.6.6-1build1
   ubuntu_26_04/sysvinit-utils: 3.15-5ubuntu1
-  ubuntu_26_04/tar: 1.35+dfsg-4
-  ubuntu_26_04/tzdata: 2026a-3ubuntu1
+  ubuntu_26_04/tar: 1.35+dfsg-4ubuntu0.4
+  ubuntu_26_04/tzdata: 2026c-0ubuntu0.26.04.1
   ubuntu_26_04/ubuntu-keyring: 2023.11.28.1build1
   ubuntu_26_04/unzip: 6.0-29ubuntu1
-  ubuntu_26_04/util-linux: 2.41.3-3ubuntu2
+  ubuntu_26_04/util-linux: 2.41.3-3ubuntu2.2
 camptocamp/mapserver:latest-arm64:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.1
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.1
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.4
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.4
   ubuntu_26_04/apt: 3.2.0
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
   ubuntu_26_04/bash-completion: 1:2.16.0-8build1
-  ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2
-  ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.1
-  ubuntu_26_04/ca-certificates: '20260223'
+  ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2.2
+  ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.3
+  ubuntu_26_04/ca-certificates: 20260601~26.04.1
   ubuntu_26_04/coreutils: 9.5-1ubuntu2+0.0.0~ubuntu25
   ubuntu_26_04/coreutils-from-uutils: 0.0.0~ubuntu25
   ubuntu_26_04/dash: 0.5.12-12ubuntu3
   ubuntu_26_04/debconf: 1.5.92
   ubuntu_26_04/debianutils: 5.23.2build1
-  ubuntu_26_04/diffutils: 1:3.12-1
+  ubuntu_26_04/diffutils: 1:3.12-1ubuntu0.1
   ubuntu_26_04/dpkg: 1.23.7ubuntu1
   ubuntu_26_04/e2fsprogs: 1.47.2-3ubuntu4
   ubuntu_26_04/findutils: 4.10.0-3build2
@@ -257,55 +257,55 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/glibc-tools: 0.0~git3.23fd2b9-0ubuntu2
   ubuntu_26_04/glycin-loaders: 2.1.1+ds-0ubuntu1
   ubuntu_26_04/glycin-thumbnailers: 2.1.1+ds-0ubuntu1
-  ubuntu_26_04/gnu-coreutils: 9.7-3ubuntu2
-  ubuntu_26_04/gpgv: 2.4.8-4ubuntu3
+  ubuntu_26_04/gnu-coreutils: 9.7-3ubuntu2.1
+  ubuntu_26_04/gpgv: 2.4.8-4ubuntu3.1
   ubuntu_26_04/grep: 3.12-1
-  ubuntu_26_04/gzip: 1.14-1~exp2ubuntu1
+  ubuntu_26_04/gzip: 1.14-1~exp2ubuntu1.1
   ubuntu_26_04/hostname: 3.25build1
   ubuntu_26_04/init-system-helpers: '1.69'
   ubuntu_26_04/libacl1: 2.3.2-2
   ubuntu_26_04/libaio1t64: 0.3.113-8build1
-  ubuntu_26_04/libaom3: 3.13.1-2
+  ubuntu_26_04/libaom3: 3.13.1-2ubuntu0.1
   ubuntu_26_04/libapache2-mod-fcgid: 1:2.3.9-4build1
   ubuntu_26_04/libapr1t64: 1.7.6-3
-  ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3
-  ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3
-  ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3
+  ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3.1
+  ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3.1
+  ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libapt-pkg7.0: 3.2.0
   ubuntu_26_04/libatomic1: 16-20260322-1ubuntu1
-  ubuntu_26_04/libattr1: 1:2.5.2-4
+  ubuntu_26_04/libattr1: 1:2.5.2-4ubuntu0.1
   ubuntu_26_04/libaudit-common: 1:4.1.2-1build1
   ubuntu_26_04/libaudit1: 1:4.1.2-1build1
   ubuntu_26_04/libblas3: 3.12.1-7ubuntu1
-  ubuntu_26_04/libblkid1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libblkid1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libbrotli1: 1.2.0-3build1
   ubuntu_26_04/libbsd0: 0.12.2-2build2
-  ubuntu_26_04/libbz2-1.0: 1.0.8-6build2
-  ubuntu_26_04/libc-bin: 2.43-2ubuntu2
-  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2
-  ubuntu_26_04/libc6: 2.43-2ubuntu2
+  ubuntu_26_04/libbz2-1.0: 1.0.8-6ubuntu0.1
+  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc6: 2.43-2ubuntu2.4
   ubuntu_26_04/libcairo-gobject2: 1.18.4-3
   ubuntu_26_04/libcairo2: 1.18.4-3
   ubuntu_26_04/libcap-ng0: 0.8.5-4build5
   ubuntu_26_04/libcap2: 1:2.75-10ubuntu2
   ubuntu_26_04/libcom-err2: 1.47.2-3ubuntu4
   ubuntu_26_04/libcrypt1: 1:4.5.1-1
-  ubuntu_26_04/libcurl3t64-gnutls: 8.18.0-1ubuntu2.1
-  ubuntu_26_04/libcurl4t64: 8.18.0-1ubuntu2.1
+  ubuntu_26_04/libcurl3t64-gnutls: 8.18.0-1ubuntu2.7
+  ubuntu_26_04/libcurl4t64: 8.18.0-1ubuntu2.7
   ubuntu_26_04/libdatrie1: 0.2.14-1
   ubuntu_26_04/libdb5.3t64: 5.3.28+dfsg2-10ubuntu1
   ubuntu_26_04/libdebconfclient0: 0.280ubuntu1
   ubuntu_26_04/libdeflate0: 1.23-2ubuntu1
-  ubuntu_26_04/libexpat1: 2.7.4-1
+  ubuntu_26_04/libexpat1: 2.7.4-1ubuntu0.2
   ubuntu_26_04/libext2fs2t64: 1.47.2-3ubuntu4
   ubuntu_26_04/libfcgi0t64: 2.4.5-0.1build2
   ubuntu_26_04/libffi8: 3.5.2-4
   ubuntu_26_04/libfontconfig1: 2.17.1-3ubuntu1
-  ubuntu_26_04/libfreetype6: 2.14.2+dfsg-1
+  ubuntu_26_04/libfreetype6: 2.14.2+dfsg-1ubuntu0.2
   ubuntu_26_04/libfreexl1: 2.0.0-1build3
   ubuntu_26_04/libfribidi0: 1.0.16-5
   ubuntu_26_04/libgcc-s1: 16-20260322-1ubuntu1
-  ubuntu_26_04/libgcrypt20: 1.12.0-2ubuntu0.1
+  ubuntu_26_04/libgcrypt20: 1.12.0-2ubuntu1.1
   ubuntu_26_04/libgdbm-compat4t64: 1.26-1build1
   ubuntu_26_04/libgdbm6t64: 1.26-1build1
   ubuntu_26_04/libgdk-pixbuf-2.0-0: 2.44.5+dfsg-4ubuntu1
@@ -313,18 +313,18 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libgeos-c1t64: 3.14.1-2
   ubuntu_26_04/libgeos3.14.1: 3.14.1-2
   ubuntu_26_04/libgfortran5: 16-20260322-1ubuntu1
-  ubuntu_26_04/libgif7: 5.2.2-1ubuntu3
-  ubuntu_26_04/libglib2.0-0t64: 2.88.0-1
+  ubuntu_26_04/libgif7: 5.2.2-1ubuntu3.2
+  ubuntu_26_04/libglib2.0-0t64: 2.88.0-1ubuntu0.1
   ubuntu_26_04/libglycin-2-0: 2.1.1+ds-0ubuntu1
   ubuntu_26_04/libgmp10: 2:6.3.0+dfsg-5ubuntu2
   ubuntu_26_04/libgnutls30t64: 3.8.12-2ubuntu1.1
   ubuntu_26_04/libgomp1: 16-20260322-1ubuntu1
   ubuntu_26_04/libgpg-error0: 1.58-2
-  ubuntu_26_04/libgraphite2-3: 1.3.14-11ubuntu1
-  ubuntu_26_04/libgssapi-krb5-2: 1.22.1-2ubuntu4
+  ubuntu_26_04/libgraphite2-3: 1.3.14-11ubuntu1.1
+  ubuntu_26_04/libgssapi-krb5-2: 1.22.1-2ubuntu4.1
   ubuntu_26_04/libharfbuzz0b: 12.3.2-2
-  ubuntu_26_04/libheif-plugin-aomdec: 1.21.2-3
-  ubuntu_26_04/libheif1: 1.21.2-3
+  ubuntu_26_04/libheif-plugin-aomdec: 1.21.2-3ubuntu0.6
+  ubuntu_26_04/libheif1: 1.21.2-3ubuntu0.6
   ubuntu_26_04/libhogweed6t64: 3.10.2-1
   ubuntu_26_04/libhwy1t64: 1.3.0-2
   ubuntu_26_04/libicu78: 78.2-2ubuntu1
@@ -333,11 +333,11 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libjbig0: 2.1-6.1ubuntu3
   ubuntu_26_04/libjpeg-turbo8: 2.1.5-4ubuntu4
   ubuntu_26_04/libjpeg8: 8c-2ubuntu12
-  ubuntu_26_04/libjxl0.11: 0.11.1-6ubuntu4
-  ubuntu_26_04/libk5crypto3: 1.22.1-2ubuntu4
+  ubuntu_26_04/libjxl0.11: 0.11.1-6ubuntu4.2
+  ubuntu_26_04/libk5crypto3: 1.22.1-2ubuntu4.1
   ubuntu_26_04/libkeyutils1: 1.6.3-6ubuntu3
-  ubuntu_26_04/libkrb5-3: 1.22.1-2ubuntu4
-  ubuntu_26_04/libkrb5support0: 1.22.1-2ubuntu4
+  ubuntu_26_04/libkrb5-3: 1.22.1-2ubuntu4.1
+  ubuntu_26_04/libkrb5support0: 1.22.1-2ubuntu4.1
   ubuntu_26_04/liblapack3: 3.12.1-7ubuntu1
   ubuntu_26_04/liblcms2-2: 2.17-1ubuntu0.2
   ubuntu_26_04/libldap-common: 2.6.10+dfsg-1ubuntu5
@@ -347,37 +347,37 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/liblz4-1: 1.10.0-8
   ubuntu_26_04/liblzma5: 5.8.3-1
   ubuntu_26_04/libmd0: 1.1.0-2build4
-  ubuntu_26_04/libminizip1t64: 1:1.3.dfsg+really1.3.1-1ubuntu3
-  ubuntu_26_04/libmount1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libminizip1t64: 1:1.3.dfsg+really1.3.1-1ubuntu3.1
+  ubuntu_26_04/libmount1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libmuparser2v5: 2.3.4-2
   ubuntu_26_04/libncursesw6: 6.6+20251231-1
   ubuntu_26_04/libnettle8t64: 3.10.2-1
-  ubuntu_26_04/libnghttp2-14: 1.68.0-2ubuntu0.1
+  ubuntu_26_04/libnghttp2-14: 1.68.0-2ubuntu0.2
   ubuntu_26_04/libopenjp2-7: 2.5.4-1ubuntu0.1
   ubuntu_26_04/libp11-kit0: 0.26.2-2
-  ubuntu_26_04/libpam-modules: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam-modules-bin: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam-runtime: 1.7.0-5ubuntu3
-  ubuntu_26_04/libpam0g: 1.7.0-5ubuntu3
+  ubuntu_26_04/libpam-modules: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam-modules-bin: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam-runtime: 1.7.0-5ubuntu3.2
+  ubuntu_26_04/libpam0g: 1.7.0-5ubuntu3.2
   ubuntu_26_04/libpango-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangocairo-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
   ubuntu_26_04/libpcre2-8-0: 10.46-1build1
   ubuntu_26_04/libpcre2-posix3: 10.46-1build1
-  ubuntu_26_04/libperl5.40: 5.40.1-7build1
+  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1
-  ubuntu_26_04/libpq5: 18.4-0ubuntu0.26.04.1
+  ubuntu_26_04/libpq5: 18.6-0ubuntu0.26.04.1
   ubuntu_26_04/libproc2-0: 2:4.0.4-9ubuntu1
   ubuntu_26_04/libproj25: 9.7.1-1
   ubuntu_26_04/libprotobuf-c1: 1.5.1-1ubuntu2
   ubuntu_26_04/libpsl5t64: 0.21.2-1.1build2
   ubuntu_26_04/libpython3-stdlib: 3.14.3-0ubuntu2
-  ubuntu_26_04/libpython3.14: 3.14.4-1
-  ubuntu_26_04/libpython3.14-minimal: 3.14.4-1
-  ubuntu_26_04/libpython3.14-stdlib: 3.14.4-1
+  ubuntu_26_04/libpython3.14: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/libpython3.14-minimal: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/libpython3.14-stdlib: 3.14.4-1ubuntu0.2
   ubuntu_26_04/libreadline8t64: 8.3-4
-  ubuntu_26_04/librsvg2-2: 2.61.3+dfsg-3
+  ubuntu_26_04/librsvg2-2: 2.61.3+dfsg-3ubuntu0.1
   ubuntu_26_04/librtmp1: 2.4+20151223.gitfa8646d.1-3
   ubuntu_26_04/librttopo1: 1.1.0-4build1
   ubuntu_26_04/libsasl2-2: 2.1.28+dfsg1-9ubuntu3
@@ -388,23 +388,23 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libsemanage2: 3.9-1build1
   ubuntu_26_04/libsepol2: 3.9-2
   ubuntu_26_04/libsharpyuv0: 1.5.0-0.1build1
-  ubuntu_26_04/libsmartcols1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libsmartcols1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libspatialite8t64: 5.1.0-3ubuntu2
-  ubuntu_26_04/libsqlite3-0: 3.46.1-9
+  ubuntu_26_04/libsqlite3-0: 3.46.1-9ubuntu0.3
   ubuntu_26_04/libss2: 1.47.2-3ubuntu4
-  ubuntu_26_04/libssh2-1t64: 1.11.1-1ubuntu0.26.04.1
-  ubuntu_26_04/libssl3t64: 3.5.5-1ubuntu3
+  ubuntu_26_04/libssh2-1t64: 1.11.1-1ubuntu0.26.04.4
+  ubuntu_26_04/libssl3t64: 3.5.5-1ubuntu3.7
   ubuntu_26_04/libstdc++6: 16-20260322-1ubuntu1
-  ubuntu_26_04/libsystemd0: 259.5-0ubuntu3
+  ubuntu_26_04/libsystemd0: 259.5-0ubuntu3.4
   ubuntu_26_04/libtasn1-6: 4.21.0-2
   ubuntu_26_04/libtcmalloc-minimal4t64: 2.18.1-1
   ubuntu_26_04/libthai-data: 0.1.30-1
   ubuntu_26_04/libthai0: 0.1.30-1
-  ubuntu_26_04/libtiff6: 4.7.0-3ubuntu4
+  ubuntu_26_04/libtiff6: 4.7.0-3ubuntu5
   ubuntu_26_04/libtinfo6: 6.6+20251231-1
-  ubuntu_26_04/libudev1: 259.5-0ubuntu3
+  ubuntu_26_04/libudev1: 259.5-0ubuntu3.4
   ubuntu_26_04/libunistring5: 1.3-2build1
-  ubuntu_26_04/libuuid1: 2.41.3-3ubuntu2
+  ubuntu_26_04/libuuid1: 2.41.3-3ubuntu2.2
   ubuntu_26_04/libwebp7: 1.5.0-0.1build1
   ubuntu_26_04/libx11-6: 2:1.8.13-1
   ubuntu_26_04/libx11-data: 2:1.8.13-1
@@ -415,28 +415,28 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libxdmcp6: 1:1.1.5-2
   ubuntu_26_04/libxerces-c3.2t64: 3.2.4+debian-1.3build2
   ubuntu_26_04/libxext6: 2:1.3.4-1build3
-  ubuntu_26_04/libxml2-16: 2.15.2+dfsg-0.1
+  ubuntu_26_04/libxml2-16: 2.15.2+dfsg-0.1ubuntu0.2
   ubuntu_26_04/libxrender1: 1:0.9.12-1build1
   ubuntu_26_04/libxslt1.1: 1.1.45-0.1
   ubuntu_26_04/libxxhash0: 0.8.3-2build1
   ubuntu_26_04/libzstd1: 1.5.7+dfsg-3
   ubuntu_26_04/lighttpd: 1.4.82-2ubuntu2
   ubuntu_26_04/lighttpd-modules-lua: 1.4.82-2ubuntu2
-  ubuntu_26_04/login: 1:4.16.0-2+really2.41.3-3ubuntu2
+  ubuntu_26_04/login: 1:4.16.0-2+really2.41.3-3ubuntu2.2
   ubuntu_26_04/login.defs: 1:4.17.4-2ubuntu3
   ubuntu_26_04/logsave: 1.47.2-3ubuntu4
   ubuntu_26_04/mawk: 1.3.4.20260129-1
   ubuntu_26_04/media-types: 14.0.0build1
-  ubuntu_26_04/mount: 2.41.3-3ubuntu2
+  ubuntu_26_04/mount: 2.41.3-3ubuntu2.2
   ubuntu_26_04/ncurses-base: 6.6+20251231-1
   ubuntu_26_04/ncurses-bin: 6.6+20251231-1
   ubuntu_26_04/netbase: 6.5build1
-  ubuntu_26_04/openssl: 3.5.5-1ubuntu3
-  ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3
+  ubuntu_26_04/openssl: 3.5.5-1ubuntu3.7
+  ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3.7
   ubuntu_26_04/passwd: 1:4.17.4-2ubuntu3
-  ubuntu_26_04/perl: 5.40.1-7build1
-  ubuntu_26_04/perl-base: 5.40.1-7build1
-  ubuntu_26_04/perl-modules-5.40: 5.40.1-7build1
+  ubuntu_26_04/perl: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/procps: 2:4.0.4-9ubuntu1
   ubuntu_26_04/proj-data: 9.7.1-1
   ubuntu_26_04/python-is-python3: 3.13.3-1+build1
@@ -444,8 +444,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/python3-minimal: 3.14.3-0ubuntu2
   ubuntu_26_04/python3-numpy: 1:2.3.5+ds-3ubuntu1
   ubuntu_26_04/python3-numpy-dev: 1:2.3.5+ds-3ubuntu1
-  ubuntu_26_04/python3.14: 3.14.4-1
-  ubuntu_26_04/python3.14-minimal: 3.14.4-1
+  ubuntu_26_04/python3.14: 3.14.4-1ubuntu0.2
+  ubuntu_26_04/python3.14-minimal: 3.14.4-1ubuntu0.2
   ubuntu_26_04/readline-common: 8.3-4
   ubuntu_26_04/rust-coreutils: 0.8.0-0ubuntu3
   ubuntu_26_04/sed: 4.9-2ubuntu1
@@ -453,8 +453,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/shared-mime-info: 2.4-5build3
   ubuntu_26_04/spawn-fcgi: 1.6.6-1build1
   ubuntu_26_04/sysvinit-utils: 3.15-5ubuntu1
-  ubuntu_26_04/tar: 1.35+dfsg-4
-  ubuntu_26_04/tzdata: 2026a-3ubuntu1
+  ubuntu_26_04/tar: 1.35+dfsg-4ubuntu0.4
+  ubuntu_26_04/tzdata: 2026c-0ubuntu0.26.04.1
   ubuntu_26_04/ubuntu-keyring: 2023.11.28.1build1
   ubuntu_26_04/unzip: 6.0-29ubuntu1
-  ubuntu_26_04/util-linux: 2.41.3-3ubuntu2
+  ubuntu_26_04/util-linux: 2.41.3-3ubuntu2.2
