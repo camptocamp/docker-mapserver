@@ -1,0 +1,5 @@
+# Written by tag-publish: when a Debian package installed in the image is not the version recorded
+# here, the publishing fails and the regenerated list is uploaded as the
+# `Update dpkg versions list.patch` artifact, which the `patch` module of ghci turns into a commit or
+# a pull request.
+{}
