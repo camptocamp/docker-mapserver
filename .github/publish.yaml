@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/camptocamp/tag-publish/1.3.1/tag_publish/schema.json
+
+docker:
+  images:
+    - name: camptocamp/mapserver
+  repository:
+    github:
+      host: ghcr.io
+      versions_type:
+        - tag
+        - default_branch
+        - stabilization_branch
+    dockerhub:
+      host: docker.io
+      versions_type:
+        - tag
+        - default_branch
+        - stabilization_branch
