@@ -8,7 +8,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.6
-  ubuntu_22_04/ca-certificates: 20260601~22.04.1
+  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.1
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.4
   ubuntu_22_04/curl: 7.81.0-1ubuntu1.30
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
@@ -101,7 +101,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libldap-2.5-0: 2.5.20+dfsg-0ubuntu0.22.04.1
   ubuntu_22_04/liblua5.3-0: 5.3.6-1build1
   ubuntu_22_04/liblz4-1: 1.9.3-2build2
-  ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1.1
+  ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1.2
   ubuntu_22_04/libmd0: 1.0.4-1build1
   ubuntu_22_04/libminizip1: 1.1-8build1
   ubuntu_22_04/libmount1: 2.37.2-4ubuntu3.6
@@ -228,7 +228,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.6
-  ubuntu_22_04/ca-certificates: 20260601~22.04.1
+  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.1
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.4
   ubuntu_22_04/curl: 7.81.0-1ubuntu1.30
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
@@ -321,7 +321,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libldap-2.5-0: 2.5.20+dfsg-0ubuntu0.22.04.1
   ubuntu_22_04/liblua5.3-0: 5.3.6-1build1
   ubuntu_22_04/liblz4-1: 1.9.3-2build2
-  ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1.1
+  ubuntu_22_04/liblzma5: 5.2.5-2ubuntu1.2
   ubuntu_22_04/libmd0: 1.0.4-1build1
   ubuntu_22_04/libminizip1: 1.1-8build1
   ubuntu_22_04/libmount1: 2.37.2-4ubuntu3.6
