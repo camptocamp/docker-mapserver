@@ -2,18 +2,21 @@ FROM ubuntu:24.04 as base-all
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
-SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
-
 RUN --mount=type=cache,target=/var/lib/apt/lists \
     --mount=type=cache,target=/var/cache,sharing=locked \
     apt-get update \
     && apt-get upgrade --assume-yes \
-    && apt-get install --assume-yes --no-install-recommends python3-pip libpq-dev \
-    && rm /usr/lib/python*/EXTERNALLY-MANAGED
+    && apt-get install --assume-yes --no-install-recommends python3-pip python3-venv libpq-dev
 
 # Used to convert the locked packages by poetry to pip requirements format
 # We don't directly use `poetry install` because it force to use a virtual environment.
 FROM base-all as poetry
+
+# Install Poetry in a dedicated virtual environment to not conflict with the
+# Python packages provided by the distribution (e.g. python3-packaging cannot
+# be uninstalled by pip because it has no RECORD file).
+RUN python3 -m venv /venv
+ENV PATH=/venv/bin:$PATH
 
 # Install Poetry
 WORKDIR /tmp
@@ -32,7 +35,11 @@ RUN --mount=type=cache,target=/var/lib/apt/lists \
     --mount=type=cache,target=/var/cache,sharing=locked \
     --mount=type=cache,target=/root/.cache \
     apt-get update \
-    && apt-get install --assume-yes --no-install-recommends python3-pip python3-dev gcc
+    && apt-get install --assume-yes --no-install-recommends python3-pip python3-venv python3-dev gcc
+
+# The tests are installed in a dedicated virtual environment, same reason as above.
+RUN python3 -m venv /venv
+ENV PATH=/venv/bin:$PATH
 
 WORKDIR /tmp
 
