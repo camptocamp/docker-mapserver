@@ -13,6 +13,11 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
         cmake librsvg2-dev colordiff libpq-dev libpng-dev libjpeg-dev libgif-dev libgeos-dev libgd-dev \
         libfreetype6-dev libfcgi-dev libcurl4-gnutls-dev libcairo2-dev libxml2-dev \
         libxslt1-dev python3-dev php-dev libexempi-dev lcov lftp ninja-build git curl \
+        # Install g++ explicitly instead of relying on transitive dependencies: without it
+        # CMake silently uses the installed clang++ for C++; clang links without --as-needed
+        # and keeps the unused distro libproj.so in DT_NEEDED, loading a second PROJ next to
+        # libinternalproj at runtime, which crashes mapserv (std::bad_alloc) on every request
+        g++ \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
     && ln -s /usr/lib/*-linux-gnu/libproj.so.*[0] $(echo /usr/lib/*-linux-gnu)/libproj.so
 
