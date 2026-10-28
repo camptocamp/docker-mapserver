@@ -1,12 +1,11 @@
-FROM ubuntu:22.04 as base-all
+FROM python:3.11-slim as base-all
 LABEL maintainer Camptocamp "info@camptocamp.com"
 SHELL ["/bin/bash", "-o", "pipefail", "-cux"]
 
 RUN --mount=type=cache,target=/var/lib/apt/lists \
     --mount=type=cache,target=/var/cache,sharing=locked \
     apt-get update \
-    && apt-get upgrade --assume-yes \
-    && apt-get install --assume-yes --no-install-recommends python3-pip python3-venv
+    && apt-get upgrade --assume-yes
 
 # Used to convert the locked packages by poetry to pip requirements format
 # We don't directly use `poetry install` because it force to use a virtual environment.
@@ -36,7 +35,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists \
     --mount=type=cache,target=/var/cache,sharing=locked \
     --mount=type=cache,target=/root/.cache \
     apt-get update \
-    && apt-get install --assume-yes --no-install-recommends python3-pip python3-venv python3-dev gcc
+    && apt-get install --assume-yes --no-install-recommends gcc libc6-dev
 
 # The tests are installed in a dedicated virtual environment, same reason as above.
 RUN python3 -m venv /venv
