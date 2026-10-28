@@ -2,7 +2,7 @@ import pytest
 from c2cwsgiutils.acceptance.connection import CacheExpected
 from owslib.wms import WebMapService
 
-from .conftest import BASE_URL, BASE_URL_BASE_PATH
+from .conftest import BASE_URL, BASE_URL_BASE_PATH, BASE_URL_LIGHTTPD
 
 
 def test_get_capabilities(connection):
@@ -53,3 +53,10 @@ def test_lighttpd(connection_lighttpd):
     print(etree.tostring(answer, pretty_print=True).decode())
     assert [e.text for e in answer.findall(f"{ns}Service/{ns}Title")] == ["test"]
     assert [e.text for e in answer.findall(f".//{ns}Layer/{ns}Name")] == ["test", "polygons"]
+
+
+def test_lighttpd_capabilities_url(connection_lighttpd):
+    wms = WebMapService(BASE_URL_LIGHTTPD)
+    assert wms.getOperationByName("GetMap").methods[0]["url"].startswith(BASE_URL_LIGHTTPD), (
+        f"url mismatch between requested PATH and Capabilities GET path"
+    )
