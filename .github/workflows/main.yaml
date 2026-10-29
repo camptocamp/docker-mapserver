@@ -10,9 +10,7 @@ on:
   pull_request:
 
 permissions:
-  contents: write
-  packages: write
-  id-token: write
+  contents: read
 
 env:
   HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
@@ -24,23 +22,19 @@ jobs:
     timeout-minutes: 75
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
+    outputs:
+      success: ${{ steps.success.outputs.success }}
+
     steps:
       # Versions
       - run: docker system prune --all --force
       - run: docker --version
       - uses: actions/checkout@v4
 
-      - uses: camptocamp/initialise-gopass-summon-action@17703c87720ba3766abc90da60b437783b530d93 # v2
-        with:
-          ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
-          github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
-          patterns: docker
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python3 -m pip install --requirement=ci/requirements.txt
+      - run: python3 -m pip install '--only-binary=:all:' --requirement=ci/requirements.txt
       - name: Print environment information
         run: c2cciutils-env
 
@@ -74,14 +68,73 @@ jobs:
           DOCKER_BUILD_ARGS: --platform=linux/arm64
           DOCKER_TAG: latest-arm64
 
+      # The images are given to the publishing job, which is the only one with the write permissions.
+      - run: docker save --output=/tmp/images.docker camptocamp/mapserver:latest camptocamp/mapserver:latest-arm64
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: images.docker
+          path: /tmp/images.docker
+          retention-days: 1
+
+      # Mark as success
+      - id: success
+        run: echo "success=true" >> $GITHUB_OUTPUT
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    needs: main
+    if: always()
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - run: '[[ "${{ needs.main.outputs.success }}" == "true" ]]'
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: latest-known
+          cache-python: true
+          # The publishing step can be skipped, and then uv never runs, so its cache directory
+          # is never created.
+          ignore-nothing-to-cache: true
+          python-version: '3.11'
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: images.docker
+          path: /tmp/
+      - run: docker load --input=/tmp/images.docker
+
+      # The Debian packages audit of tag-publish runs commands inside the images, and the arm64
+      # one cannot be executed on this runner without the binfmt handlers.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf # v3.2.0
+        with:
+          image: docker.io/tonistiigi/binfmt:qemu-v6.2.0
+          platforms: arm64
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
+
       - name: Publish
-        run: tag-publish
+        run: uv run --locked --isolated --project=.github/publish tag-publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
-      - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch || true
+        if: env.HAS_SECRETS == 'HAS_SECRETS' && github.actor != 'renovate[bot]'
+
+      - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch; git diff --color; git reset --hard || true
         if: failure()
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Update dpkg versions list.patch
           path: /tmp/dpkg-versions.patch
