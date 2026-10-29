@@ -4,9 +4,7 @@ on:
   push:
 
 permissions:
-  contents: write
-  packages: write
-  id-token: write
+  contents: read
 
 jobs:
   main:
@@ -15,17 +13,13 @@ jobs:
     timeout-minutes: 20
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
+    outputs:
+      success: ${{ steps.success.outputs.success }}
+
     steps:
       # Versions
       - run: docker --version
       - uses: actions/checkout@v4
-
-      - uses: camptocamp/initialise-gopass-summon-action@17703c87720ba3766abc90da60b437783b530d93 # v2
-        with:
-          ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
-          github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
-          patterns: docker
-        if: github.repository == 'camptocamp/docker-mapserver'
 
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
@@ -41,14 +35,62 @@ jobs:
       - run: (cd acceptance_tests/ && docker-compose logs)
         if: failure()
 
+      # The images are given to the publishing job, which is the only one with the write permissions.
+      - run: docker save --output=/tmp/images.docker camptocamp/mapserver:latest
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: images.docker
+          path: /tmp/images.docker
+          retention-days: 1
+
+      # Mark as success
+      - id: success
+        run: echo "success=true" >> $GITHUB_OUTPUT
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    needs: main
+    if: always()
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - run: '[[ "${{ needs.main.outputs.success }}" == "true" ]]'
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+      - run: python3 -m pip install '--only-binary=:all:' --no-binary=markdown-table --requirement=ci/requirements.txt
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: images.docker
+          path: /tmp/
+      - run: docker load --input=/tmp/images.docker
+
+      # tag-publish only logs in to ghcr.io, the Docker Hub credentials come from the secrets.
+      - name: Login to Docker Hub
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+        if: github.repository == 'camptocamp/docker-mapserver'
+
       - name: Publish
         run: tag-publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.repository == 'camptocamp/docker-mapserver'
-      - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch || true
+
+      - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch; git diff --color; git reset --hard || true
         if: failure()
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: Update dpkg versions list.patch
           path: /tmp/dpkg-versions.patch
