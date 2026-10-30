@@ -6,8 +6,8 @@
 | --------------- | --------------- | ----------------------------------------------- | ------------- | ----------------------------- |
 | <= 7.4          | Unsupported     |                                                 |               |                               |
 | 7.6             | 23/06/2025      | 13/07/2021                                      |               |                               |
-| 7.6-ubuntu18.04 | Best effort     |                                                 |               | Version based on Ubuntu 18.04 |
-| 7.6-gdal3.3     | Best effort     |                                                 | 7.6-20-04     | Version based on Ubuntu 20.04 |
+| 7.6-ubuntu18.04 | Unsupported     |                                                 |               | Version based on Ubuntu 18.04 |
+| 7.6-gdal3.3     | Unsupported     |                                                 | 7.6-20-04     | Version based on Ubuntu 20.04 |
 | 7.6-gdal3.7     | Best effort     |                                                 |               | Version based on Ubuntu 22.04 |
 | 7.6-gdal3.8     | Best effort     |                                                 | 7.6           | Version based on Ubuntu 22.04 |
 | 8.0             | 31/12/2025      | 12/06/2024                                      |               |                               |
