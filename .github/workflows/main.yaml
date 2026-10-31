@@ -100,9 +100,6 @@ jobs:
         with:
           version: latest-known
           cache-python: true
-          # The publishing step can be skipped, and then uv never runs, so its cache directory
-          # is never created.
-          ignore-nothing-to-cache: true
           python-version: '3.11'
 
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
@@ -130,7 +127,6 @@ jobs:
         run: uv run --locked --isolated --project=.github/publish tag-publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: env.HAS_SECRETS == 'HAS_SECRETS' && github.actor != 'renovate[bot]'
 
       - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch; git diff --color; git reset --hard || true
         if: failure()
