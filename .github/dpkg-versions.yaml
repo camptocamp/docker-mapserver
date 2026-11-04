@@ -132,8 +132,8 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libpango-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangocairo-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
-  ubuntu_26_04/libpcre2-8-0: 10.46-1build1
-  ubuntu_26_04/libpcre2-posix3: 10.46-1build1
+  ubuntu_26_04/libpcre2-8-0: 10.46-1ubuntu0.1
+  ubuntu_26_04/libpcre2-posix3: 10.46-1ubuntu0.1
   ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1ubuntu0.1
@@ -362,8 +362,8 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libpango-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangocairo-1.0-0: 1.57.0-1
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
-  ubuntu_26_04/libpcre2-8-0: 10.46-1build1
-  ubuntu_26_04/libpcre2-posix3: 10.46-1build1
+  ubuntu_26_04/libpcre2-8-0: 10.46-1ubuntu0.1
+  ubuntu_26_04/libpcre2-posix3: 10.46-1ubuntu0.1
   ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1ubuntu0.1
