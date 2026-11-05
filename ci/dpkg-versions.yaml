@@ -4,11 +4,11 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.25
   ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.25
   ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apt: 2.4.14
+  ubuntu_22_04/apt: 2.4.15ubuntu0.1
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.6
-  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.1
+  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.2
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.4
   ubuntu_22_04/curl: 7.81.0-1ubuntu1.30
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
@@ -35,7 +35,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libaprutil1: 1.6.1-5ubuntu4.22.04.3
   ubuntu_22_04/libaprutil1-dbd-sqlite3: 1.6.1-5ubuntu4.22.04.3
   ubuntu_22_04/libaprutil1-ldap: 1.6.1-5ubuntu4.22.04.3
-  ubuntu_22_04/libapt-pkg6.0: 2.4.14
+  ubuntu_22_04/libapt-pkg6.0: 2.4.15ubuntu0.1
   ubuntu_22_04/libattr1: 1:2.5.1-1ubuntu0.1
   ubuntu_22_04/libaudit-common: 1:3.0.7-1build1
   ubuntu_22_04/libaudit1: 1:3.0.7-1build1
@@ -204,7 +204,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/python3: 3.10.6-1~22.04.1
   ubuntu_22_04/python3-minimal: 3.10.6-1~22.04.1
   ubuntu_22_04/python3-numpy: 1:1.21.5-1ubuntu22.04.1
-  ubuntu_22_04/python3-pil: 9.0.1-1ubuntu0.5
+  ubuntu_22_04/python3-pil: 9.0.1-1ubuntu0.6
   ubuntu_22_04/python3-pkg-resources: 59.6.0-1.2ubuntu0.22.04.3
   ubuntu_22_04/python3.10: 3.10.12-1~22.04.18
   ubuntu_22_04/python3.10-minimal: 3.10.12-1~22.04.18
@@ -225,11 +225,11 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.25
   ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.25
   ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apt: 2.4.14
+  ubuntu_22_04/apt: 2.4.15ubuntu0.1
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
   ubuntu_22_04/bsdutils: 1:2.37.2-4ubuntu3.6
-  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.1
+  ubuntu_22_04/ca-certificates: 20260816ubuntu0.22.04.2
   ubuntu_22_04/coreutils: 8.32-4.1ubuntu1.4
   ubuntu_22_04/curl: 7.81.0-1ubuntu1.30
   ubuntu_22_04/dash: 0.5.11+git20210903+057cd650a4ed-3build1
@@ -256,7 +256,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libaprutil1: 1.6.1-5ubuntu4.22.04.3
   ubuntu_22_04/libaprutil1-dbd-sqlite3: 1.6.1-5ubuntu4.22.04.3
   ubuntu_22_04/libaprutil1-ldap: 1.6.1-5ubuntu4.22.04.3
-  ubuntu_22_04/libapt-pkg6.0: 2.4.14
+  ubuntu_22_04/libapt-pkg6.0: 2.4.15ubuntu0.1
   ubuntu_22_04/libattr1: 1:2.5.1-1ubuntu0.1
   ubuntu_22_04/libaudit-common: 1:3.0.7-1build1
   ubuntu_22_04/libaudit1: 1:3.0.7-1build1
@@ -424,7 +424,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/python3: 3.10.6-1~22.04.1
   ubuntu_22_04/python3-minimal: 3.10.6-1~22.04.1
   ubuntu_22_04/python3-numpy: 1:1.21.5-1ubuntu22.04.1
-  ubuntu_22_04/python3-pil: 9.0.1-1ubuntu0.5
+  ubuntu_22_04/python3-pil: 9.0.1-1ubuntu0.6
   ubuntu_22_04/python3-pkg-resources: 59.6.0-1.2ubuntu0.22.04.3
   ubuntu_22_04/python3.10: 3.10.12-1~22.04.18
   ubuntu_22_04/python3.10-minimal: 3.10.12-1~22.04.18
