@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
-      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+      - run: python3 -m pip install --user '--only-binary=:all:' --no-binary=markdown-table --requirement=ci/requirements.txt
 
       - name: Checks
         run: c2cciutils-checks
@@ -80,11 +80,11 @@ jobs:
 
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with:
+          version: latest-known
+          cache-python: true
           python-version: '3.11'
-      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
-      - run: python3 -m pip install --user '--only-binary=:all:' --no-binary=markdown-table --requirement=ci/requirements.txt
 
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
@@ -95,8 +95,9 @@ jobs:
       # The Debian packages audit of tag-publish runs commands inside the images, and the arm64
       # one cannot be executed on this runner without the binfmt handlers.
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf # v3.2.0
+        uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4.4.0
         with:
+          image: docker.io/tonistiigi/binfmt:qemu-v8.1.5
           platforms: arm64
 
       # tag-publish only logs in to ghcr.io, the Docker Hub credentials come from the secrets.
@@ -108,9 +109,10 @@ jobs:
         if: env.HAS_SECRETS == 'HAS_SECRETS'
 
       - name: Publish
-        run: tag-publish
+        run: uv run --locked --isolated --project=.github/publish tag-publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: env.HAS_SECRETS == 'HAS_SECRETS' && github.actor != 'renovate[bot]'
 
       - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch; git diff --color; git reset --hard || true
         if: failure()
