@@ -3,13 +3,13 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.6
   ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.6
   ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apt: 3.2.0
+  ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
   ubuntu_26_04/bash-completion: 1:2.16.0-8build1
   ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2.2
   ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.3
-  ubuntu_26_04/ca-certificates: 20260816ubuntu0.26.04.1
+  ubuntu_26_04/ca-certificates: 20260816ubuntu0.26.04.2
   ubuntu_26_04/coreutils: 9.5-1ubuntu2+0.0.0~ubuntu25
   ubuntu_26_04/coreutils-from-uutils: 0.0.0~ubuntu25
   ubuntu_26_04/dash: 0.5.12-12ubuntu3
@@ -41,7 +41,7 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3.1
-  ubuntu_26_04/libapt-pkg7.0: 3.2.0
+  ubuntu_26_04/libapt-pkg7.0: 3.2.1ubuntu0.1
   ubuntu_26_04/libatomic1: 16-20260322-1ubuntu1
   ubuntu_26_04/libattr1: 1:2.5.2-4ubuntu0.1
   ubuntu_26_04/libaudit-common: 1:4.1.2-1build1
@@ -233,13 +233,13 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.6
   ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.6
   ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apt: 3.2.0
+  ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
   ubuntu_26_04/bash-completion: 1:2.16.0-8build1
   ubuntu_26_04/bsdutils: 1:2.41.3-3ubuntu2.2
   ubuntu_26_04/bubblewrap: 0.11.1-1ubuntu0.3
-  ubuntu_26_04/ca-certificates: 20260816ubuntu0.26.04.1
+  ubuntu_26_04/ca-certificates: 20260816ubuntu0.26.04.2
   ubuntu_26_04/coreutils: 9.5-1ubuntu2+0.0.0~ubuntu25
   ubuntu_26_04/coreutils-from-uutils: 0.0.0~ubuntu25
   ubuntu_26_04/dash: 0.5.12-12ubuntu3
@@ -271,7 +271,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libaprutil1-dbd-sqlite3: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libaprutil1-ldap: 1.6.3-3ubuntu3.1
   ubuntu_26_04/libaprutil1t64: 1.6.3-3ubuntu3.1
-  ubuntu_26_04/libapt-pkg7.0: 3.2.0
+  ubuntu_26_04/libapt-pkg7.0: 3.2.1ubuntu0.1
   ubuntu_26_04/libatomic1: 16-20260322-1ubuntu1
   ubuntu_26_04/libattr1: 1:2.5.2-4ubuntu0.1
   ubuntu_26_04/libaudit-common: 1:4.1.2-1build1
