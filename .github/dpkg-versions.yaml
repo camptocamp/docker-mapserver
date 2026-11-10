@@ -1,8 +1,8 @@
 camptocamp/mapserver:latest:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.6
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.7
   ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
@@ -134,7 +134,7 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
   ubuntu_26_04/libpcre2-8-0: 10.46-1ubuntu0.1
   ubuntu_26_04/libpcre2-posix3: 10.46-1ubuntu0.1
-  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.4
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1ubuntu0.1
   ubuntu_26_04/libpq5: 18.6-0ubuntu0.26.04.1
@@ -204,9 +204,9 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/openssl: 3.5.5-1ubuntu3.7
   ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3.7
   ubuntu_26_04/passwd: 1:4.17.4-2ubuntu3
-  ubuntu_26_04/perl: 5.40.1-7ubuntu0.3
-  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.3
-  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl: 5.40.1-7ubuntu0.4
+  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.4
+  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.4
   ubuntu_26_04/procps: 2:4.0.4-9ubuntu1
   ubuntu_26_04/proj-data: 9.7.1-1
   ubuntu_26_04/python-is-python3: 3.13.3-1+build1
@@ -229,10 +229,10 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/unzip: 6.0-29ubuntu1
   ubuntu_26_04/util-linux: 2.41.3-3ubuntu2.2
 camptocamp/mapserver:latest-arm64:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.6
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.6
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.7
   ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
@@ -364,7 +364,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libpangoft2-1.0-0: 1.57.0-1
   ubuntu_26_04/libpcre2-8-0: 10.46-1ubuntu0.1
   ubuntu_26_04/libpcre2-posix3: 10.46-1ubuntu0.1
-  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/libperl5.40: 5.40.1-7ubuntu0.4
   ubuntu_26_04/libpixman-1-0: 0.46.4-1
   ubuntu_26_04/libpng16-16t64: 1.6.57-1ubuntu0.1
   ubuntu_26_04/libpq5: 18.6-0ubuntu0.26.04.1
@@ -434,9 +434,9 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/openssl: 3.5.5-1ubuntu3.7
   ubuntu_26_04/openssl-provider-legacy: 3.5.5-1ubuntu3.7
   ubuntu_26_04/passwd: 1:4.17.4-2ubuntu3
-  ubuntu_26_04/perl: 5.40.1-7ubuntu0.3
-  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.3
-  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.3
+  ubuntu_26_04/perl: 5.40.1-7ubuntu0.4
+  ubuntu_26_04/perl-base: 5.40.1-7ubuntu0.4
+  ubuntu_26_04/perl-modules-5.40: 5.40.1-7ubuntu0.4
   ubuntu_26_04/procps: 2:4.0.4-9ubuntu1
   ubuntu_26_04/proj-data: 9.7.1-1
   ubuntu_26_04/python-is-python3: 3.13.3-1+build1
