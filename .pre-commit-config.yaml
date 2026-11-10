@@ -10,5 +10,5 @@ repos:
     hooks:
       - id: uv-lock
         additional_dependencies:
-          - uv==0.13.4 # pypi
+          - uv==0.13.7 # pypi
         files: ^\.github/publish/pyproject\.toml$
