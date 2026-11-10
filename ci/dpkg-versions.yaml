@@ -1,9 +1,9 @@
 camptocamp/mapserver:latest:
   ubuntu_22_04/adduser: 3.118ubuntu5
-  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.25
+  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.26
   ubuntu_22_04/apt: 2.4.15ubuntu0.1
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
@@ -123,7 +123,7 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/libpcre2-8-0: 10.39-3ubuntu0.2
   ubuntu_22_04/libpcre2-posix3: 10.39-3ubuntu0.2
   ubuntu_22_04/libpcre3: 2:8.39-13ubuntu0.22.04.1
-  ubuntu_22_04/libperl5.34: 5.34.0-3ubuntu1.9
+  ubuntu_22_04/libperl5.34: 5.34.0-3ubuntu1.10
   ubuntu_22_04/libpixman-1-0: 0.40.0-1ubuntu0.22.04.1
   ubuntu_22_04/libpng16-16: 1.6.37-3ubuntu0.7
   ubuntu_22_04/libpq5: 14.24-0ubuntu0.22.04.1
@@ -195,9 +195,9 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/ncurses-bin: 6.3-2ubuntu0.3
   ubuntu_22_04/openssl: 3.0.2-0ubuntu1.30
   ubuntu_22_04/passwd: 1:4.8.1-2ubuntu2.2
-  ubuntu_22_04/perl: 5.34.0-3ubuntu1.9
-  ubuntu_22_04/perl-base: 5.34.0-3ubuntu1.9
-  ubuntu_22_04/perl-modules-5.34: 5.34.0-3ubuntu1.9
+  ubuntu_22_04/perl: 5.34.0-3ubuntu1.10
+  ubuntu_22_04/perl-base: 5.34.0-3ubuntu1.10
+  ubuntu_22_04/perl-modules-5.34: 5.34.0-3ubuntu1.10
   ubuntu_22_04/procps: 2:3.3.17-6ubuntu2.1
   ubuntu_22_04/proj-data: 8.2.1-1
   ubuntu_22_04/python-is-python3: 3.9.2-2
@@ -221,10 +221,10 @@ camptocamp/mapserver:latest:
   ubuntu_22_04/util-linux: 2.37.2-4ubuntu3.6
 camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/adduser: 3.118ubuntu5
-  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.25
-  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.25
+  ubuntu_22_04/apache2: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-bin: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-data: 2.4.52-1ubuntu4.26
+  ubuntu_22_04/apache2-utils: 2.4.52-1ubuntu4.26
   ubuntu_22_04/apt: 2.4.15ubuntu0.1
   ubuntu_22_04/base-passwd: 3.5.52build1
   ubuntu_22_04/bash: 5.1-6ubuntu1.1
@@ -344,7 +344,7 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/libpcre2-8-0: 10.39-3ubuntu0.2
   ubuntu_22_04/libpcre2-posix3: 10.39-3ubuntu0.2
   ubuntu_22_04/libpcre3: 2:8.39-13ubuntu0.22.04.1
-  ubuntu_22_04/libperl5.34: 5.34.0-3ubuntu1.9
+  ubuntu_22_04/libperl5.34: 5.34.0-3ubuntu1.10
   ubuntu_22_04/libpixman-1-0: 0.40.0-1ubuntu0.22.04.1
   ubuntu_22_04/libpng16-16: 1.6.37-3ubuntu0.7
   ubuntu_22_04/libpq5: 14.24-0ubuntu0.22.04.1
@@ -415,9 +415,9 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_22_04/ncurses-bin: 6.3-2ubuntu0.3
   ubuntu_22_04/openssl: 3.0.2-0ubuntu1.30
   ubuntu_22_04/passwd: 1:4.8.1-2ubuntu2.2
-  ubuntu_22_04/perl: 5.34.0-3ubuntu1.9
-  ubuntu_22_04/perl-base: 5.34.0-3ubuntu1.9
-  ubuntu_22_04/perl-modules-5.34: 5.34.0-3ubuntu1.9
+  ubuntu_22_04/perl: 5.34.0-3ubuntu1.10
+  ubuntu_22_04/perl-base: 5.34.0-3ubuntu1.10
+  ubuntu_22_04/perl-modules-5.34: 5.34.0-3ubuntu1.10
   ubuntu_22_04/procps: 2:3.3.17-6ubuntu2.1
   ubuntu_22_04/proj-data: 8.2.1-1
   ubuntu_22_04/python-is-python3: 3.9.2-2
