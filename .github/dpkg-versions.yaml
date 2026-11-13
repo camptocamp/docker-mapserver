@@ -1,8 +1,8 @@
 camptocamp/mapserver:latest:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.8
   ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
@@ -51,9 +51,9 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/libbrotli1: 1.2.0-3ubuntu0.1
   ubuntu_26_04/libbsd0: 0.12.2-2build2
   ubuntu_26_04/libbz2-1.0: 1.0.8-6ubuntu0.1
-  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.4
-  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.4
-  ubuntu_26_04/libc6: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.7
+  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.7
+  ubuntu_26_04/libc6: 2.43-2ubuntu2.7
   ubuntu_26_04/libcairo-gobject2: 1.18.4-3
   ubuntu_26_04/libcairo2: 1.18.4-3
   ubuntu_26_04/libcap-ng0: 0.8.5-4build5
@@ -229,10 +229,10 @@ camptocamp/mapserver:latest:
   ubuntu_26_04/unzip: 6.0-29ubuntu1
   ubuntu_26_04/util-linux: 2.41.3-3ubuntu2.2
 camptocamp/mapserver:latest-arm64:
-  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.7
-  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.7
+  ubuntu_26_04/apache2: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-bin: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-data: 2.4.66-2ubuntu2.8
+  ubuntu_26_04/apache2-utils: 2.4.66-2ubuntu2.8
   ubuntu_26_04/apt: 3.2.1ubuntu0.1
   ubuntu_26_04/base-passwd: 3.6.8
   ubuntu_26_04/bash: 5.3-2ubuntu1
@@ -281,9 +281,9 @@ camptocamp/mapserver:latest-arm64:
   ubuntu_26_04/libbrotli1: 1.2.0-3ubuntu0.1
   ubuntu_26_04/libbsd0: 0.12.2-2build2
   ubuntu_26_04/libbz2-1.0: 1.0.8-6ubuntu0.1
-  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.4
-  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.4
-  ubuntu_26_04/libc6: 2.43-2ubuntu2.4
+  ubuntu_26_04/libc-bin: 2.43-2ubuntu2.7
+  ubuntu_26_04/libc-gconv-modules-extra: 2.43-2ubuntu2.7
+  ubuntu_26_04/libc6: 2.43-2ubuntu2.7
   ubuntu_26_04/libcairo-gobject2: 1.18.4-3
   ubuntu_26_04/libcairo2: 1.18.4-3
   ubuntu_26_04/libcap-ng0: 0.8.5-4build5
